@@ -1,0 +1,323 @@
+@charset "utf-8";
+
+.header {
+	position: relative;
+}
+
+.header .searchbar {
+	position: absolute;
+	top: .42rem;
+	left: .24rem;
+	right: .24rem;
+	z-index: 999;
+	font-size: .3rem;
+}
+
+.header .searchbar .reback {
+	display: block;
+	width: .36rem;
+	background: url(../img/mp-indexfan@3x.png) no-repeat center center;
+	background-size: contain;
+	margin-right: .12rem;
+}
+
+.header .searchbar>div {
+	background: rgba(255, 255, 255, .9);
+	border-radius: .5rem;
+	line-height: .66rem;
+}
+
+.header .searchbar>div .addr {
+	width: 1.9rem;
+	padding-left: .4rem;
+	position: relative;
+}
+
+.header .searchbar>div .addr:after {
+	position: absolute;
+	content: '';
+	display: block;
+	right: .28rem;
+	top: 0;
+	height: 100%;
+	width: .2rem;
+	background: url(../img/mp01-chengshixiala@3x.png) no-repeat center center;
+	background-size: contain;
+}
+
+.header .searchbar>div .line {
+	height: .36rem;
+	width: 1px;
+	background: #ccc;
+	transform: scaleX(.5);
+}
+
+.header .searchbar>div .search {
+	margin-left: .3rem;
+	background: url(../img/search2@3x.png) no-repeat left center;
+	background-size: .3rem auto;
+	padding-left: .48rem;
+	color: #999;
+}
+
+.header .banner {
+	display: block;
+}
+
+.menulist ul li {
+	float: left;
+	width: 20%;
+	text-align: center;
+	margin-top: .44rem
+}
+
+.menulist ul li:nth-child(5+n) {
+	margin-top: .6rem;
+}
+
+.menulist ul li a {
+	display: block;
+	font-size: .26rem;
+	color: #333;
+	text-align: center;
+}
+
+.menulist ul li a i {
+	display: block;
+	margin: 0 auto;
+}
+
+.menulist ul li a i.icon {
+	height: 1rem;
+	width: 1rem;
+	background: url(../img/mp01-dongzhiwu@3x.png) no-repeat center center;
+	background-size: contain;
+}
+
+.menulist ul li a i.icon.smicon {
+	height: .6rem;
+	width: .6rem;
+	margin-bottom: .1rem;
+
+}
+
+.menulist ul li a i.icon1 {
+	background-image: url(../img/mp01-qinzi@3x.png);
+}
+
+.menulist ul li a i.icon2 {
+	background-image: url(../img/mp01-wanshui@3x.png);
+}
+
+.menulist ul li a i.icon3 {
+	background-image: url(../img/mp01-dongzhiwu@3x.png);
+}
+
+.menulist ul li a i.icon4 {
+	background-image: url(../img/mp01-jiyong@3x.png);
+}
+
+.menulist ul li a i.icon5 {
+	background-image: url(../img/mp01-quanbu@3x.png);
+}
+
+.menulist ul li a i.icon6 {
+	background-image: url(../img/mp01-fengjing@3x.png);
+}
+
+.menulist ul li a i.icon7 {
+	background-image: url(../img/mp01-zhiwu@3x.png);
+}
+
+.menulist ul li a i.icon8 {
+	background-image: url(../img/mp01-yanchu@3x.png);
+}
+
+.menulist ul li a i.icon9 {
+	background-image: url(../img/mp01-chengshi@3x.png);
+}
+
+.menulist ul li a i.icon10 {
+	background-image: url(../img/mp01-yiji@3x.png);
+}
+
+/* 广告 */
+.adlist {
+	padding: .6rem .24rem .34rem;
+
+}
+
+.adlist a {
+	display: block;
+}
+
+.adlist a img {
+	display: block;
+	width: 100%;
+}
+
+.adlist a+a {
+	margin-left: .2rem;
+}
+
+/* 人气景点 */
+.popularSpots {
+
+	padding: 0 .24rem .34rem;
+}
+
+.popularSpots>div {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	white-space: nowrap;
+	font-size: 0;
+	-webkit-font-size-adjust: none;
+}
+
+.popularSpots .popularSpots-item {
+	width: 2.8rem;
+	display: inline-block;
+}
+
+.popularSpots .popularSpots-item+.popularSpots-item {
+	margin-left: .2rem;
+}
+
+.popularSpots .popularSpots-item .imgbox {
+	position: relative;
+	height: 2.2rem;
+	width: 100%;
+	overflow: hidden;
+	border-border: .1rem;
+
+}
+
+.popularSpots .popularSpots-item .imgbox img {
+	display: block;
+	width: 100%;
+}
+
+.popularSpots .popularSpots-item .imgbox .tip {
+	color: #fff;
+	font-size: .18rem;
+	background: #ff5b5b;
+	border-top-left-radius: .1rem;
+	border-bottom-right-radius: .1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: .7rem;
+	height: .36rem;
+	text-align: center;
+}
+
+.popularSpots .popularSpots-item .name {
+	color: #333;
+	font-size: .3rem;
+	margin-top: .16rem
+}
+
+.popularSpots .popularSpots-item .price {
+	color: #999;
+	font-size: .24rem;
+}
+
+.popularSpots .popularSpots-item .price em {
+	font-size: .3rem;
+	color: #ff5b5b;
+	font-style: normal;
+	margin-top: .2rem
+}
+
+.popularSpots .popularSpots-item .num {
+	color: #999;
+	font-size: .18rem;
+	line-height: .32rem;
+	padding: 0 .1rem;
+	background: #f5f5f5;
+	border-radius: 50px;
+	display: inline-block;
+	margin-top: .18rem;
+}
+
+/* 景区列表 */
+.spotslist {
+	margin: 0 .24rem;
+}
+
+.spotslist .spots-item {
+	padding: .4rem 0;
+	font-size:.22rem;
+	position:relative;
+}
+.spotslist .spots-item:after{
+	height:1px;
+	background:#e6e6e6;
+	left:0;right:0;
+	bottom:0;
+	position:absolute;
+	content:'';
+	display:block;
+	transform:scaleY(.5)
+}
+.spotslist .spots-item .imgbox {
+	width: 2.4rem;
+	border-radius: .1rem;
+	overflow: hidden;
+	margin-right:.3rem;
+
+}
+
+.spotslist .spots-item .imgbox img {
+	display: block;
+	width: 100%
+}
+
+.spotslist .spots-item .name {
+	color: #333;
+	font-size: .3rem;
+}
+.spotslist .spots-item .flex+p{
+	color:#333;
+	font-size:.22rem;
+	margin-top:.3rem;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}.spotslist .spots-item .flex+p em{
+	color:#999;
+}
+.spotslist .spots-item .tags{
+	margin-top:.22rem;
+}
+.spotslist .spots-item .tags .tag{
+	font-size:.16rem;
+	display:inline-block;
+	padding:0.05rem .1rem;
+	line-height:.22rem;
+	border-radius:.05rem;
+}.spotslist .spots-item .tags .tag:first-child{
+	color:#008dff;
+	background:#cee9ff;
+}.spotslist .spots-item .tags .tag:nth-child(2n+2){
+	color:#ff4e45;
+	background:#ffebea;
+}.spotslist .spots-item .tags+p{
+	
+	color:#666;
+	margin-top:.34rem;
+}.spotslist .spots-item  .score{
+	color:#ffab00;font-size:.22rem;
+	margin-top:.1rem;
+}.spotslist .spots-item  .score span{
+	display:inline-block;
+	vertical-align:middle;
+}
+.spotslist .spots-item  .price{
+	color:#999
+}
+.spotslist .spots-item  .price span.red{
+	color:#ff4e45;
+}.spotslist .spots-item  .price span.num{
+	font-size:.3rem;
+}
