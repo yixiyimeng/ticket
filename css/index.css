@@ -243,6 +243,7 @@
 /* 景区列表 */
 .spotslist {
 	margin: 0 .24rem;
+	padding-top: .81rem;
 }
 
 .spotslist .spots-item {
