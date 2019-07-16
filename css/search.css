@@ -1,0 +1,50 @@
+.spotslist .spots-item:first-child {
+	padding-top: 0;
+}
+.searchbar{
+	position: fixed;
+	background: #fff;
+	padding: .3rem 0 ;
+	top: 0;
+	left: .24rem;
+	right: .24rem;
+	z-index: 999;
+	font-size: .3rem;
+}
+ 
+
+ .searchbar .reback {
+	display: block;
+	width: .15rem;
+	background: url(../img/reback.png) no-repeat center center;
+	background-size: contain;
+	margin-right: .15rem;
+	height: .6rem;
+}
+
+ .searchbar>div {
+	background: #f5f5f5;
+	border-radius: .5rem;
+	line-height: .6rem;
+	height: .6rem;
+}
+ .searchbar>div i{
+	 margin-left: .3rem;
+	 background: url(../img/mp04-sousuo32@3x.png) no-repeat left center;
+	 background-size: .32rem auto;
+	 padding-left: .48rem;
+	 color: #999;
+	 display: block;
+	 height: .6rem;
+ }
+  .searchbar>div input{
+	  background: none;
+	  border: none;
+	  font-size: .3rem;
+  }
+.searchbar+ .modbox{
+	padding-top: 1rem;
+}
+.searchbar+ .modbox .modbox-hd .title{
+	font-size: .3rem;
+}

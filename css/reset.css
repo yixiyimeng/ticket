@@ -332,21 +332,87 @@ input[type='search'] {
 .mt10 {
 	margin-top: .1rem;
 }
-.ml15{
-	margin-left:.15rem
-}.mr15{
-	margin-right:.15rem
+.mt15 {
+	margin-top: .15rem;
 }
 
+.mt20 {
+	margin-top: .2rem;
+}
 
+.mt30 {
+	margin-top: .3rem;
+}
+
+.mt40 {
+	margin-top: .4rem;
+}
+
+.ml15 {
+	margin-left: .15rem
+}
+
+.ml20 {
+	margin-left: .2rem
+}
+
+.mr15 {
+	margin-right: .15rem
+}
+
+.pd24 {
+	padding: 0 .24rem;
+}
+.pt81{
+	padding-top: .81rem;
+}
+.c-blue {
+	color: #008dff;
+}
+
+.c-yellow {
+	color: #ffab00;
+}
+
+.c-grey {
+	color: #999;
+}
+.ellipsis{
+	overflow: hidden;text-overflow: ellipsis;
+	white-space: nowrap;
+}
 .modbox .modbox-hd {
 	height: .9rem;
 	padding: 0 .24rem;
 }
-
+.modbox .modbox-hd .right-arrow{
+	height: .9rem;
+	line-height: .9rem;
+	position: relative;
+}
+.modbox .modbox-hd .right-arrow:after{
+	content: '';
+	display: block;
+	height: .9rem;
+	width: .26rem;
+	background: url(../img/xq-gengduojiantou20@3x.png) no-repeat center center;
+	background-size: contain;
+	right: 0;
+	position: absolute;
+}
 .modbox .modbox-hd .title {
 	font-size: .36rem;
 	color: #333;
+}
+
+.modbox .modbox-hd .thumb {
+	font-size: .2rem;
+	color: #fff;
+	background: #ff5b5b;
+	border-radius: .1rem;
+	border-top-left-radius: 0;
+	line-height: .36rem;
+	padding: 0 .12rem;
 }
 
 .modbox .modbox-hd .more {
@@ -367,9 +433,11 @@ input[type='search'] {
 	background: url(../img/mp01-gengduo@3x.png) no-repeat center center;
 	background-size: contain;
 }
-.modbox .modbox-bd{
+
+.modbox .modbox-bd {
 	position: relative;
 }
+
 .filterbar {
 	position: absolute;
 	font-size: .26rem;
@@ -381,9 +449,11 @@ input[type='search'] {
 	z-index: 1;
 
 }
-.filterbar.active{
+
+.filterbar.active {
 	position: fixed;
 }
+
 .filterbar .filter-item {
 	/* position:relative; */
 }
@@ -400,10 +470,12 @@ input[type='search'] {
 	background: url(../img/mp01-xianzexiala@3x.png) no-repeat center center;
 	background-size: contain;
 }
-.filterbar .filter-item.active .title{
-	color:#ffab00;
+
+.filterbar .filter-item.active .title {
+	color: #ffab00;
 }
-.filterbar .filter-item.active .title i{
+
+.filterbar .filter-item.active .title i {
 	background-image: url(../img/mp01-huangxiala@3x.png);
 }
 
@@ -417,24 +489,282 @@ input[type='search'] {
 .filterbar .filter-item .list {
 	position: absolute;
 	top: .81rem;
-	left:0;
-	right:0;
-	background:#fff;
-	display:none;
-	padding-bottom:.8rem;
-	box-shadow:0 .1rem .1rem rgba(0,0,0,.2)
-	
+	left: 0;
+	right: 0;
+	background: #fff;
+	display: none;
+	padding-bottom: .8rem;
+	box-shadow: 0 .1rem .1rem rgba(0, 0, 0, .2)
 }
-.filterbar .filter-item.active .list{
-	display:block;
-	
-}.filterbar .filter-item.active .list .sort {
-	padding:0 .24rem;
+
+.filterbar .filter-item.active .list {
+	display: block;
+
 }
-.filterbar .filter-item.active .list .sort li{
-	line-height:.8rem;
+
+.filterbar .filter-item.active .list .sort {
+	padding: 0 .24rem;
+}
+
+.filterbar .filter-item.active .list .sort li {
+	line-height: .8rem;
 	border-bottom: 1px solid #f7f7f7;
-	color:#666
-}.filterbar .filter-item.active .list .sort li.active{
+	color: #666
+}
+
+.filterbar .filter-item.active .list .sort li.active {
+	color: #ffab00;
+}
+
+.star-rating span {
+	display: inline-block;
+	width: .2rem;
+	height: .18rem;
+	background: url(../img/xq-star-g@3x.png) no-repeat center center;
+	background-size: contain;
+}
+
+.star-rating span.active {
+	background-image: url(../img/xq-starhuang@3x.png);
+}
+
+.star-rating span+span {
+	margin-left: .05rem;
+}
+
+.bdline {
+	height: 1px;
+	background: #e6e6e6;
+	transform: translateY(.5);
+}
+
+/* ticket */
+
+.ticketlist .ticket-item {
+	font-size: .26rem;
+	padding: .3rem 0 .28rem;
+	position: relative;
+}
+
+.ticketlist .ticket-item .name {
+	font-size: .3rem;
+	color: #333;
+}
+
+.ticketlist .ticket-item .name .thumb {
+	font-size: .22rem;
+	color: #ff5b5b;
+	background: #ffe2e2;
+	border-radius: .1rem;
+	border-top-left-radius: 0;
+	line-height: .32rem;
+	padding: 0 .12rem;
+}
+
+.ticketlist .ticket-item .tag {
+	-webkit-text-size-adjust: none;
+	font-size: 0;
+}
+
+.ticketlist .ticket-item .tag {
+	color: #999;
+	font-size: .2rem;
+	border: 1px solid #e6e6e6;
+	border-radius: .05rem;
+	display: inline-block;
+	line-height: .3rem;
+	padding: 0 .1rem;
+	text-align: center;
+}
+
+.ticketlist .ticket-item .tag+.tag {
+	margin-left: .08rem;
+}
+
+.ticketlist .ticket-item .discounttags .tag {
+	color: #ff6666;
+	font-size: .16rem;
+	border-color: #ff6666;
+	line-height: .26rem;
+}
+
+.ticketlist .ticket-item .price {
+	font-size: .3rem;
+	color: #ff4242;
+}
+
+.ticketlist .ticket-item .flex-1+div {
+	text-align: right;
+}
+
+.ticketlist .ticket-item .m-price {
+	color: #ccc;
+	font-size: .22rem;
+	text-decoration: line-through
+}
+
+.ticketlist .ticket-item .orderBtn {
+	color: #333;
+	font-size: .3rem;
+	background-image: linear-gradient(90deg, #ffcf5b, #ffaf22);
+	border-radius: .5rem;
+	width: 1.7rem;
+	line-height: .6rem;
+	text-align: center;
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: .28rem;
+}
+
+.ticketlist .ticket-item:not(last-child):after,
+.showmore:before {
+	content: '';
+	display: block;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: #e6e6e6;
+	transform: translateY(.5);
+	bottom: 0;
+	position: absolute;
+
+}
+
+.showmore {
+	color: #999;
+	font-size: .26rem;
+	display: block;
+	line-height: 1rem;
+	text-align: center;
+	position: relative;
+}
+.showmore i{
+	display: inline-block;
+	background: url(../img/xq-jiantouhui@3x.png) no-repeat center center;
+	background-size:contain ;
+	height: .16rem;
+	width: .16rem;
+	margin-left: .05rem;
+}
+.showmore:before {
+	top: 0;
+}
+
+/* 问答 */
+.questionlist .question-item{
+	font-size: .26rem;
+}
+.questionlist .question-item .qt-title{
+	color: #333;
+	background: url(../img/xq-wen@3x.png) no-repeat left center;
+	background-size: .36rem auto;
+	padding-left: .5rem;
+}
+.questionlist .question-item .answer{
+	color: #666;
+	background: url(../img/xq-da@3x.png) no-repeat left center;
+	background-size: .36rem auto;
+	padding-left: .5rem;
+}.questionlist .question-item .tip a{
+	color: #999;
+	font-size: .22rem;
+	margin-left: .5rem;
+}.questionlist .question-item .tip a i.eye,.questionlist .question-item .tip a i.com{
+	display: inline-block;height: .26rem;
+	width: .26rem;
+	background: url(../img/xq-chakan@3x.png) no-repeat center center;
+	background-size: .26rem auto;
+	vertical-align: middle;
+	margin-right: .08rem;
+}.questionlist .question-item .tip a i+span{
+	vertical-align: middle;
+}
+.questionlist .question-item .tip a i.com{
+	background-image: url(../img/xq-pinglun@3x.png);
+}
+/* 景区列表 */
+.spotslist {
+	/* margin: 0 .24rem; */
+}
+
+.spotslist .spots-item {
+	padding: .4rem 0;
+	font-size:.22rem;
+	position:relative;
+}
+.spotslist .spots-item:not(:last-child):after{
+	height:1px;
+	background:#e6e6e6;
+	left:0;right:0;
+	bottom:0;
+	position:absolute;
+	content:'';
+	display:block;
+	transform:scaleY(.5)
+}
+.spotslist .spots-item .imgbox {
+	width: 2.4rem;
+	border-radius: .1rem;
+	overflow: hidden;
+	margin-right:.3rem;
+
+}
+
+.spotslist .spots-item .imgbox img {
+	display: block;
+	width: 100%
+}
+
+.spotslist .spots-item .name {
+	color: #333;
+	font-size: .3rem;
+}
+.spotslist .spots-item .flex+p{
+	color:#333;
+	font-size:.22rem;
+	margin-top:.3rem;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}.spotslist .spots-item .flex+p em{
+	color:#999;
+}
+.spotslist .spots-item .tags{
+	margin-top:.22rem;
+}
+.spotslist .spots-item .tags .tag{
+	font-size:.16rem;
+	display:inline-block;
+	padding:0.05rem .1rem;
+	line-height:.22rem;
+	border-radius:.05rem;
+}.spotslist .spots-item .tags .tag.b-tag{
+	color:#008dff;
+	background:#cee9ff;
+}.spotslist .spots-item .tags .tag.r-tag{
 	color:#ffab00;
+	background:#fff4d6;
+}.spotslist .spots-item .tags .tag.y-tag{
+	color:#ff4e45;
+	background:#ffebea;
+}
+.spotslist .spots-item .tags+p{
+	
+	color:#666;
+	margin-top:.34rem;
+}.spotslist .spots-item  .score{
+	color:#ffab00;font-size:.22rem;
+	margin-top:.1rem;
+}.spotslist .spots-item  .score span{
+	display:inline-block;
+	vertical-align:middle;
+}
+.spotslist .spots-item  .price{
+	color:#999
+}
+.spotslist .spots-item  .price span.red{
+	color:#ff4e45;
+}.spotslist .spots-item  .price span.num{
+	font-size:.3rem;
 }

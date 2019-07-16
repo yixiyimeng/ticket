@@ -1,0 +1,164 @@
+.banner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+}
+
+.details-info {
+	padding-top: 3.8rem;
+	padding-bottom: .1rem;
+	position: relative;
+	z-index: 9;
+}
+
+.details-info .card {
+	padding: .4rem .24rem 0;
+	border-top-left-radius: .2rem;
+	border-top-right-radius: .2rem;
+}
+
+.details-info .base-info .flex-1 {
+	border-right: 1px solid #e6e6e6;
+}
+
+.details-info .base-info .name {
+	color: #333;
+	font-size: .34rem;
+}
+
+.details-info .base-info .tag a,
+.details-info .base-info .tag {
+	color: #2d86ff;
+	font-size: .22rem;
+}
+
+.details-info .base-info .tag:after {
+	content: '';
+	background: url(../img/xq-jiantoulan@3x.png) no-repeat center center;
+	background-size: .16rem auto;
+	display: inline-block;
+	width: .16rem;
+	height: .16rem;
+	margin-left: .3rem;
+}
+
+.details-info .base-info .tip {
+	color: #999;
+	font-size: .26rem;
+	margin-top: .26rem;
+}
+
+.details-info .base-info .score {
+	font-size: .36rem;
+}
+
+.details-info .base-info .commentNum {
+	font-size: .2erm;
+}
+
+.details-info .base-info .flex-1+div {
+	margin: 0 .1rem 0 .3rem;
+	text-align: center;
+	color: #ffab00;
+}
+
+.details-info .base-info .star-rating {
+	margin-top: .22rem;
+}
+
+.details-info .addr {
+	color: #333;
+	font-size: .26rem;
+	line-height: .4rem;
+	padding: .36rem .4rem .36rem 0;
+	position: relative;
+}
+
+.details-info .addr:after {
+	content: '';
+	height: .24rem;
+	width: .24rem;
+	background: url(../img/xq-jiantouhui@3x.png) no-repeat center center;
+	background-size: contain;
+	position: absolute;
+	right: .15rem;
+}
+
+.details-info .addr i {
+	display: block;
+	height: .26rem;
+	width: .26rem;
+	background: url(../img/xq-weizhi-hui@3x.png) no-repeat center center;
+	background-size: contain;
+	margin-right: .26rem;
+}
+
+.details-info .addr span {
+	color: #999;
+	font-size: .22rem;
+	margin-left: .54rem;
+}
+
+.spotsinfo {
+	font-size: .26rem;
+	color: #333;
+	line-height: .4rem;
+	padding-top: .33rem;
+	padding-bottom: .33rem;
+}
+
+.spotsinfo label {
+	width: 5em;
+	color: #999;
+}
+
+.comment .tags .tag {
+	font-size: .22rem;
+	color: #343434;
+	background: #ededed;
+	line-height: .5rem;
+	padding: 0 .3rem;
+	border-radius: .5rem;
+	display: inline-block;
+}
+
+.comment .tags .tag+.tag {
+	margin-left: .2rem;
+}
+
+.comment .tags .tag.active {
+	background: #ffe192;
+}
+
+
+
+/* 联系客服 */
+.contact {
+	box-shadow: 0 -.05rem .05rem rgba(0, 0, 0, .1);
+	position: fixed;
+	z-index: 999;
+	background: #fff;
+	text-align: center;
+	color: #333232;
+	font-size: .3rem;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	line-height: 1rem;
+}
+
+.contact i {
+	display: inline-block;
+	height: .44rem;
+	width: .44rem;
+	background: url(../img/xq-kefu@3x.png) no-repeat center center;
+	background-size: contain;
+	vertical-align: middle;
+}
+
+.contact span {
+	vertical-align: middle;
+	margin-left: .2rem;
+}
