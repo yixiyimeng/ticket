@@ -7,7 +7,7 @@
 }
 
 .details-info {
-	padding-top: 3.8rem;
+	margin-top: 3.8rem;
 	padding-bottom: .1rem;
 	position: relative;
 	z-index: 9;
@@ -55,7 +55,16 @@
 }
 
 .details-info .base-info .commentNum {
-	font-size: .2erm;
+	font-size: .2rem;
+}
+
+.details-info .base-info .commentNum:after {
+	content: '';
+	display: inline-block;
+	height: .16rem;
+	width: .16rem;
+	background: url(../img/xq-jiantouhuang@3x.png) no-repeat center center;
+	background-size: contain;
 }
 
 .details-info .base-info .flex-1+div {
@@ -161,4 +170,17 @@
 .contact span {
 	vertical-align: middle;
 	margin-left: .2rem;
+}
+
+.swiper-pagination-fraction {
+	top: 3.05rem;
+	width: .8rem;
+	left: auto;
+	color: #fff;
+	background: rgba(0, 0, 0, .5);
+	border-radius: .5rem;
+	line-height: .36rem;
+	height: .36rem;
+	font-size: .22rem;
+	right: .24rem;
 }
