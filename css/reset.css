@@ -344,6 +344,9 @@ input[type='search'] {
 .mt30 {
 	margin-top: .3rem;
 }
+.mt36 {
+	margin-top: .36rem;
+}
 
 .mt40 {
 	margin-top: .4rem;
@@ -358,6 +361,9 @@ input[type='search'] {
 
 .ml20 {
 	margin-left: .2rem
+}
+.ml40 {
+	margin-left: .4rem
 }
 
 .mr15 {
@@ -385,6 +391,9 @@ input[type='search'] {
 
 .c-grey {
 	color: #999;
+}
+.c-red {
+	color: #eb4747;
 }
 
 .ellipsis {
@@ -679,16 +688,18 @@ input[type='search'] {
 	font-size: .22rem;
 	text-decoration: line-through
 }
-
-.ticketlist .ticket-item .orderBtn {
+.orderBtn{
 	color: #333;
 	font-size: .3rem;
 	background-image: linear-gradient(90deg, #ffcf5b, #ffaf22);
-	border-radius: .5rem;
-	width: 1.7rem;
+	border-radius: .4rem;
+	
 	line-height: .6rem;
 	text-align: center;
 	display: block;
+}
+.ticketlist .ticket-item .orderBtn {
+	width: 1.7rem;
 	position: absolute;
 	right: 0;
 	bottom: .28rem;
@@ -921,4 +932,29 @@ input[type='search'] {
 	display: inline-block;
 	width: 25%;
 	padding: .1rem .03rem;
+}
+.shophandle{
+	padding: .24rem 0;
+	overflow: hidden;
+}
+.shophandle .minus,.shophandle .add{
+	display: inline-block;
+	height: .6rem;
+	width: .6rem;
+	background: no-repeat center center;
+	background-size: contain;vertical-align: middle;
+}
+.shophandle .minus{
+	background-image: url(../img/jian@3x.png);
+}.shophandle .add{
+	background-image: url(../img/jia@3x.png);
+}
+.shophandle input{
+	text-align: center;
+	width: .96rem;
+	font-size: .3rem;
+	line-height: .6rem;
+	color: #333;
+	border: none;
+	vertical-align: middle;
 }

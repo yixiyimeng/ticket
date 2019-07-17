@@ -1,21 +1,31 @@
-.page{
-	padding: .2rem .24rem;
+.page {
+	padding: .2rem .24rem 1.7rem;
 }
-.mod-card{
+
+.mod-card {
 	border-radius: .15rem;
-	
-}.mod-card.ticketinfo{
+	overflow: hidden;
+}
+
+.mod-card.ticketinfo {
 	padding: .4rem .38rem .24rem;
 }
-.mod-card.ticketinfo .title{
+
+.mod-card.ticketinfo .title {
 	font-size: .36rem;
 	font-weight: bold;
-	color: #333;line-height: .5rem;
-}.mod-card.ticketinfo .know{
+	color: #333;
+	line-height: .5rem;
+}
+
+.mod-card.ticketinfo .know {
 	color: #1e83ff;
 	font-size: .26rem;
-	position: relative;line-height: .5rem;
-}.mod-card.ticketinfo .know:after{
+	position: relative;
+	line-height: .5rem;
+}
+
+.mod-card.ticketinfo .know:after {
 	content: '';
 	height: .2rem;
 	width: .2rem;
@@ -23,4 +33,174 @@
 	background-size: contain;
 	display: inline-block;
 	margin-left: .05rem;
+}
+
+.mod-card.ticketinfo .tip {
+	line-height: .36rem;
+	color: #e09800;
+	font-size: .22rem;
+	background: #fff5e0;
+	border-radius: .08rem;
+	padding: 0 .2rem;
+	margin-bottom: .24rem;
+	margin-top: .2rem;
+	position: relative;
+}
+
+.mod-card.ticketinfo .tip:after {
+	content: '';
+	display: block;
+	right: .2rem;
+	height: .36rem;
+	width: .16rem;
+	background: url(../img/xq-jiantouhuang@3x.png) no-repeat center center;
+	background-size: contain;
+	position: absolute;
+	top: 0;
+}
+
+.daylist {
+	margin-top: .34rem;
+	padding-bottom: .32rem;
+}
+
+.daylist>div {
+	border: 1px solid #ccc;
+	border-radius: .08rem;
+	height: 1rem;
+	font-size: .22rem;
+	color: #333;
+}
+
+.daylist .arrow-check {
+	padding: .18rem .16rem;
+	width: 1.6rem;
+}
+
+.daylist .arrow-check p {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.daylist .arrow-check .price {
+	font-size: .3rem;
+	color: #ff3030;
+}
+.daylist .arrow-check.active,.mod-visitor .mod-visitor-bd .namelist .arrow-check.active{
+	border-color: #ffab00;
+	position: relative;
+}
+.daylist .arrow-check.active:after,
+.mod-visitor .mod-visitor-bd .namelist .arrow-check.active:after{
+	height: .3rem;
+	width: .3rem;
+	background: url(../img/xuanzefang30@3x.png) no-repeat center center;
+	background-size: contain;
+	position: absolute;
+	right: .01rem;
+	bottom: -.02rem;
+	content: '';
+	display: block;
+}
+.daylist .moreday {
+	padding-top: .16rem;
+	width: .92rem;
+	text-align: center;
+	background: url(../img/xq-jiantouhui@3x.png) no-repeat right center;
+	background-size: .16rem auto;
+}
+.mod-visitor .mod-visitor-hd{
+	font-size: .26rem;
+	color: #666;
+	padding: 0 .38rem;
+	line-height: 1.2rem;
+	background: #e7edf7;
+}
+.mod-visitor .mod-visitor-hd .title{
+	font-size: .36rem;
+	color: #333;
+}
+.mod-visitor .mod-visitor-bd{
+	padding: .35rem .38rem .45rem;
+}
+.mod-visitor .mod-visitor-bd .namelist{
+	font-size: .22rem;
+	color: #333;
+	text-align: center;
+}
+.mod-visitor .mod-visitor-bd .namelist>div{
+	border: 1px solid #ccc;
+	border-radius: .08rem;
+	line-height: .6rem;
+	width: 1.4rem;
+	float: left;
+	position: relative;
+}.mod-visitor .mod-visitor-bd .namelist>div+div{
+	margin-left: .18rem;
+}
+.mod-visitor .mod-visitor-bd .namelist>div.checkname:after{
+	display: inline-block;
+	content: '';
+	height: .24rem;
+	width: .24rem;
+	background: url(../img/xq-jiantouhui@3x.png) no-repeat center center;
+	background-size: contain;
+	margin-left: .05rem;
+	vertical-align: middle;
+}.mod-visitor .mod-visitor-bd .namelist>div.checkname span{
+	vertical-align: middle;
+}
+.mod-visitor .mod-visitor-bd .namelist .arrow-check.active{
+	position: relative;
+	font-size: .3rem;
+	color: #333;
+}
+.mod-visitor .mod-visitor-bd .visitorinfo{
+	position: relative;
+	padding-top: .32rem;
+}
+.mod-visitor .mod-visitor-bd .visitorinfo>div{
+	float: left;
+}
+.mod-visitor .mod-visitor-bd .visitorinfo .title{
+	
+	color: #999;
+	margin-right: .7rem;
+}.mod-visitor .mod-visitor-bd .visitorinfo .title .close{
+	display: block;
+	margin: .2rem auto;
+	width: .4rem;height: .4rem;
+	background: url(../img/shanchuyouke@3x.png) no-repeat center center;
+	background-size: contain;
+}.mod-visitor .mod-visitor-bd .visitorinfo p+p{
+	margin-top: .26rem;
+}
+.mod-visitor .mod-visitor-bd .visitorinfo .edit{
+	position: absolute;
+	right: 0;
+	color: #3a8dff;
+	font-size: .26rem;
+}
+.shopbar{
+	
+	background: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.shopbar >div{
+	padding: 0 .24rem;
+}
+.shopbar .tip{
+	line-height: .6rem;
+	font-size: .24rem;
+	color: #ffb022;
+	background: #fff3d7;
+}
+.shopbar .orderBtn{
+	width: 3rem;
+	line-height: .8rem;
+	margin: .08rem 0;
 }

@@ -184,3 +184,24 @@
 	font-size: .22rem;
 	right: .24rem;
 }
+.headerbar{
+	
+	left: .24rem;
+	right: .24rem;
+	}
+	.headerbar a{
+		position: absolute;
+		top: .6rem;
+		height:.44rem ;
+		width: .44rem;
+		background:  no-repeat center center;
+		background-size:contain ;
+	}
+	.headerbar a.reback{
+		background-image: url(../img/xp-fanhui@3x.png);
+		left: .24rem;
+	}
+	.headerbar a.share{
+		background-image: url(../img/xq-fenxiang@3x.png);
+		right: .24rem;
+	}
