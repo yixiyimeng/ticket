@@ -272,7 +272,12 @@ input[type='search'] {
 
 
 /*垂直对其方式*/
-
+.flex-align-top {
+	-webkit-box-align:flex-start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: flex-start;
+	align-items: flex-start
+}
 .flex-align-center {
 	-webkit-box-align: center;
 	-webkit-align-items: center;
@@ -361,6 +366,8 @@ input[type='search'] {
 
 .ml20 {
 	margin-left: .2rem
+}.ml30 {
+	margin-left: .3rem
 }
 .ml40 {
 	margin-left: .4rem
@@ -706,7 +713,8 @@ input[type='search'] {
 }
 
 .ticketlist .ticket-item:not(last-child):after,
-.showmore:before {
+.showmore:before,
+.mod-buyinfo .mod-buyinfo-item:after{
 	content: '';
 	display: block;
 	left: 0;
@@ -801,7 +809,8 @@ input[type='search'] {
 	padding-top: .4rem;
 }
 
-.spotslist .spots-item:not(:last-of-type):after,.comment .comment-item:not(:last-of-type):after {
+.spotslist .spots-item:not(:last-of-type):after,.comment .comment-item:not(:last-of-type):after,
+.input-group .input-row:after{
 	height: 1px;
 	background: #e6e6e6;
 	left: 0;
@@ -957,4 +966,47 @@ input[type='search'] {
 	color: #333;
 	border: none;
 	vertical-align: middle;
+}
+.popup{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 70%;
+	background: #fff;
+	z-index: 99;
+	border-top-left-radius: .2rem;
+	border-top-right-radius: .2rem;
+	overflow: hidden;
+	display: none;
+}
+.popup .input-group .input-row{
+	padding: .4rem 0 ;
+	position: relative;
+	font-size: .3rem;
+}
+.popup .input-group .input-row label{
+	display: block;
+	width: 4em;
+	margin-right: .48rem;
+}
+.popup .input-group .input-row input{
+	border: none;
+	background: none;
+}.popup .input-group .input-row.input-row-clear i{
+	display: block;
+	height: .26rem;
+	width: .26rem;
+	background: url(../img/quxiao@3x.png) no-repeat center center;
+	background-size: contain;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.popup .input-group .input-row.phonenum{
+	background: url(../img/tongxunlu@3x.png) no-repeat right center;
+	background-size: .36rem auto;
+}.popup .input-group .input-row.phonenum.input-row-clear i{
+	right: .5rem;
 }

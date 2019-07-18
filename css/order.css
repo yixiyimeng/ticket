@@ -87,12 +87,15 @@
 	font-size: .3rem;
 	color: #ff3030;
 }
-.daylist .arrow-check.active,.mod-visitor .mod-visitor-bd .namelist .arrow-check.active{
+
+.daylist .arrow-check.active,
+.mod-visitor .mod-visitor-bd .namelist .arrow-check.active {
 	border-color: #ffab00;
 	position: relative;
 }
+
 .daylist .arrow-check.active:after,
-.mod-visitor .mod-visitor-bd .namelist .arrow-check.active:after{
+.mod-visitor .mod-visitor-bd .namelist .arrow-check.active:after {
 	height: .3rem;
 	width: .3rem;
 	background: url(../img/xuanzefang30@3x.png) no-repeat center center;
@@ -103,6 +106,7 @@
 	content: '';
 	display: block;
 }
+
 .daylist .moreday {
 	padding-top: .16rem;
 	width: .92rem;
@@ -110,36 +114,44 @@
 	background: url(../img/xq-jiantouhui@3x.png) no-repeat right center;
 	background-size: .16rem auto;
 }
-.mod-visitor .mod-visitor-hd{
+
+.mod-visitor .mod-visitor-hd {
 	font-size: .26rem;
 	color: #666;
 	padding: 0 .38rem;
 	line-height: 1.2rem;
 	background: #e7edf7;
 }
-.mod-visitor .mod-visitor-hd .title{
+
+.mod-visitor .mod-visitor-hd .title {
 	font-size: .36rem;
 	color: #333;
 }
-.mod-visitor .mod-visitor-bd{
+
+.mod-visitor .mod-visitor-bd {
 	padding: .35rem .38rem .45rem;
 }
-.mod-visitor .mod-visitor-bd .namelist{
+
+.mod-visitor .mod-visitor-bd .namelist {
 	font-size: .22rem;
 	color: #333;
 	text-align: center;
 }
-.mod-visitor .mod-visitor-bd .namelist>div{
+
+.mod-visitor .mod-visitor-bd .namelist>div {
 	border: 1px solid #ccc;
 	border-radius: .08rem;
 	line-height: .6rem;
 	width: 1.4rem;
 	float: left;
 	position: relative;
-}.mod-visitor .mod-visitor-bd .namelist>div+div{
+}
+
+.mod-visitor .mod-visitor-bd .namelist>div+div {
 	margin-left: .18rem;
 }
-.mod-visitor .mod-visitor-bd .namelist>div.checkname:after{
+
+.mod-visitor .mod-visitor-bd .namelist>div.checkname:after {
 	display: inline-block;
 	content: '';
 	height: .24rem;
@@ -148,59 +160,235 @@
 	background-size: contain;
 	margin-left: .05rem;
 	vertical-align: middle;
-}.mod-visitor .mod-visitor-bd .namelist>div.checkname span{
+}
+
+.mod-visitor .mod-visitor-bd .namelist>div.checkname span {
 	vertical-align: middle;
 }
-.mod-visitor .mod-visitor-bd .namelist .arrow-check.active{
+
+.mod-visitor .mod-visitor-bd .namelist .arrow-check.active {
 	position: relative;
 	font-size: .3rem;
 	color: #333;
 }
-.mod-visitor .mod-visitor-bd .visitorinfo{
+
+.mod-visitor .mod-visitor-bd .visitorinfo {
 	position: relative;
 	padding-top: .32rem;
 }
-.mod-visitor .mod-visitor-bd .visitorinfo>div{
+
+.mod-visitor .mod-visitor-bd .visitorinfo>div {
 	float: left;
 }
-.mod-visitor .mod-visitor-bd .visitorinfo .title{
-	
+
+.mod-visitor .mod-visitor-bd .visitorinfo .title {
+
 	color: #999;
 	margin-right: .7rem;
-}.mod-visitor .mod-visitor-bd .visitorinfo .title .close{
+}
+
+.mod-visitor .mod-visitor-bd .visitorinfo .title .close {
 	display: block;
 	margin: .2rem auto;
-	width: .4rem;height: .4rem;
+	width: .4rem;
+	height: .4rem;
 	background: url(../img/shanchuyouke@3x.png) no-repeat center center;
 	background-size: contain;
-}.mod-visitor .mod-visitor-bd .visitorinfo p+p{
+}
+
+.mod-visitor .mod-visitor-bd .visitorinfo p+p {
 	margin-top: .26rem;
 }
-.mod-visitor .mod-visitor-bd .visitorinfo .edit{
+
+.mod-visitor .mod-visitor-bd .visitorinfo .edit {
 	position: absolute;
 	right: 0;
 	color: #3a8dff;
 	font-size: .26rem;
 }
-.shopbar{
-	
+
+.mod-discount {
+	background-image: linear-gradient(#ffe8e8, #fff 40%);
+	padding: 0 .38rem;
+	line-height: 1.2rem;
+	color: #333;
+}
+
+.mod-discount .mod-discount-hd {
+	font-size: .36rem;
+}
+
+.mod-discount .mod-discount-bd .mod-discount-item i {
+	display: inline-block;
+	height: .4rem;
+	width: .4rem;
+	background: url(../img/quan@3x.png) no-repeat center center;
+	background-size: contain;
+	vertical-align: middle;
+	margin-right: .3rem;
+}
+
+.mod-discount .mod-discount-bd .mod-discount-item span {
+	vertical-align: middle;
+}
+
+.shopbar {
+
 	background: #fff;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	z-index: 1;
 }
-.shopbar >div{
+
+.shopbar>div {
 	padding: 0 .24rem;
 }
-.shopbar .tip{
+
+.shopbar .tip {
 	line-height: .6rem;
 	font-size: .24rem;
 	color: #ffb022;
 	background: #fff3d7;
 }
-.shopbar .orderBtn{
+
+.shopbar .orderBtn {
 	width: 3rem;
 	line-height: .8rem;
 	margin: .08rem 0;
+}
+
+.shopbar .price {
+	color: #ff0000;
+	font-size: .2rem;
+}
+
+.shopbar .price em {
+	font-size: .36rem;
+}
+
+.shopbar .tag {
+	display: block;
+	font-size: .16rem;
+	color: #ff0000;
+	padding: .05rem .12rem;
+	border-radius: .05rem;
+	background: #ffe5e5;
+}
+
+.shopbar .details {
+	color: #666;
+	font-size: .26rem;
+}
+
+.shopbar .details:after {
+	content: '';
+	display: inline-block;
+	height: .16rem;
+	width: .16rem;
+	background: url(../img/shangjiantou16@3x.png) no-repeat center center;
+	background-size: contain;
+	margin-left: .05rem;
+}
+
+.mask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .5);
+	display: none;
+}
+
+.shopbar .detailslist {
+	display: none;
+}
+
+.shopbar .detailslist .info {
+	background: #fff;
+	padding: 0 .24rem;
+	line-height: .8rem;
+}
+
+.shopbar .detailslist .info .title {
+	font-size: .3rem;
+}
+
+.shopbar .detailslist .info li {
+	font-size: .26rem;
+}
+.mod-buyinfo  .popup-hd{
+	text-align: center;
+	color: #333;
+	font-size: .3rem;
+	background: #fff;
+	padding: .5rem 0;
+}
+.mod-buyinfo  .popup-bd{
+	position: absolute;
+	top: 1.3rem;
+	bottom: .9rem;
+	left: 0;right: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	padding: 0 .24rem;
+}
+.mod-buyinfo .popup-ft{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.mod-buyinfo .popup-ft .close{
+	display: block;
+	line-height: .9rem;
+	text-align: center;
+	color: #333;
+	font-size: .3rem;
+	background-image: linear-gradient(90deg, #ffcf5b, #ffaf22);
+}
+.mod-buyinfo .mod-buyinfo-item{
+	color: #999;
+	font-size: .26rem;
+	position: relative;
+	line-height: .4rem;
+	padding-bottom: .4rem;
+}.mod-buyinfo .mod-buyinfo-item .title{
+	font-size: .36rem;color: #333;
+	padding-bottom: .4rem;
+}
+.mod-buyinfo .mod-buyinfo-item  .subtitle{
+	font-size: .24rem;
+	color: #ffab00;
+	background: #fff4dd;
+	border-radius: .05rem;
+	line-height: .4rem;
+	width: 1.2rem;
+	margin-right: .4rem;
+	text-align: center;
+}
+.popup-bd{
+	padding: 0 .24rem;
+}
+.edit-visitor .popup-hd{
+	padding: .48rem 0 .6rem ;
+	text-align: center;
+	font-size: .34rem;
+	color: #333;
+	position: relative;
+}.edit-visitor .popup-hd a{
+	color: #ffab00;
+	font-size: .3rem;
+	position: absolute;
+	line-height: .48rem;
+	height: .48rem;
+	display: block;
+	top: 50%;
+	transform: translateY(-50%);
+}.edit-visitor .popup-hd a.cancelbtn{
+	left: .24rem;
+}.edit-visitor .popup-hd a.okbtn{
+	right: .24rem;
 }

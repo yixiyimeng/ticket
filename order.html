@@ -74,23 +74,105 @@
 			<!-- 优惠 -->
 			<div class=" mod-discount mod-card bgfff mt10">
 				<div class="mod-discount-hd">优惠</div>
+				<div class="bdline"></div>
 				<div class="mod-discount-bd">
 					<div class="mod-discount-item flex flex-pack-justify">
-						<span><i></i>抵用券</span>
-						<span>无抵用券</span>
+						<span><i></i><span>抵用券</span></span>
+						<span class="c-grey">无抵用券</span>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- 提交按钮 -->
+		<div class="mask" style="display: block;"></div>
 		<div class="shopbar">
+			<!-- 明细列表 -->
+			<div class="detailslist">
+				<div class="info">
+					<div class="title">价格明细</div>
+					<div class="bdline"></div>
+					<ul>
+						<li class="flex flex-pack-justify"><span>门票</span>
+							<span><span>￥30</span>
+								<span class="ml30">×1张</span></span>
+						</li>
+					</ul>
+				</div>
+			</div>
 			<div class="tip">仅剩1小时可购买今日票</div>
 			<div class="flex flex-align-center flex-pack-justify">
-				<div class="price">总价￥188</div>
+				<div class="price">总价￥<em>188</em></div>
 				<span class="tag">优惠券减3元</span>
 				<span class="details">明细</span>
 				<a href="javascript:;" class="orderBtn">提交订单</a>
 			</div>
+		</div>
+		<!-- 购买须知 -->
+		<div class="popup mod-buyinfo">
+			<div class="popup-hd">购买须知</div>
+			<div class="popup-bd">
+				<div class="mod-buyinfo-item">
+					<div class="title">购买须知</div>
+					<div class="flex  flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">18:00之前可定今日，预定后立即可用</p>
+					</div>
+					<div class="flex mt30  flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">18:00之前可定今日，预定后立即可用</p>
+					</div>
+					<div class="flex mt30 flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">游玩日截止后6天 23:59 前未消费可申请
+							退款，退款不收手续费。过期未消费系统
+							自动发起退款申请。
+							一笔订单多张票不支持部分退款。下单后
+							不支持改期。</p>
+					</div>
+				</div>
+				<div class="mod-buyinfo-item mt40">
+					<div class="title">使用说明</div>
+					<div class="flex  flex-align-top">
+						<div>入院时间 </div>
+						<p class="flex-1 ml40">08:00-18:00</p>
+					</div>
+					<div class="flex  flex-align-top mt20">
+						<div>入院地址 </div>
+						<p class="flex-1 ml40">郑州市金水区动物园</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="popup-ft">
+				<a href="javascript:;" class="close">关闭</a>
+			</div>
+		</div>
+		<!-- 编辑游客信息 -->
+		<div class="popup edit-visitor" style="display: block;">
+				<div class="popup-hd">编辑游客 <a href="javascript:;" class="cancelbtn">取消</a><a href="javascript:;" class="okbtn">完成</a></div>
+				<div class="popup-bd">
+					<div class="input-group">
+						<div class="input-row flex input-row-clear">
+							<label>姓名</label>
+							<input type="text" class="flex-1" placeholder="必填 请输入证件上的姓名">
+							<i></i>
+						</div>
+					</div>
+					<div class="input-group">
+						<div class="input-row flex input-row-clear phonenum">
+							<label>手机号</label>
+							<input type="text" class="flex-1" placeholder="必填 请输入联系人手机号">
+							<i></i>
+						</div>
+					</div>
+					<div class="input-group">
+						<div class="input-row flex input-row-clear">
+							<label>身份证号</label>
+							<input type="text" class="flex-1" placeholder="选填 请输入游客身份证号">
+							<i></i>
+						</div>
+					</div>
+				</div>
 		</div>
 	</body>
 </html>
