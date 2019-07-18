@@ -7,53 +7,18 @@
 		<meta content="yes" name="apple-mobile-web-app-capable">
 		<meta content="yes" name="apple-touch-fullscreen">
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
-
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 		<link rel="stylesheet" href="css/rili.css">
-		<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css">
 
 		<script src="js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="js/swiper-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js"></script>
 
 	</head>
 	<body>
-
-		<!-- 加载ing -->
-		<div class="loading loading1 covers">
-			<div class="loading-bj"></div>
-			<p>加载中...</p>
-		</div>
-		<!-- 加载ing END -->
 		<section class="out-wrap">
-			<div class="header-main">
-				<section class="header">
-					<div class="child return">
-						<!-- <i></i> -->
-					</div>
-					<div class="child date">
-						<em class="f34" id="ymym">2016年06月</em>
-						<i></i>
-					</div>
-				</section>
-				<section class="day">
-					<section class="grid clearfix">
-						<div class="day-left clearfix">
-							<h1 id="top_shu">20</h1>
-							<div class="top-contrl">
-								<p><em id="top_week">星期二</em></p>
-								<div><i id="top_yue">八月廿十</i></div>
-								<!-- <p><em id="ymym" class="date">2016年06月</em><span></span></p>
-							<div><i id="top_yue">八月廿十</i><em id="top_week">星期二</em></div> -->
-							</div>
-						</div>
-						<div class="day-right clearfix">
-							<div class="yun">
-								<span class="js_jin">今</span>
-							</div>
-						</div>
-					</section>
-				</section>
-				<!-- end day -->
-			</div>
+
 			<!-- end header -->
 			<section class="content">
 
@@ -67,7 +32,12 @@
 						<li><a href="#">五</a></li>
 						<li><a href="#">六</a></li>
 					</ul>
+					<div class="bdline"></div>
 				</section>
+				<div class="child date">
+					<em class="f34" id="ymym">2016年06月</em>
+					<i></i>
+				</div>
 				<section class="calenda">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
@@ -81,13 +51,6 @@
 							<div class="swiper-slide">
 								<table id="now2" class="tables">
 									<tr class="">
-										<td class=" list"><i>12</i><em>中秋</em></td>
-										<td class=" list"><i>12</i><em>中秋</em></td>
-										<td class=" list"><i>12</i><em>中秋</em></td>
-										<td class=" list"><i>12</i><em>中秋</em></td>
-										<td class=" list"><i>12</i><em>中秋</em></td>
-										<td class=" list"><i>12</i><em>中秋</em></td>
-										<td class=" list"><i>12</i><em>中秋</em></td>
 									</tr>
 								</table>
 							</div>
@@ -342,48 +305,7 @@
 				</div>
 			</div>
 		</section>
-		<script type="text/javascript">
-			//- 璁剧疆html鏍囩font-size
-			(function(doc, win) {
-				var _root = doc.documentElement,
-					resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize',
-					resizeCallback = function() {
-						var clientWidth = _root.clientWidth,
-							fontSize = 100;
-						if (!clientWidth) return;
-						if (clientWidth < 750) {
-							fontSize = 100 * (clientWidth / 375);
-						} else {
-							fontSize = 100 * (750 / 375);
-						}
-						_root.style.fontSize = fontSize + 'px';
-					};
-				if (!doc.addEventListener) return;
-				win.addEventListener(resizeEvent, resizeCallback, false);
-				doc.addEventListener('DOMContentLoaded', resizeCallback, false);
-			})(document, window);
-			//瀛椾綋澶у皬鐨勮嚜閫傚簲锛屽姞涓奵lass=autosize鍗冲彲
-			$(function() {
-				function e() {
-					var e = document.documentElement.clientWidth;
-					var font_size = e * .04 + "px";
-					var font_size_small = e * .03 + "px";
-					var font_size_big = e * .05 + "px";
-					//var padding = e * .01 ;
-					//if(padding>10){padding = 10}
-					$('.autosize').css('font-size', font_size);
-					$('.autosize2').css('font-size', font_size_small);
-					$('.autosize3').css('font-size', font_size_big);
-					//$('.swiper-slide img').css('padding',padding);
-				}
-				e();
-				$(window).on("orientationchange, resize",
-					function() {
-						e();
-					})
 
-			});
-		</script>
 		<script>
 			//全局的年月日，适用于任何时候获取今天的年月日。（很重要）
 			var sev_m, sev_y, sev_d, active = 3;
@@ -391,10 +313,222 @@
 				initialSlide: 1,
 				loop: true,
 				speed: 400,
-
 				followFinger: false,
-				prevButton: '.js_prev',
-				nextButton: '.js_next',
+				on: {
+					slideChangeTransitionStart: function() {
+						// alert(this.activeIndex);
+						//swiper.lockSwipes();
+					},
+					slideChangeTransitionEnd: function() {
+						var nows = $(".swiper-slide-active").find("table").attr("id");
+						if (nows == 'now2')
+							return;
+						nows = parseInt(nows.substr(1, 1));
+						//console.log(active,nows);
+						if (nows == active)
+							return;
+						if (active == 4 && nows == 5) {
+							var fors = 1;
+
+							sev_m++;
+							if (sev_m > 12) {
+								sev_m = 1;
+								sev_y++;
+							}
+							var nowweak = new Date(sev_y, sev_m - 1, 1).getDay();
+							get_first(nowweak, sev_y, sev_m, 0, "d2");
+
+							var lastm = sev_m - 1;
+							var lasty = sev_y;
+							if (lastm < 1) {
+								lastm = 12;
+								lasty--;
+							}
+
+							var nm = sev_m + 1;
+							var ny = sev_y;
+							if (nm > 12) {
+								nm = 1;
+								ny++;
+							}
+							var nowweak = new Date(ny, nm - 1, 1).getDay();
+							var lastweek = new Date(lasty, lastm - 1, 1).getDay();
+							get_first(lastweek, lasty, lastm, 0, "d" + fors);
+							get_first(nowweak, ny, nm, 0, "d3");
+							$("#ymym").html(sev_y + "年" + sev_m + "月");
+							active = 5;
+						} else if (active == 2 && nows == 1) {
+							var fors = 5;
+
+							var nextweak = new Date(sev_y, sev_m - 1, 1).getDay();
+							get_first(nextweak, sev_y, sev_m, 0, "d" + fors);
+							sev_m--;
+							if (sev_m < 1) {
+								sev_m = 12;
+								sev_y--;
+							}
+							var nowweak = new Date(sev_y, sev_m - 1, 1).getDay();
+							get_first(nowweak, sev_y, sev_m, 0, "d4");
+
+							var nm = sev_m - 1;
+							var ny = sev_y;
+							if (nm < 1) {
+								nm = 12;
+								ny--;
+							}
+							var nowweak = new Date(ny, nm - 1, 1).getDay();
+							//get_first(nowweak, ny, nm, 0, "d4");
+							get_first(nowweak, ny, nm, 0, "d3");
+							$("#ymym").html(sev_y + "年" + sev_m + "月");
+							active = 1;
+						} else if (active == 5 && nows == 3) {
+							var fors = 4;
+
+							var lastm = sev_m;
+							var lasty = sev_y;
+
+							sev_m++;
+							if (sev_m > 12) {
+								sev_m = 1;
+								sev_y++;
+							}
+
+							var nm = sev_m + 1;
+							var ny = sev_y;
+							if (nm > 12) {
+								nm = 1;
+								ny++;
+							}
+							var nowweak = new Date(ny, nm - 1, 1).getDay();
+							get_first(nowweak, ny, nm, 0, "d" + fors);
+							var nowweak = new Date(lasty, lastm - 1, 1).getDay();
+							get_first(nowweak, lasty, lastm, 0, "d2");
+							$("#ymym").html(sev_y + "年" + sev_m + "月");
+							active = 3;
+						} else if (active == 1 && nows == 3) {
+							var fors = 2;
+
+							var lastm = sev_m;
+							var lasty = sev_y;
+
+							sev_m--;
+							if (sev_m < 1) {
+								sev_m = 12;
+								sev_y--;
+							}
+
+							var nm = sev_m - 1;
+							var ny = sev_y;
+							if (nm < 1) {
+								nm = 12;
+								ny--;
+							}
+							var nowweak = new Date(ny, nm - 1, 1).getDay();
+							get_first(nowweak, ny, nm, 0, "d" + fors);
+							var nowweak = new Date(lasty, lastm - 1, 1).getDay();
+							get_first(nowweak, lasty, lastm, 0, "d4");
+							$("#ymym").html(sev_y + "年" + sev_m + "月");
+							active = 3;
+						} else if (active == 1 && nows == 5) {
+							var fors = 3;
+
+							var lastm = sev_m;
+							var lasty = sev_y;
+
+							sev_m++;
+							if (sev_m > 12) {
+								sev_m = 1;
+								sev_y++;
+							}
+
+							var nm = sev_m + 1;
+							var ny = sev_y;
+							if (nm > 12) {
+								nm = 1;
+								ny++;
+							}
+							var nowweak = new Date(ny, nm - 1, 1).getDay();
+							get_first(nowweak, ny, nm, 0, "d" + fors);
+							$("#ymym").html(sev_y + "年" + sev_m + "月");
+							active = 5;
+						} else if (active == 5 && nows == 1) {
+							var fors = 3;
+
+
+							sev_m--;
+							if (sev_m < 1) {
+								sev_m = 12;
+								sev_y--;
+							}
+							var lastm = sev_m;
+							var lasty = sev_y;
+
+							var nm = sev_m - 1;
+							var ny = sev_y;
+							if (nm < 1) {
+								nm = 12;
+								ny--;
+							}
+							var nowweak = new Date(ny, nm - 1, 1).getDay();
+							var lastweak = new Date(lasty, sev_m - 1, 1).getDay();
+							get_first(nowweak, ny, nm, 0, "d" + fors);
+							console.log(lasty, lastm)
+							get_first(lastweak, lasty, sev_m, 0, "d4");
+							$("#ymym").html(sev_y + "年" + sev_m + "月");
+							active = 1;
+						} else if (active > nows) {
+							var fors = nows - 1;
+							if (fors < 1)
+								fors = 5;
+
+							sev_m--;
+							if (sev_m < 1) {
+								sev_m = 12;
+								sev_y--;
+							}
+
+							var nm = sev_m - 1;
+							var ny = sev_y;
+							if (nm < 1) {
+								nm = 12;
+								ny--;
+							}
+							var nowweak = new Date(ny, nm - 1, 1).getDay();
+							get_first(nowweak, ny, nm, 0, "d" + fors);
+							$("#ymym").html(sev_y + "年" + sev_m + "月");
+							active = nows;
+						} else if (active < nows) {
+							var fors = nows + 1;
+							if (fors > 5)
+								fors = 1;
+
+							sev_m++;
+							if (sev_m > 12) {
+								sev_m = 1;
+								sev_y++;
+							}
+
+							var nm = sev_m + 1;
+							var ny = sev_y;
+							if (nm > 12) {
+								nm = 1;
+								ny++;
+							}
+							var nowweak = new Date(ny, nm - 1, 1).getDay();
+							get_first(nowweak, ny, nm, 0, "d" + fors);
+							$("#ymym").html(sev_y + "年" + sev_m + "月");
+							active = nows;
+						}
+						var trLength = $("#d" + nows).find("tr").length;
+						if (trLength == 6) {
+							$(".swiper-container").css("paddingBottom", ".45rem");
+						} else {
+							$(".swiper-container").css("paddingBottom", "");
+
+						}
+						//swiper.unlockSwipes();
+					},
+				},
 				onSlideChangeStart: function(swiper) {
 					//swiper.params.allowSwipeToPrev = false;
 					swiper.lockSwipes();
@@ -403,213 +537,6 @@
 
 				onSlideChangeEnd: function(swiper) {
 
-					var nows = $(".swiper-slide-active").find("table").attr("id");
-					if (nows == 'now2')
-						return;
-					nows = parseInt(nows.substr(1, 1));
-					//console.log(active,nows);
-					if (nows == active)
-						return;
-					if (active == 4 && nows == 5) {
-						var fors = 1;
-
-						sev_m++;
-						if (sev_m > 12) {
-							sev_m = 1;
-							sev_y++;
-						}
-						var nowweak = new Date(sev_y, sev_m - 1, 1).getDay();
-						get_first(nowweak, sev_y, sev_m, 0, "d2");
-
-						var lastm = sev_m - 1;
-						var lasty = sev_y;
-						if (lastm < 1) {
-							lastm = 12;
-							lasty--;
-						}
-
-						var nm = sev_m + 1;
-						var ny = sev_y;
-						if (nm > 12) {
-							nm = 1;
-							ny++;
-						}
-						var nowweak = new Date(ny, nm - 1, 1).getDay();
-						var lastweek = new Date(lasty, lastm - 1, 1).getDay();
-						get_first(lastweek, lasty, lastm, 0, "d" + fors);
-						get_first(nowweak, ny, nm, 0, "d3");
-						$("#ymym").html(sev_y + "年" + sev_m + "月");
-						active = 5;
-					} else if (active == 2 && nows == 1) {
-						var fors = 5;
-
-						var nextweak = new Date(sev_y, sev_m - 1, 1).getDay();
-						get_first(nextweak, sev_y, sev_m, 0, "d" + fors);
-						sev_m--;
-						if (sev_m < 1) {
-							sev_m = 12;
-							sev_y--;
-						}
-						var nowweak = new Date(sev_y, sev_m - 1, 1).getDay();
-						get_first(nowweak, sev_y, sev_m, 0, "d4");
-
-						var nm = sev_m - 1;
-						var ny = sev_y;
-						if (nm < 1) {
-							nm = 12;
-							ny--;
-						}
-						var nowweak = new Date(ny, nm - 1, 1).getDay();
-						//get_first(nowweak, ny, nm, 0, "d4");
-						get_first(nowweak, ny, nm, 0, "d3");
-						$("#ymym").html(sev_y + "年" + sev_m + "月");
-						active = 1;
-					} else if (active == 5 && nows == 3) {
-						var fors = 4;
-
-						var lastm = sev_m;
-						var lasty = sev_y;
-
-						sev_m++;
-						if (sev_m > 12) {
-							sev_m = 1;
-							sev_y++;
-						}
-
-						var nm = sev_m + 1;
-						var ny = sev_y;
-						if (nm > 12) {
-							nm = 1;
-							ny++;
-						}
-						var nowweak = new Date(ny, nm - 1, 1).getDay();
-						get_first(nowweak, ny, nm, 0, "d" + fors);
-						var nowweak = new Date(lasty, lastm - 1, 1).getDay();
-						get_first(nowweak, lasty, lastm, 0, "d2");
-						$("#ymym").html(sev_y + "年" + sev_m + "月");
-						active = 3;
-					} else if (active == 1 && nows == 3) {
-						var fors = 2;
-
-						var lastm = sev_m;
-						var lasty = sev_y;
-
-						sev_m--;
-						if (sev_m < 1) {
-							sev_m = 12;
-							sev_y--;
-						}
-
-						var nm = sev_m - 1;
-						var ny = sev_y;
-						if (nm < 1) {
-							nm = 12;
-							ny--;
-						}
-						var nowweak = new Date(ny, nm - 1, 1).getDay();
-						get_first(nowweak, ny, nm, 0, "d" + fors);
-						var nowweak = new Date(lasty, lastm - 1, 1).getDay();
-						get_first(nowweak, lasty, lastm, 0, "d4");
-						$("#ymym").html(sev_y + "年" + sev_m + "月");
-						active = 3;
-					} else if (active == 1 && nows == 5) {
-						var fors = 3;
-
-						var lastm = sev_m;
-						var lasty = sev_y;
-
-						sev_m++;
-						if (sev_m > 12) {
-							sev_m = 1;
-							sev_y++;
-						}
-
-						var nm = sev_m + 1;
-						var ny = sev_y;
-						if (nm > 12) {
-							nm = 1;
-							ny++;
-						}
-						var nowweak = new Date(ny, nm - 1, 1).getDay();
-						get_first(nowweak, ny, nm, 0, "d" + fors);
-						$("#ymym").html(sev_y + "年" + sev_m + "月");
-						active = 5;
-					} else if (active == 5 && nows == 1) {
-						var fors = 3;
-
-
-						sev_m--;
-						if (sev_m < 1) {
-							sev_m = 12;
-							sev_y--;
-						}
-						var lastm = sev_m;
-						var lasty = sev_y;
-
-						var nm = sev_m - 1;
-						var ny = sev_y;
-						if (nm < 1) {
-							nm = 12;
-							ny--;
-						}
-						var nowweak = new Date(ny, nm - 1, 1).getDay();
-						var lastweak = new Date(lasty, sev_m - 1, 1).getDay();
-						get_first(nowweak, ny, nm, 0, "d" + fors);
-						console.log(lasty, lastm)
-						get_first(lastweak, lasty, sev_m, 0, "d4");
-						$("#ymym").html(sev_y + "年" + sev_m + "月");
-						active = 1;
-					} else if (active > nows) {
-						var fors = nows - 1;
-						if (fors < 1)
-							fors = 5;
-
-						sev_m--;
-						if (sev_m < 1) {
-							sev_m = 12;
-							sev_y--;
-						}
-
-						var nm = sev_m - 1;
-						var ny = sev_y;
-						if (nm < 1) {
-							nm = 12;
-							ny--;
-						}
-						var nowweak = new Date(ny, nm - 1, 1).getDay();
-						get_first(nowweak, ny, nm, 0, "d" + fors);
-						$("#ymym").html(sev_y + "年" + sev_m + "月");
-						active = nows;
-					} else if (active < nows) {
-						var fors = nows + 1;
-						if (fors > 5)
-							fors = 1;
-
-						sev_m++;
-						if (sev_m > 12) {
-							sev_m = 1;
-							sev_y++;
-						}
-
-						var nm = sev_m + 1;
-						var ny = sev_y;
-						if (nm > 12) {
-							nm = 1;
-							ny++;
-						}
-						var nowweak = new Date(ny, nm - 1, 1).getDay();
-						get_first(nowweak, ny, nm, 0, "d" + fors);
-						$("#ymym").html(sev_y + "年" + sev_m + "月");
-						active = nows;
-					}
-					var trLength = $("#d" + nows).find("tr").length;
-					if (trLength == 6) {
-						$(".swiper-container").css("paddingBottom", ".45rem");
-					} else {
-						$(".swiper-container").css("paddingBottom", "");
-
-					}
-					swiper.unlockSwipes();
 				}
 
 			})
@@ -685,14 +612,9 @@
 					$("#ymym").html(sev_y + "年" + sev_m + "月");
 					mySwiper.slideTo(2, 500, false);
 				});
-				mySwiper.unlockSwipes();
+				//mySwiper.unlockSwipes();
 			};
-			//$(window).ajaxStart(function(){
-			//    $(".covers").show();
-			//  })
-			//  $(window).ajaxStop(function(){
-			//    $(".covers").hide();
-			//  });
+			
 			function jump(yyyy, mm, dd) {
 				sev_y = parseInt(yyyy);
 				sev_m = parseInt(mm);
@@ -798,11 +720,11 @@
 					// 		if (jq) {
 					// 			ly = '<font color="#00b7ec">' + jq;
 					// 		}
-					var ly = '￥12';
+					// var ly = '￥12';
 					var jd = "";
 					var hb = lb + "-" + lm + "-" + bday;
 					str += ' <td data_y="' + lb + '" data_m="' + lm + '" data_d="' + bday + '" class="list not_this js_up"><i>' + bday +
-						'</i><em>' + ly + '</em>' + jd + '</td>';
+						'</i>' + jd + '</td>';
 					if (num % 7 == 0) {
 						str += '</tr><tr>';
 					}
@@ -811,11 +733,6 @@
 
 				for (var i = 1; i <= dd; i++) {
 					var bday = ldays - i + 1;
-					// 		var ly = LunarDate.GetLunarDayDetail(b, c, i);
-					// 		var jq = getjq(b, c, i);
-					// 		if (jq) {
-					// 			ly = '<font color="#00b7ec">' + jq;
-					// 		}
 					var ly = '￥12';
 					var jd = "";
 					var hb = b + "-" + c + "-" + i;
@@ -842,7 +759,7 @@
 						// 			if (jq) {
 						// 				ly = '<font color="#00b7ec">' + jq;
 						// 			}
-							var ly = '￥12';
+						var ly = '￥12';
 						var jd = "";
 						var hb = xb + "-" + xm + "-" + i;
 						str += ' <td data_y="' + xb + '" data_m="' + xm + '" data_d="' + i + '" class="list not_this js_down"><i>' + i +
@@ -883,10 +800,10 @@
 					var weekk = weeks[data.getDay() - 1];
 					var yue = LunarDate.GetLunarDay(data.getFullYear(), data.getMonth(), data.getDate());
 					var shu = data.getDate();
-					document.getElementById("top_shu").innerHTML = shu;
+					//document.getElementById("top_shu").innerHTML = shu;
 					sev_d = parseInt(shu);
-					document.getElementById("top_week").innerHTML = weekk;
-					document.getElementById("top_yue").innerHTML = yue;
+					//document.getElementById("top_week").innerHTML = weekk;
+					//document.getElementById("top_yue").innerHTML = yue;
 				} else {
 					var weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
 					var y = a.attr("data_y");
@@ -896,10 +813,10 @@
 					var weekk = weeks[new Date(y, m, d).getDay()];
 					var ms = parseInt(a.attr("data_m"));
 					var yue = LunarDate.GetLunarDay(y, ms, d);
-					document.getElementById("top_shu").innerHTML = d;
+					//document.getElementById("top_shu").innerHTML = d;
 					sev_d = parseInt(d);
-					document.getElementById("top_week").innerHTML = weekk;
-					document.getElementById("top_yue").innerHTML = yue;
+					//document.getElementById("top_week").innerHTML = weekk;
+					//document.getElementById("top_yue").innerHTML = yue;
 					$(".xuanzhong").removeClass('xuanzhong');
 					a.addClass("xuanzhong");
 				}
@@ -1089,15 +1006,17 @@
 					freeMode: true,
 					freeModeMomentumRatio: 1,
 					freeModeSticky: true,
-					onTouchMove: function(swiper) {
-						var b1 = $('.year').children('.swiper-slide-active').html();
-						$('.i-year').html(b1);
+					on: {
+						touchMove: function(event) {
+							var b1 = $('.year').children('.swiper-slide-active').html();
+							$('.i-year').html(b1);
+						},
+						slideChangeTransitionEnd: function() {
+							var b1 = $('.year').children('.swiper-slide-active').html();
+							$('.i-year').html(b1);
+						},
 					},
-					onSlideChangeEnd: function(swiper) {
-						var b1 = $('.year').children('.swiper-slide-active').html();
-						$('.i-year').html(b1);
-					},
-
+					
 
 				});
 				var mySwiper = new Swiper('.swiper-container3', {
@@ -1113,16 +1032,17 @@
 					freeMode: true,
 					freeModeMomentumRatio: 1,
 					freeModeSticky: true,
-					onTouchMove: function(swiper) {
-						var b1 = $('.month').children('.swiper-slide-active').html();
-						$('.i-month').html(b1);
+					on: {
+						touchMove: function(event) {
+							var b1 = $('.month').children('.swiper-slide-active').html();
+							$('.i-month').html(b1);
+						},
+						slideChangeTransitionEnd: function() {
+							var b1 = $('.month').children('.swiper-slide-active').html();
+							$('.i-month').html(b1);
+						},
 					},
-					onSlideChangeEnd: function(swiper) {
-						var b1 = $('.month').children('.swiper-slide-active').html();
-						$('.i-month').html(b1);
-					},
-
-
+					
 				});
 				var mySwiper = new Swiper('.swiper-container4', {
 					direction: 'vertical',
@@ -1137,14 +1057,17 @@
 					freeMode: true,
 					freeModeMomentumRatio: 1,
 					freeModeSticky: true,
-					onTouchMove: function(swiper) {
-						var b1 = $('.date').children('.swiper-slide-active').html();
-						$('.i-date').html(b1);
+					on: {
+						touchMove: function(event) {
+							var b1 = $('.date').children('.swiper-slide-active').html();
+							$('.i-date').html(b1);
+						},
+						slideChangeTransitionEnd: function() {
+								var b1 = $('.date').children('.swiper-slide-active').html();
+							$('.i-date').html(b1);
+						},
 					},
-					onSlideChangeEnd: function(swiper) {
-						var b1 = $('.date').children('.swiper-slide-active').html();
-						$('.i-date').html(b1);
-					},
+					
 
 				});
 			};

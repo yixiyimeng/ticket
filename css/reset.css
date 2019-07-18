@@ -225,7 +225,9 @@ input[type='search'] {
 	box-sizing: border-box;
 	/*所有元素以border开始计算盒子大小*/
 }
-
+i,em{
+	font-style: normal;
+}
 .clearfix:after,
 .clearfix:before {
 	/*清除浮动*/
