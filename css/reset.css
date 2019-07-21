@@ -347,6 +347,9 @@ i,em{
 .mt20 {
 	margin-top: .2rem;
 }
+.mt25 {
+	margin-top: .25rem;
+}
 
 .mt30 {
 	margin-top: .3rem;
@@ -812,7 +815,8 @@ i,em{
 }
 
 .spotslist .spots-item:not(:last-of-type):after,.comment .comment-item:not(:last-of-type):after,
-.input-group .input-row:after{
+.input-group .input-row:after,
+.mod-card .mod-card-hd:after{
 	height: 1px;
 	background: #e6e6e6;
 	left: 0;
@@ -976,7 +980,7 @@ i,em{
 	right: 0;
 	height: 70%;
 	background: #fff;
-	z-index: 99;
+	z-index: 999;
 	border-top-left-radius: .2rem;
 	border-top-right-radius: .2rem;
 	overflow: hidden;
@@ -1005,6 +1009,7 @@ i,em{
 	right: 0;
 	top: 50%;
 	transform: translateY(-50%);
+	display: none;
 }
 .popup .input-group .input-row.phonenum{
 	background: url(../img/tongxunlu@3x.png) no-repeat right center;

@@ -1,0 +1,283 @@
+.page {
+	padding: .9rem .24rem 1.25rem;
+	background-image: linear-gradient(#ffab00 10%, #f5f5f5);
+}
+
+.page .state {
+	color: #fff;
+	font-size: .3rem;
+	padding: .3rem 0;
+}
+.page .state>span{
+	position: relative;
+}
+.page .state>span:after{
+	content: '';
+	display: inline-block;
+	height:.26rem ;
+	width: .26rem;
+	margin-left: .2rem;
+	background: url(../img/baijiantou26@3x.png) no-repeat center center;
+	background-size: contain;
+}
+.page>.tip {
+	font-size: .22rem;
+	color: #ff5b5b;
+	background: #ffe2e2;
+	line-height: .6rem;
+	border-radius: .1rem;
+	padding-left: .28rem;
+}
+.page>.tip.white-tip{
+	background: #fff;
+	color: #3a8dff;
+}
+.page>img {
+	display: block;
+	width: 100%;
+}
+
+.mod-card {
+	border-radius: .15rem;
+	overflow: hidden;
+	padding-left: .38rem;
+	padding-right: .38rem;
+}
+
+.mod-card.ticketinfo {
+	padding: .6rem .38rem .24rem;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.mod-card.ticketinfo .title {
+	font-size: .36rem;
+	font-weight: bold;
+	color: #333;
+	line-height: .5rem;
+}
+
+.mod-card.ticketinfo .know {
+	color: #1e83ff;
+	font-size: .26rem;
+	position: relative;
+	line-height: .5rem;
+}
+
+.mod-card.ticketinfo .know:after {
+	content: '';
+	height: .2rem;
+	width: .2rem;
+	background: url(../img/jiantoulan20@3x.png) no-repeat center center;
+	background-size: contain;
+	display: inline-block;
+	margin-left: .05rem;
+}
+
+.mod-card .txt {
+	font-size: .3rem;
+	color: #333;
+}
+
+.mod-card .txt .subtitle {
+	color: #999;
+	display: block;
+	width: 1.75rem;
+}
+
+.mod-card.mod-enterway {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	padding-top: .3rem;
+	padding-bottom: .48rem;
+}
+
+.mod-card.mod-enterway .tip {
+	line-height: .7rem;
+	width: 4rem;
+	background: #f5f5f5;
+	border-radius: .1rem;
+	padding-left: .25rem;
+	margin-top: .26rem;
+}
+
+.mod-card.mod-enterway .qrbox {
+	text-align: center;
+}
+
+.mod-card.mod-enterway .qrbox img {
+	width: 2.46rem;
+	display: block;
+	margin: 0 auto;
+}
+
+.mod-card.mod-enterway .qrbox .download {
+	color: #ffab00;
+	font-size: .26rem;
+	text-align: center;
+	line-height: .6rem;
+	width: 3rem;
+	border: 1px solid #ffab00;
+	border-radius: .5rem;
+	display: block;
+	margin: .25rem auto .4rem;
+}
+
+.mod-card.mod-enterway .qrbox .download i {
+	display: inline-block;
+	width: .24rem;
+	height: .24rem;
+	background: url(../img/dd-xiazai@3x.png) no-repeat center center;
+	background-size: contain;
+	vertical-align: middle;
+}
+
+.mod-card.mod-enterway .qrbox .download i+em {
+	vertical-align: middle;
+	margin-left: .1rem;
+}.mod-contact{
+	padding: .3rem 0;
+	
+}.mod-contact>div{
+	padding-left: .5rem;
+	padding-right: .55rem;
+	color: #999;
+	font-size: .22rem;
+	line-height: .3rem;
+}
+.mod-contact>div .title{
+	color: #333;
+	font-size: .3rem;
+	margin-bottom: .1rem;
+}
+.mod-contact>div:first-child{
+	border-right: 1px solid #e6e6e6;
+}.mod-contact>div i{
+	display: inline-block;
+	height: .4rem;
+	width: .4rem;
+	background:  no-repeat center center;
+	background-size: contain;
+	margin-right: .2rem;
+}.mod-contact>div i.icon1{
+	background-image: url(../img/gongyingshang@3x.png);
+}.mod-contact>div i.icon2{
+	background-image: url(../img/kefu@3x.png);
+}
+.mod-card .view-cell a{
+	display: block;
+	line-height: .9rem;
+	color: #333;
+	font-size: .3rem;
+	position: relative;
+}.mod-card .view-cell a.right-arrow:after{
+	content: '';
+	height: .26rem;
+	width: .26rem;
+	background: url(../img/xq-gengduojiantou20@3x.png) no-repeat center center;
+	background-size: contain;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	
+}.mod-card .mod-card-hd{
+	font-size: .36rem;
+	color: #333;
+	line-height: 1.2rem;
+	position: relative;
+}
+.mod-card.mod-orderinfo .mod-card-bd{
+	padding-bottom: .5rem;
+	}
+	.mod-card.mod-question .tags{
+		padding: .3rem 0;
+	}
+	.mod-card.mod-question .tags .tag{
+		display: block;
+		float: left;
+		width: 2rem;
+		line-height: .48rem;
+		background: #fff9ec;
+		border-radius: .5rem;
+		text-align: center;
+		color: #d69001;
+		margin-bottom: .15rem;
+	}.mod-card.mod-question .tags .tag:nth-child(3n+2){
+		margin-left: .13rem;
+		margin-right: .13rem;
+	}
+	.mod-card.mod-question  .mod-card-hd a.more{
+		color: #333;
+		display: block;
+		position: relative;
+	}
+	.mod-card.mod-question  .mod-card-hd a.more:after{
+		content: '';
+		display: block;
+		height: .2rem;
+		width: .2rem;
+		background: url(../img/xq-jiantouhui@3x.png) no-repeat center center;
+		background-size: contain;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+	}
+	.btnbar{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #fff;
+		padding: .2rem .24rem .18rem;
+		text-align: right;
+		font-size-adjust: none;
+		font-size: 0;
+	}
+		.btnbar a{
+			display: inline-block;
+			color: #333;
+			font-size: .3rem;
+			line-height: .6rem;
+			width: 1.8rem;
+			text-align: center;
+			border-radius: .5rem;
+			background: #f5f5f5;
+		}
+		.btnbar a.orderBtn{
+			background-image: linear-gradient(90deg, #ffcf5b, #ffaf22);
+	
+		}
+		.btnbar .price{
+			color: #ff0000;
+			font-size: .2rem;
+		}
+		.btnbar .price em{
+			font-size: .36rem;
+		}
+		.order-state-over .qrbox{
+			position: relative;
+		}
+		.order-state-over .mod-card.mod-enterway .qrbox:after{
+			content: '';
+			display: block;
+			height: 2.08rem;
+			width: 2.08rem;
+			background: url(../img/yiwancheng@3x.png) no-repeat center center;
+			background-size: contain;
+			position: absolute;
+			bottom: -.4rem;
+			right: .24rem;
+		}
+		.copy{
+			color: #333;
+			font-size: .22rem;
+			display: inline-block;
+			border-radius: .08rem;
+			border: 1px solid #ccc;
+			line-height: .3rem;
+			padding: 0 .1rem;
+			margin-left: .38rem;
+		}

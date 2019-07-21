@@ -16,6 +16,8 @@
 		<link rel="stylesheet" type="text/css" href="css/rili.css"/>
 	</head>
 	<body class="bgf5">
+		<div class="subheader"><a href="javascript :history.back(-1)" class="reback"></a>
+			<span>订单详情</span></div>
 		<div class="page">
 			<div class="mod-card bgfff ticketinfo">
 				<div class="flex">
@@ -74,7 +76,7 @@
 							<p class="ellipsis">手机号 15838022930</p>
 							<p class="ellipsis">身份证号 411322199206271029</p>
 						</div>
-						<a href="" class="edit">编辑</a>
+						<a href="javascript:;" class="edit">编辑</a>
 					</div>
 				</div>
 			</div>
@@ -182,7 +184,7 @@
 			</div>
 		</div>
 		<!-- 日历 -->
-		<div class="popup mod-rili">
+		<div class="popup mod-rili" >
 			<div class="popup-hd">选择游玩日期 <a href="javascript:;" class="close"></a></div>
 			<div class="popup-bd">
 				<section class="out-wrap">
@@ -481,3 +483,39 @@
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/rili.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	/*  更多日期*/
+	$('.moreday').click(function(){
+		$('.mask').show();
+		$('.mod-rili').show();
+		setrili();
+	});
+	/* 编辑员工 */
+	$('.mod-visitor .edit').click(function(){
+		$('.mask').show();
+		$('.edit-visitor').show();
+	});
+	/* 清除按钮 */
+	$('.edit-visitor').on('input','input',function(){
+		if($(this).val().length>0){
+			$(this).next('i').show();
+		}else{
+			$(this).next('i').hide();
+		}
+	});
+	/* 点击清除 */
+	$('.edit-visitor').on('click','.input-row-clear i',function(){
+		$(this).prev('input').val('').focus();
+	});
+	/* 显示明细 */
+	$('.shopbar .details').click(function(){
+		$('.mask').toggle();
+		$('.shopbar .detailslist').toggle();
+	});
+	$('.popup .close,.mask,.popup .cancelbtn').click(function(){
+		$('.mask').hide();
+		$('.popup').hide();
+		$('.shopbar .detailslist').hide();
+	});
+	
+</script>

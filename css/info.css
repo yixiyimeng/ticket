@@ -1,0 +1,138 @@
+.page {
+	color: #666;
+	font-size: .26rem;
+}
+.subheader+.page{
+	padding-bottom: 2.4rem;
+} 
+.page .title {
+	font-size: .34rem;
+	color: #333;
+	padding: .2rem 0;
+}
+
+.page .subtitle {
+	text-align: center;
+
+	line-height: .6rem;
+	background: #f5f5f5;
+	border-radius: .1rem;
+}
+
+.timelist .time-item {
+	padding: .3rem 0;
+	line-height: .36rem;
+}
+
+.timelist .time-item>div:first-child {
+	width: 1.8rem;
+}
+
+.timelist .time-item>div:nth-child(2) {
+	width: 1.4rem;
+}
+
+.timelist .time-item p+p {
+	margin-top: .26rem;
+}
+.txt p{
+	line-height: .48rem;
+}
+.txt img{
+	display: block;
+	width: 100%;
+	margin: .1rem auto;
+}
+.txt .tip{
+	font-size: .3rem;
+	color: #333;
+}
+.txt.dottxt p {
+	
+	padding-left: .3rem;
+	position: relative;
+}
+
+.txt.dottxt p:before {
+	content: '';
+	display: block;
+	height: .1rem;
+	width: .1rem;
+	background: #666;
+	border-radius: 100%;
+	top: .18rem;
+	position: absolute;
+	left: 0;
+}
+.devicelist span{
+	float: left;
+	width: 33.33%;
+	font-size: .24rem;
+	color: #666;
+	margin-bottom: .15rem;
+}.devicelist span i,.trafficlist span i,.buybar .contact i,
+.buybar .btnlist a:first-child i{
+	display: inline-block;
+	height: .48rem;
+	width: .48rem;
+	background:no-repeat center center;
+	background-size: contain;
+	margin-right: .2rem;vertical-align:middle;
+}
+.devicelist span i+em,.trafficlist span i+em,
+.buybar .contact i+em,
+.buybar .btnlist a:first-child i+em{
+	vertical-align:middle;
+}
+.devicelist span i.icon1{
+	background-image: url(../img/canting@3x.png);
+}.devicelist span i.icon2{
+	background-image: url(../img/jiudian@3x.png);
+}.devicelist span i.icon3{
+	background-image: url(../img/tingche@3x.png);
+}.devicelist span i.icon4{
+	background-image: url(../img/wifi@3x.png);
+}.devicelist span i.icon5{
+	background-image: url(../img/shangddian@3x.png);
+}
+.trafficlist span{
+	font-size: .24rem;
+	color: #666;
+}.trafficlist span i{
+	width: .32rem;
+	height: .32rem;
+	margin-right: .1rem;
+	background-image:url(../img/baidu@3x.png);
+}
+.buybar{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.buybar .contact{
+	text-align: center;
+	font-size: .3rem;
+	color: #333;
+	line-height: .8rem;
+	background: #f5f5f5;
+}.buybar .contact i{
+	height: .38rem;
+	width: .38rem;
+	background-image: url(../img/zixunshangjia@3x.png);
+}
+.buybar .btnlist a{
+	display: block;
+	line-height: .98rem;
+	text-align: center;
+	background: #ffab00;
+	font-size: .3rem;
+	color: #333;
+}.buybar .btnlist a:first-child{
+	width: 2.5rem;background: #fff;
+}
+.buybar .btnlist a:first-child i{
+	width: .28rem;
+	height: .28rem;
+	background-image:url(../img/wendajia@3x.png);
+}
