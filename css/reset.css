@@ -377,7 +377,9 @@ i,em{
 .ml40 {
 	margin-left: .4rem
 }
-
+.ml70{
+	margin-left: .7rem;
+}
 .mr15 {
 	margin-right: .15rem
 }
@@ -407,7 +409,12 @@ i,em{
 .c-red {
 	color: #eb4747;
 }
-
+.c333{
+	color: #333;
+}
+.ft20{
+	font-size: .2rem;
+}
 .ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -717,9 +724,10 @@ i,em{
 	bottom: .28rem;
 }
 
-.ticketlist .ticket-item:not(last-child):after,
+.ticketlist .ticket-item:not(:last-child):after,
 .showmore:before,
-.mod-buyinfo .mod-buyinfo-item:after{
+.mod-buyinfo .mod-buyinfo-item:after,
+.page .view-cell:not(:last-child):after{
 	content: '';
 	display: block;
 	left: 0;

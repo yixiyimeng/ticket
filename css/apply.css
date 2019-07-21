@@ -1,0 +1,63 @@
+.page{
+	/* padding-bottom: 1.67rem; */
+}
+.page>.tip{
+	color: #ffab00;
+	font-size: .24rem;
+	background: #fdf0ce;
+	padding: .3rem .24rem;
+	line-height: .36rem;
+}
+.page .orderinfo{
+	padding: .36rem .24rem .48rem;
+	font-size: .24rem;
+	color: #999;
+	line-height: .36rem;
+}
+.page .orderinfo .title{
+	font-size: .3rem;color: #333;
+}
+.page .view-cell{
+	line-height: .8rem;
+	color: #999;
+	font-size: .24rem;
+	position: relative;
+}
+.page .shophandle{
+	padding: 0;
+}
+.shophandle .minus, .shophandle .add{
+	height: .48rem;
+	width: .48rem;
+}
+.page .shophandle .add{
+	background-image: url(../img/sqtk-jia@3x.png);
+}.page .shophandle input{
+	width: .87rem;
+}
+.page .showdetails  em{
+	vertical-align: middle;
+}
+.page .showdetails i{
+	content: '';
+	height: .24rem;
+	width: .24rem;
+	display: inline-block;
+	background: url(../img/mp01-xianzexiala@3x.png) no-repeat center center;
+	background-size: contain;
+	vertical-align: middle;
+	margin-left: .1rem;
+}
+.applyBtn{
+	color: #ff5b5b;
+	font-size: .3rem;
+	display: block;
+	text-align: center;
+	line-height: .98rem;
+	background: #fff;
+	/* position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0; */
+	margin-top: .7rem;
+}
