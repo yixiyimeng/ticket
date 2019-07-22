@@ -1,3 +1,14 @@
+html,body{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	
+}
+.page{
+	height:100%;
+	overflow:auto;
+	position:relative;
+}
 .banner {
 	position: absolute;
 	top: 0;
@@ -185,24 +196,132 @@
 	font-size: .22rem;
 	right: .24rem;
 }
-.headerbar{
-	
+
+.headerbar {
+
 	left: .24rem;
 	right: .24rem;
-	}
-	.headerbar a{
-		position: absolute;
-		top: .6rem;
-		height:.44rem ;
-		width: .44rem;
-		background:  no-repeat center center;
-		background-size:contain ;
-	}
-	.headerbar a.reback{
-		background-image: url(../img/xp-fanhui@3x.png);
-		left: .24rem;
-	}
-	.headerbar a.share{
-		background-image: url(../img/xq-fenxiang@3x.png);
-		right: .24rem;
-	}
+}
+
+.headerbar a {
+	position: absolute;
+	top: .6rem;
+	height: .44rem;
+	width: .44rem;
+	background: no-repeat center center;
+	background-size: contain;
+}
+
+.headerbar a.reback {
+	background-image: url(../img/xp-fanhui@3x.png);
+	left: .24rem;
+}
+
+.headerbar a.share {
+	background-image: url(../img/xq-fenxiang@3x.png);
+	right: .24rem;
+}
+
+.popup.mod-share {
+	padding: .7rem .6rem .3rem;
+	border-radius: 0;
+	height:90%;
+	overflow:auto;
+}
+
+.mod-share .mod-share-hd {
+	position: relative;
+}
+
+.mod-share .mod-share-hd .close,
+.win.win-share>div .win-share-hd .close {
+	width: .32rem;
+	height: .32rem;
+	background: url(../img/dd-gunabi@3x.png) no-repeat center center;
+	background-size: contain;
+	display: block;
+	position: absolute;
+	right: -.36rem;
+	top: -.5rem;
+}
+
+.mod-share .mod-share-bd .btnlist span {
+	display: block;
+	color: #333;
+	font-size: .3rem;
+	text-align: center;
+	line-height: .6rem;
+	border-radius: .5rem;
+	background: #ffab00;
+margin-bottom:.3rem;
+
+}
+
+.mod-share .mod-share-bd .btnlist span+span {
+	margin-left: .25rem
+}
+.mod-share .mod-share-bd .sharebox {
+	text-align:center;
+	color:#333;
+	font-size:.3rem;
+}
+.mod-share .mod-share-bd .sharebox img{
+	display:block;
+	width:100%;
+}
+.win {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .7);
+	z-index: 999;
+	display:none;
+}
+
+.win.win-share>div {
+	position: absolute;
+	background: #fff;
+	left: .6rem;
+	right: .6rem;
+	border-radius: .15rem;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: .3rem .5rem .4rem;
+	color: #666;
+	font-size: .26rem;
+	line-height: .36rem;
+}
+
+.win.win-share>div p+p {
+	margin-top: .15rem;
+}
+
+.win.win-share>div .win-share-hd {
+	color: #333;
+	font-size: .3rem;
+	text-align: center;
+	position: relative;
+}
+
+.win.win-share>div .win-share-hd .close {
+	top: 0;
+	right: -.2rem;
+}
+
+.win.win-share>div .win-share-bd {
+	margin-top: .55rem
+}
+
+.win .win-share-ft a {
+	display: block;
+	color: #333;
+	font-size: .3rem;
+	line-height: .66rem;
+	text-align: center;
+	width: 3rem;
+	border-radius: .5rem;
+	background: #ffab00;
+	margin: .55rem auto 0;
+}
