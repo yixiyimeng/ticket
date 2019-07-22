@@ -1,44 +1,57 @@
-.page{
+.page {
 	/* padding-bottom: 1.67rem; */
 }
-.page>.tip{
+
+.page>.tip {
 	color: #ffab00;
 	font-size: .24rem;
 	background: #fdf0ce;
 	padding: .3rem .24rem;
 	line-height: .36rem;
 }
-.page .orderinfo{
+
+.page .orderinfo {
 	padding: .36rem .24rem .48rem;
 	font-size: .24rem;
 	color: #999;
 	line-height: .36rem;
 }
-.page .orderinfo .title{
-	font-size: .3rem;color: #333;
+
+.page .orderinfo .title {
+	font-size: .3rem;
+	color: #333;
 }
-.page .view-cell{
+
+.page .view-cell {
 	line-height: .8rem;
 	color: #999;
 	font-size: .24rem;
 	position: relative;
 }
-.page .shophandle{
+
+.page .shophandle {
 	padding: 0;
 }
-.shophandle .minus, .shophandle .add{
+
+.shophandle .minus,
+.shophandle .add {
 	height: .48rem;
 	width: .48rem;
 }
-.page .shophandle .add{
+
+.page .shophandle .add {
 	background-image: url(../img/sqtk-jia@3x.png);
-}.page .shophandle input{
+}
+
+.page .shophandle input {
 	width: .87rem;
 }
-.page .showdetails  em{
+
+.page .showdetails em {
 	vertical-align: middle;
 }
-.page .showdetails i{
+
+.page .showdetails i {
 	content: '';
 	height: .24rem;
 	width: .24rem;
@@ -48,7 +61,8 @@
 	vertical-align: middle;
 	margin-left: .1rem;
 }
-.applyBtn{
+
+.applyBtn {
 	color: #ff5b5b;
 	font-size: .3rem;
 	display: block;
@@ -60,4 +74,150 @@
 	left: 0;
 	right: 0; */
 	margin-top: .7rem;
+}
+
+.checkbox input[type=checkbox] {
+	-webkit-appearance: none;
+	height: .3rem;
+	width: .3rem;
+	background: no-repeat center center;
+	background-size: contain;
+}
+
+.checkbox.circular-checkbox input[type=checkbox] {
+	background-image: url(../img/weixuanzhong@3x.png)
+}
+
+.checkbox.circular-checkbox input[type=checkbox]:checked {
+	background-image: url(../img/xuanzehuang@3x.png);
+}
+
+.checkbox.square-checkbox input[type=checkbox] {
+	background-image: url(../img/xuanzefangkuang@3x.png);
+}
+
+.checkbox.square-checkbox input[type=checkbox]:checked {
+	background-image: url(../img/xuanzhong@3x.png);
+}
+
+/* 退款详情 */
+.subtip {
+	background: #fff;
+	color: #ff5b5b;
+	font-size: .26rem;
+	line-height: .8rem;
+}
+
+.mod-refunddetails {
+	font-size: .24rem;
+	color: #666;
+	margin-bottom: .9rem;
+}
+
+.mod-refunddetails .mod-card-hd {
+	padding-top: .34rem;
+	position: relative;
+	padding-bottom: .32rem;
+}
+
+.mod-refunddetails .mod-card-hd .title {
+	font-weight: bold;
+	font-size: .36rem;
+	color: #333;
+}
+
+.mod-refunddetails .mod-card-bd {
+	padding-top: .36rem;
+}
+
+.mod-refunddetails .mod-card-bd .subtitle {
+	display: block;
+	width: 5em;
+	margin-right: 38px;
+}
+
+.mod-refunddetails .mod-card-bd .info {
+	padding-bottom: .4rem;
+	border-bottom: 1px dashed #e6e6e6;
+}
+
+.mod-refunddetails .mod-card-bd .info .handle {
+	color: #3ea6ff;
+	position: relative;
+	padding-right: .4rem;
+}
+
+.mod-refunddetails .mod-card-bd .info .handle:after {
+	display: block;
+	height: .18rem;
+	width: .18rem;
+	background: url(../img/lansexia18@3x.png) no-repeat center center;
+	background-size: contain;
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.mod-refunddetails .timeaxis {
+	padding: .38rem 0 .64rem;
+	font-size: .24rem;
+	color: #999;
+	padding-left: .4rem;
+}
+
+.mod-refunddetails .timeaxis .title {
+	color: #333;
+}
+.mod-refunddetails .timeaxis .timeaxis-item.active .title{
+	font-size: .3rem;
+	color: #2a99f1;
+}
+.mod-refunddetails .timeaxis p {
+	margin-top: .2rem;
+}
+
+.mod-refunddetails .timeaxis .timeaxis-item {
+	position: relative;
+	padding-bottom: .54rem;
+	font-weight: bold;
+}
+.mod-refunddetails .timeaxis .timeaxis-item.active{
+	font-size: .26rem;
+	color: #333;
+}
+.mod-refunddetails .timeaxis .timeaxis-item p{
+	margin-top: .12rem;
+}.mod-refunddetails .timeaxis .timeaxis-item p:first-child{
+	margin-top: .18rem;
+	margin-bottom: .12rem;
+}
+.mod-refunddetails .timeaxis .timeaxis-item:before {
+	content: '';
+	height: .14rem;
+	width: .14rem;
+	background: #2a99f1;
+	border-radius: 100%;
+	display: block;
+	position: absolute;
+	left: -.4rem;
+	top: .1rem;
+}.mod-refunddetails .timeaxis .timeaxis-item.active:before{
+	height: .3rem;
+	width: .3rem;
+	background: url(../img/landangqian@3x.png) no-repeat center center;
+	 background-size: contain;
+	left: -.48rem;
+}
+
+.mod-refunddetails .timeaxis .timeaxis-item:not(:last-child):after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 1px;
+	background: #2a99f1;
+	height: 80%;
+	top: .32rem;
+	left: -.34rem;
 }

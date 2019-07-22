@@ -10,11 +10,6 @@ html,body{
 	height: 100%;
 }
 
-.mod-card {
-	border-radius: .15rem;
-	overflow: hidden;
-}
-
 .mod-card.ticketinfo {
 	padding: .4rem .38rem .24rem;
 }

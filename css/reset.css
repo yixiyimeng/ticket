@@ -390,7 +390,10 @@ i,em{
 .pd24 {
 	padding: 0 .24rem;
 }
-
+.pd30 {
+padding-left: .3rem;
+padding-right: .3rem;
+}
 .pt81 {
 	padding-top: .81rem;
 }
@@ -1089,4 +1092,8 @@ i,em{
 	right: .6rem;
 	display: none;
 	
+}
+.mod-card {
+	border-radius: .15rem;
+	overflow: hidden;
 }
