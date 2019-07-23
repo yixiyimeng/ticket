@@ -6,6 +6,7 @@ html {
 	/*不想让iPhone横坚屏切换的时候调节文字*/
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+	font-size: 13.3333vw;
 }
 
 html * {
@@ -316,7 +317,11 @@ em {
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 }
-
+.banner img,
+.banner a{
+	display: block;
+	width: 100%;
+}
 .swiper-container-horizontal>.swiper-pagination-bullets {
 	bottom: .14rem;
 }
@@ -371,6 +376,9 @@ em {
 .mt50 {
 	margin-top: .5rem;
 }
+.ml10 {
+	margin-left: .1rem
+}
 
 .ml15 {
 	margin-left: .15rem
@@ -390,6 +398,9 @@ em {
 
 .ml70 {
 	margin-left: .7rem;
+}
+.mr10 {
+	margin-right: .1rem
 }
 
 .mr15 {
@@ -742,7 +753,21 @@ em {
 	font-size: .22rem;
 	text-decoration: line-through
 }
-
+.ticketlist .ticket-item .right-arrow{
+	position: relative;
+	padding-right: .3rem;
+}
+.ticketlist .ticket-item .right-arrow:after{
+	content: '';
+	height: .24rem;
+	width: .24rem;
+	background: url(../img/xq-jiantouhui@3x.png) no-repeat center center;
+	background-size: contain;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
 .orderBtn {
 	color: #333;
 	font-size: .3rem;
@@ -764,7 +789,8 @@ em {
 .ticketlist .ticket-item:not(:last-child):after,
 .showmore:before,
 .mod-buyinfo .mod-buyinfo-item:after,
-.page .view-cell:not(:last-child):after {
+.page .view-cell:not(:last-child):after,
+.mod-buyinfo .popup-hd:after{
 	content: '';
 	display: block;
 	left: 0;
@@ -1163,7 +1189,9 @@ em {
 	border-color: #ffab00;
 	color: #ffab00;
 }
-
+.tabpanel{
+	display: none;
+}
 .scroll_top {
 	height: .7rem;
 	width: .7rem;
@@ -1182,4 +1210,69 @@ em {
 .mod-card {
 	border-radius: .15rem;
 	overflow: hidden;
+}
+/* 购买须知 */
+
+.popup-bd {
+	padding: 0 .24rem;
+}
+
+.mod-buyinfo .popup-hd {
+	text-align: center;
+	color: #333;
+	font-size: .3rem;
+	background: #fff;
+	padding: .5rem 0;
+}
+
+.mod-buyinfo .popup-bd {
+	position: absolute;
+	top: 1.3rem;
+	bottom: .9rem;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	padding: 0 .24rem;
+}
+
+.mod-buyinfo .popup-ft {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.mod-buyinfo .popup-ft .close {
+	display: block;
+	line-height: .9rem;
+	text-align: center;
+	color: #333;
+	font-size: .3rem;
+	background-image: linear-gradient(90deg, #ffcf5b, #ffaf22);
+}
+
+.mod-buyinfo .mod-buyinfo-item {
+	color: #999;
+	font-size: .26rem;
+	position: relative;
+	line-height: .4rem;
+	padding-bottom: .4rem;
+}
+
+.mod-buyinfo .mod-buyinfo-item .title {
+	font-size: .36rem;
+	color: #333;
+	padding-bottom: .4rem;
+}
+
+.mod-buyinfo .mod-buyinfo-item .subtitle {
+	font-size: .24rem;
+	color: #ffab00;
+	background: #fff4dd;
+	border-radius: .05rem;
+	line-height: .4rem;
+	width: 1.2rem;
+	margin-right: .4rem;
+	text-align: center;
 }

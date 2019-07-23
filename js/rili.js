@@ -1,10 +1,13 @@
 //全局的年月日，适用于任何时候获取今天的年月日。（很重要）
 var sev_m, sev_y, sev_d, active = 3;
 var mySwiper = null;
-
+var fillPrice=null;
 var yl = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-function setrili() {
+function setrili(callback) {
+	if(callback){
+		fillPrice=callback;
+	}
 	mySwiper = new Swiper('.swiper-container', {
 		initialSlide: 1,
 		loop: true,
@@ -457,6 +460,10 @@ function get_first(a, b, c, d, e) {
 	}
 	document.getElementById(e).innerHTML = str;
 	bind_click(e);
+	/* 回填价格 */
+	if(fillPrice&&e=='d3'){
+		fillPrice();
+	}
 }
 
 function bind_click(a) {

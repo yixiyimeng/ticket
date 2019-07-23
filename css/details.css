@@ -325,3 +325,68 @@ margin-bottom:.3rem;
 	background: #ffab00;
 	margin: .55rem auto 0;
 }
+
+/* 购买须知 */
+.mod-buyinfo .popup-hd {
+	line-height: 1rem;
+	padding: 0 .6rem 0 .24rem;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	font-size:.36rem ;
+	color: #333;
+	font-weight: bold;
+}
+.mod-buyinfo .popup-hd .close{
+	position: absolute;
+	right: .24rem;
+	top: .36rem;
+	display: block;
+	width: .29rem;
+	height: .29rem;
+	background: url(../img/riliguanbi@3x.png) no-repeat center center;
+	background-size: contain;
+}
+.mod-buyinfo .popup-ft{
+	height: .98rem;
+	padding: 0 .24rem;
+	font-size: .2rem;
+}
+.mod-buyinfo .popup-ft .price em{
+	font-size: .36rem;
+}
+.mod-buyinfo .popup-ft:after{
+	content: '';
+	display: block;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: #e6e6e6;
+	transform: translateY(.5);
+	top: 0;
+	position: absolute;
+
+}
+.mod-buyinfo .popup-ft .orderBtn{
+	display: block;
+	width: 3rem;
+	height: .8rem;
+	line-height: .8rem;
+}
+.shareBtn{
+	position: fixed;
+	bottom: 1.4rem;
+	right: .18rem;
+	display: block;
+	height: .8rem;
+	width: .8rem;
+	background: rgba(0,0,0,.6);
+	border-radius: 100%;
+	z-index: 9999;
+	text-align: center;
+	color: #fff;
+	line-height: .8rem;
+	font-size: .26rem;
+	}

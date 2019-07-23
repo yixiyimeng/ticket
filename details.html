@@ -30,8 +30,8 @@
 			</div>
 			<!-- 按钮 -->
 			<div class="headerbar">
-				<a href="javascript :history.back(-1)" class="reback"></a>
-				<a href="" class="share"></a>
+				<a href="javascript:history.back(-1)" class="reback"></a>
+				<a href="javascript:;" class="share"></a>
 			</div>
 			<div class="details-info">
 				<div class="card bgfff">
@@ -70,7 +70,7 @@
 										<div class="name">【成人票】门票</div>
 										<div class="mt20"><span class="c-blue">18:00前可定今日票</span><span class="c-yellow ml20">出票1小时可用</span></div>
 										<div class="tags mt10"><span class="tag">7天有效期</span><span class="tag">7天有效期</span></div>
-										<div class="c-grey mt20">已售3.6w |<a href="" class="c-grey">购买须知</a></div>
+										<div class="c-grey mt20">已售3.6w<span class="ml10 mr10">|</span><a href="" class="c-grey right-arrow">购买须知</a></div>
 									</div>
 									<div>
 										<div class="price">￥138</div>
@@ -83,10 +83,10 @@
 							<div class="ticket-item">
 								<div class="flex">
 									<div class="flex-1">
-										<div class="name"><span class="thumb">限量100张</span>【成人票】门票</div>
+										<div class="name">【成人票】门票</div>
 										<div class="mt20"><span class="c-blue">18:00前可定今日票</span><span class="c-yellow ml20">出票1小时可用</span></div>
 										<div class="tags mt10"><span class="tag">7天有效期</span><span class="tag">7天有效期</span></div>
-										<div class="c-grey mt20">已售3.6w |<a href="" class="c-grey">购买须知</a></div>
+										<div class="c-grey mt20">已售3.6w<span class="ml10 mr10">|</span><a href="" class="c-grey right-arrow">购买须知</a></div>
 									</div>
 									<div>
 										<div class="price">￥138</div>
@@ -112,7 +112,7 @@
 										<div class="name">【成人票】门票</div>
 										<div class="mt20"><span class="c-blue">18:00前可定今日票</span><span class="c-yellow ml20">出票1小时可用</span></div>
 										<div class="tags mt10"><span class="tag">7天有效期</span><span class="tag">7天有效期</span></div>
-										<div class="c-grey mt20">已售3.6w |<a href="" class="c-grey">购买须知</a></div>
+										<div class="c-grey mt20">已售3.6w<span class="ml10 mr10">|</span><a href="" class="c-grey right-arrow">购买须知</a></div>
 									</div>
 									<div>
 										<div class="price">￥138</div>
@@ -125,10 +125,10 @@
 							<div class="ticket-item">
 								<div class="flex">
 									<div class="flex-1">
-										<div class="name"><span class="thumb">限量100张</span>【成人票】门票</div>
+										<div class="name">【成人票】门票</div>
 										<div class="mt20"><span class="c-blue">18:00前可定今日票</span><span class="c-yellow ml20">出票1小时可用</span></div>
 										<div class="tags mt10"><span class="tag">7天有效期</span><span class="tag">7天有效期</span></div>
-										<div class="c-grey mt20">已售3.6w |<a href="" class="c-grey">购买须知</a></div>
+										<div class="c-grey mt20">已售3.6w<span class="ml10 mr10">|</span><a href="" class="c-grey right-arrow">购买须知</a></div>
 									</div>
 									<div>
 										<div class="price">￥138</div>
@@ -247,14 +247,14 @@
 		</div>
 		<!-- 联系客服 -->
 		<div class="contact"><i></i><span>联系景区客服</span></div>
-		<div class="mask" ></div>
+		<div class="mask"></div>
 		<div class="popup mod-share">
 			<div class="mod-share-hd">
 				<a href="javascript:;" class="close"></a>
 			</div>
 			<div class="mod-share-bd">
 				<div class="btnlist flex">
-					<span class="flex-1">获取推广文案</span>
+					<span class="flex-1 js-getshretxt">获取推广文案</span>
 					<span class="flex-1">分享转发</span>
 				</div>
 				<div class="sharebox">
@@ -280,7 +280,49 @@
 					<a href="javascript:;">复制文案</a></div>
 			</div>
 		</div>
+		<!-- 购买须知 -->
+		<div class="popup mod-buyinfo" >
+			<div class="popup-hd">郑州百花唐温泉门票+按摩票（成人票）<a href="javascript:;" class="close"></a></div>
+			<div class="popup-bd">
+				<div class="mod-buyinfo-item">
+					<div class="title">购买须知</div>
+					<div class="flex  flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">18:00之前可定今日，预定后立即可用</p>
+					</div>
+					<div class="flex mt30  flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">18:00之前可定今日，预定后立即可用</p>
+					</div>
+					<div class="flex mt30 flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">游玩日截止后6天 23:59 前未消费可申请
+							退款，退款不收手续费。过期未消费系统
+							自动发起退款申请。
+							一笔订单多张票不支持部分退款。下单后
+							不支持改期。</p>
+					</div>
+				</div>
+				<div class="mod-buyinfo-item mt40">
+					<div class="title">使用说明</div>
+					<div class="flex  flex-align-top">
+						<div>入院时间 </div>
+						<p class="flex-1 ml40">08:00-18:00</p>
+					</div>
+					<div class="flex  flex-align-top mt20">
+						<div>入院地址 </div>
+						<p class="flex-1 ml40">郑州市金水区动物园</p>
+					</div>
 
+				</div>
+			</div>
+			<div class="popup-ft flex flex-pack-justify flex-align-center">
+				<span class="price c-red">总价<em>￥188</em></span>
+				<a href="javascrit:;" class="orderBtn">立即预定</a>
+			</div>
+		</div>
+		<!-- 分享按钮 -->
+		<a href="javascript:;" class="shareBtn">分享</a>
 	</body>
 </html>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
@@ -298,4 +340,26 @@
 			disableOnInteraction: false,
 		}
 	});
+	/* 购买须知 */
+	$('.ticketlist').on('click','.ticket-item .flex-1',function(){
+		$('.mask').fadeIn();
+		$('.mod-buyinfo').slideDown(300);
+	});
+	$('.mask,.popup .close').on('click',function(){
+		$('.mask').fadeOut();
+		$(this).closest('.popup').slideUp(300);
+		$('.mod-share').slideUp(300);
+	});
+	/* 分享 */
+	$('.shareBtn,.headerbar .share').click(function(){
+		$('.mask').fadeIn();
+		$('.mod-share').slideDown(300);
+	});
+	/* 获取分享文案 */
+	$('.js-getshretxt').click(function(){
+		$('.win-share').fadeIn();
+	});
+	$('.win-share .close').click(function(){
+		$('.win-share').fadeOut();
+	})
 </script>

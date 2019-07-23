@@ -315,69 +315,9 @@ html,body{
 .shopbar .detailslist .info li {
 	font-size: .26rem;
 }
-
-.mod-buyinfo .popup-hd {
-	text-align: center;
-	color: #333;
-	font-size: .3rem;
-	background: #fff;
-	padding: .5rem 0;
-}
-
-.mod-buyinfo .popup-bd {
-	position: absolute;
-	top: 1.3rem;
-	bottom: .9rem;
-	left: 0;
-	right: 0;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-	padding: 0 .24rem;
-}
-
-.mod-buyinfo .popup-ft {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-.mod-buyinfo .popup-ft .close {
-	display: block;
-	line-height: .9rem;
-	text-align: center;
-	color: #333;
-	font-size: .3rem;
-	background-image: linear-gradient(90deg, #ffcf5b, #ffaf22);
-}
-
-.mod-buyinfo .mod-buyinfo-item {
-	color: #999;
-	font-size: .26rem;
-	position: relative;
-	line-height: .4rem;
-	padding-bottom: .4rem;
-}
-
-.mod-buyinfo .mod-buyinfo-item .title {
-	font-size: .36rem;
-	color: #333;
-	padding-bottom: .4rem;
-}
-
-.mod-buyinfo .mod-buyinfo-item .subtitle {
-	font-size: .24rem;
-	color: #ffab00;
-	background: #fff4dd;
-	border-radius: .05rem;
-	line-height: .4rem;
-	width: 1.2rem;
-	margin-right: .4rem;
-	text-align: center;
-}
-
-.popup-bd {
-	padding: 0 .24rem;
+.edit-visitor{
+	padding-bottom: 2.4rem;
+	height: auto;
 }
 
 .edit-visitor .popup-hd {
@@ -406,7 +346,17 @@ html,body{
 .edit-visitor .popup-hd a.okbtn {
 	right: .24rem;
 }
-
+.edit-visitor .popup-bd .del{
+	display: block;
+	font-size: .3rem;
+	color: #333;
+	line-height: .8rem;
+	width: 5rem;
+	margin: 2rem auto 0;
+	text-align: center;
+	background: #ffab00;
+	border-radius: .5rem;
+}
 .popup.mod-rili {
 	height: auto;
 }

@@ -15,15 +15,15 @@
 	</head>
 	<body class="bgfff">
 		<!-- 头部 -->
-		<div class="subheader"><a href="javascript :history.back(-1)" class="reback"></a>
+		<div class="subheader"><a href="javascript:history.back(-1)" class="reback"></a>
 			<span>景点信息</span></div>
 		<div class="page">
 			<!-- tab -->
 			<div class="tablink flex">
-				<a href="" class="flex-1 active">购票须知</a>
-				<a href="" class="flex-1">景点简介</a>
+				<a href="javascript:;" class="flex-1 active">购票须知</a>
+				<a href="javascript:;" class="flex-1">景点简介</a>
 			</div>
-			<div class="tabpanel pd24 mt20">
+			<div class="tabpanel pd24 mt20" style="display: block;">
 				<div class="title">开放时间</div>
 				<div class="subtitle">5月25日至8月31日</div>
 				<div class="timelist">
@@ -100,6 +100,8 @@
 						病症这，请勿购票入园，否则导致不良后果，乐园不负任何
 						责任</p>
 				</div>
+			</div>
+			<div class="tabpanel pd24 mt20">
 				<!-- 景点介绍 -->
 				<div class="title mt10">景点介绍</div>
 				<div class="txt">
@@ -151,17 +153,21 @@
 					<a href="javascript:;" class="flex-1">去预定</a>
 				</div>
 			</div>
-			<a href="javascript:;" class="scroll_top"></a>	
+			<a href="javascript:;" class="scroll_top"></a>
 	</body>
 </html>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-	var vtop=$(window).height();
+	var vtop = $(window).height();
 	$(window).scroll(function() {
 		if ($(window).scrollTop() >= vtop) {
-			$('.scroll_top').css({'display':'block'})
+			$('.scroll_top').css({
+				'display': 'block'
+			})
 		} else {
-			$('.scroll_top').css({'display':'none'})
+			$('.scroll_top').css({
+				'display': 'none'
+			})
 		}
 	});
 	$('.scroll_top').click(function() {
@@ -169,4 +175,10 @@
 			scrollTop: '0px'
 		}, 800);
 	});
+	/* tab 切换 */
+	$('.tablink a').click(function(){
+		$(this).addClass('active').siblings('a.active').removeClass('active');
+		var index=$(this).index('.tablink a');
+		$('.tabpanel').eq(index).show().siblings('.tabpanel').hide();
+	})
 </script>
