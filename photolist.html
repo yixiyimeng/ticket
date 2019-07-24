@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html">
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<title>相册</title>
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/photolist.css">
+	</head>
+	<body class="bgfff">
+		<!-- 头部 -->
+		<div class="subheader"><a href="javascript:history.back(-1)" class="reback"></a>
+			<span>商家相册</span>
+		</div>
+		<div class="page">
+			<ul class="clearfix photolist">
+			
+				<li>
+					<a href="#"><img src="img/demo/xiangce.png" class="xiangce-1" /></a></li>
+				<li>
+					<a href="#"><img src="img/demo/xiangce.png" class="xiangce-1" /></a></li>
+				<li>
+					<a href="#"><img src="img/demo/xiangce.png" class="xiangce-1" /></a></li>
+				<li>
+					<a href="#"><img src="img/demo/xiangce.png" class="xiangce-1" /></a></li>
+				<li>
+					<a href="#"><img src="img/demo/xiangce.png" class="xiangce-1" /></a></li>
+				<li>
+					<a href="#"><img src="img/demo/xiangce.png" class="xiangce-1" /></a></li>
+				<li>
+					<a href="#"><img src="img/demo/xiangce.png" class="xiangce-1" /></a></li>
+						<li>
+						<a href="javascript:;"><img src="img/demo/xiangce.png" class="xiangce-1" /></a></li>
+			</ul>
+		</div>
+		<!-- imgbox -->
+		<div class="big_img">
+			<a href="javascript:;" class="close"></a>
+			<div>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><a href=""><img src="img/demo/xiangce.png" alt=""></a></div>
+						<div class="swiper-slide"><a href=""><img src="img/demo/xiangce.png" alt=""></a></div>
+						<div class="swiper-slide"><a href=""><img src="img/demo/xiangce.png" alt=""></a></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript">
+	var mySwiper = new Swiper('.swiper-container', {
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+			type: 'fraction'
+		}
+	})
+	$('.photolist').on('click','li',function(){
+		var index=$(this).index();
+		mySwiper.slideToLoop(index,0)
+		 $('.big_img').css({ 
+		    "z-index": "999", 
+		    "opacity": "1" 
+		}); 
+	});
+	$('.big_img .close').click(function(){
+		 $('.big_img').css({ 
+		    "z-index": "-1", 
+		    "opacity": "0" 
+		}); 
+	})
+</script>

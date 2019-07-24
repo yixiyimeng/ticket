@@ -309,6 +309,7 @@
 		$('.swiper-container4 .swiper-wrapper').html(daystr)
 
 	}
+	/* 日历数据 筛选回填 */
 	fillrili();
 	/* 购票须知 */
 	$('.ticketinfo .know').click(function() {
@@ -321,7 +322,8 @@
 		$('.mod-rili').slideDown(300);
 		setrili(function(){
 			/* 回填价格 */
-			$('#d3 tr td em').text('￥12');
+			//$('#d3 tr td em')
+			 $(".swiper-slide-active tr td em").text('￥14');
 		});
 	});
 	/* 编辑员工 */
@@ -351,4 +353,5 @@
 		$('.popup').slideUp(300);
 		$('.shopbar .detailslist').slideUp(300);
 	});
+	
 </script>

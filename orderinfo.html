@@ -14,12 +14,12 @@
 		<link rel="stylesheet" href="css/orderinfo.css">
 	</head>
 	<body class="bgf5">
-		<div class="subheader"><a href="javascript :history.back(-1)" class="reback"></a>
+		<div class="subheader"><a href="javascript:history.back(-1)" class="reback"></a>
 			<span>订单详情</span></div>
 		<div class="page">
 			<div class="state flex flex-pack-justify">
-				<span>待使用</span>
-				<span>￥188</span>
+				<span class="ordertimelinedetails">待使用</span>
+				<span class="pricedetails">￥188</span>
 			</div>
 			<div class="tip ellipsis">入园凭证不会以短信方式发送，请在订单详情内查看</div>
 			<div class="mod-card bgfff ticketinfo mt10">
@@ -127,8 +127,9 @@
 					<div class="flex txt mt36">
 						<label class="subtitle">订单编号</label>
 						<div class="flex-1 ">
-							<span>1234 1556 1545 458</span>
-							<a href="javascript:;" class="copy">复制</a>
+							<span id="copy-pp">1234 1556 1545 458</span>
+							<input type="hidden" id="copy-text">
+							<a href="javascript:;" class="copy" onclick="jsCopy()">复制</a>
 						</div>
 					</div>
 					<div class="flex txt mt36">
@@ -166,6 +167,111 @@
 			<a href="">评价</a>
 			<a href="" class="orderBtn ml20">申请退款</a>
 		</div>
+		<!-- 订单跟踪 -->
+		<div class="sildePage ordertimeline-page">
+			<div class="subheader"><a href="javascript:;" class="reback"></a>
+				<span>订单跟踪</span></div>
+			<div class="subpage">
+				<div class="timeline">
+					<div class="timeline-item flex">
+						<div class="time">
+							<span>06-29</span>
+							<span class="c-grey ml30">15:30</span>
+						</div>
+						<div class="title">入园使用</div>
+ 					</div>
+						<div class="timeline-item flex">
+						<div class="time">
+							<span>06-29</span>
+							<span class="c-grey ml30">15:30</span>
+						</div>
+						<div class="title">入园使用</div>
+					</div>
+				</div>
+				<div class="use">
+					<div class="date">
+						<p>06-29</p>
+					</div>
+					<div class="time">
+						<p>15:30</p>
+					</div>
+					<div class="finish_pre">
+						<img src="img/weixuanzhong@3x.png" />
+					</div>
+					<div class="date">
+						<p>入园使用</p>
+					</div>
+				</div>
+				<div class="close"></div>
+			</div>
+		</div>
+		<!-- 价格明细 -->
+		<div class="sildePage pricedetails-page">
+			<div class="subheader"><a href="javascript:;" class="reback"></a>
+				<span>订单跟踪</span></div>
+			<div class="subpage">
+				<div class="pricelist">
+					<div class="title">价格明细</div>
+					<div class="view-cell flex flex-pack-justify"><span>￥30</span>
+						<span><em>￥30 </em><em class="ml30">×1张</em></span></div>
+					<div class="view-cell flex flex-pack-justify"><span>￥30</span>
+						<span><em>￥30 </em><em class="ml30">×1张</em></span></div>
+				</div>
+				<div class="close"></div>
+			</div>
+		</div>
 	</body>
 </html>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	/* 价格明细 */
+	$('.pricedetails').click(function() {
+		$('.pricedetails-page').addClass('active')
+	});
+	/* 订单跟踪 */
+	$('.ordertimelinedetails').click(function() {
+		$('.ordertimeline-page').addClass('active')
+	});
+	$('.sildePage .close, .sildePage .reback').click(function() {
+		$('.sildePage').removeClass('active')
+	})
+	/* 复制 */
+	function jsCopy() {
+		var u = navigator.userAgent;
+		//苹果
+		if (u.match(/(iPhone|iPod|iPad);?/i)) {
+			var copyDOM = document.getElementById("copy-pp"); //要复制文字的节点
+			var range = document.createRange();
+			// 选中需要复制的节点
+			range.selectNode(copyDOM);
+			// 执行选中元素
+			window.getSelection().addRange(range);
+			// 执行 copy 操作
+			var successful = document.execCommand('copy');
+			try {
+				var msg = successful ? '成功' : '失败';
+				console.log(msg);
+			} catch (err) {
+				console.log(err);
+			}
+			// 移除选中的元素
+			window.getSelection().removeAllRanges();
+			// obj.innerHTML = '已复制';
+		}
+
+		// 安卓
+		if (u.indexOf('Android') > -1) {
+			var $copyText = document.getElementById("copy-text"),
+				$copyPP = document.getElementById("copy-pp");
+			$copyText.value = $copyPP.innerHTML.replace(/<[^>]+>/g, "");
+			$copyText.select(); // 选择对象
+			document.execCommand("Copy"); // 执行浏览器复制命令
+			// obj.innerHTML = '已复制';
+		}
+		// 安卓系统的UC浏览器
+		if (u.indexOf('Android') > -1 && u.indexOf('UCBrowser') > -1) {
+			// obj.innerHTML = '点击复制分享链接';
+			alert('若点击复制分享链接无效，请长按内容手动复制！');
+		}
+	}
+</script>

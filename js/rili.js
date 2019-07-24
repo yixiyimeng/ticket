@@ -226,6 +226,10 @@ function setrili(callback) {
 
 				}
 				//swiper.unlockSwipes();
+				/* 回填价格 */
+				if(fillPrice){
+					fillPrice();
+				}
 			},
 		},
 	});
@@ -298,6 +302,10 @@ function setrili(callback) {
 		mySwiper.slideTo(2, 500, false);
 	});
 	//mySwiper.unlockSwipes();
+	/* 回填价格 */
+	if(fillPrice){
+		fillPrice();
+	}
 };
 
 function jump(yyyy, mm, dd) {
@@ -418,7 +426,7 @@ function get_first(a, b, c, d, e) {
 
 	for (var i = 1; i <= dd; i++) {
 		var bday = ldays - i + 1;
-		var ly = '￥12';
+		var ly = '';
 		var jd = "";
 		var hb = b + "-" + c + "-" + i;
 		if (new Date().getDate() == i && b == new Date().getFullYear() && c == (new Date().getMonth() + 1)) {
@@ -444,7 +452,7 @@ function get_first(a, b, c, d, e) {
 			// 			if (jq) {
 			// 				ly = '<font color="#00b7ec">' + jq;
 			// 			}
-			var ly = '￥12';
+			var ly = '';
 			var jd = "";
 			var hb = xb + "-" + xm + "-" + i;
 			str += ' <td data_y="' + xb + '" data_m="' + xm + '" data_d="' + i + '" class="list not_this js_down"><i>' + i +
@@ -460,10 +468,7 @@ function get_first(a, b, c, d, e) {
 	}
 	document.getElementById(e).innerHTML = str;
 	bind_click(e);
-	/* 回填价格 */
-	if(fillPrice&&e=='d3'){
-		fillPrice();
-	}
+	
 }
 
 function bind_click(a) {

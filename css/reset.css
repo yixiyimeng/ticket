@@ -790,6 +790,8 @@ em {
 .showmore:before,
 .mod-buyinfo .mod-buyinfo-item:after,
 .page .view-cell:not(:last-child):after,
+.subpage .view-cell:not(:last-child):after,
+.subpage .pricelist .title:after,
 .mod-buyinfo .popup-hd:after{
 	content: '';
 	display: block;

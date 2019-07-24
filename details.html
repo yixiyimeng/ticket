@@ -268,7 +268,7 @@
 		<div class="win win-share">
 			<div>
 				<div class="win-share-hd">推广文案<a href="javascript:;" class="close"></a></div>
-				<div class="win-share-bd">
+				<div class="win-share-bd" id="copy-pp">
 					<p>江南春温泉 休闲度假 惬意养生温泉【成人票】</p>
 					<p>【在售价】￥128</p>
 					<p>【券后价】￥108</p>
@@ -276,8 +276,9 @@
 					<p> -----------</p>
 					<p> 复制这条消息，{￥选择分享渠道后自动生成口令￥}，到【量子美食】即可查看</p>
 				</div>
+				<textarea class="copy-text" id="copy-text" value="" readonly="readonly" style="display: none;"></textarea>
 				<div class="win-share-ft">
-					<a href="javascript:;">复制文案</a></div>
+					<a href="javascript:;" onclick="jsCopy()">复制文案</a></div>
 			</div>
 		</div>
 		<!-- 购买须知 -->
@@ -361,5 +362,43 @@
 	});
 	$('.win-share .close').click(function(){
 		$('.win-share').fadeOut();
-	})
+	});
+	function jsCopy(){
+        var u = navigator.userAgent;
+        //苹果
+        if (u.match(/(iPhone|iPod|iPad);?/i)) {
+            var copyDOM = document.getElementById("copy-pp");  //要复制文字的节点
+            var range = document.createRange();
+            // 选中需要复制的节点
+            range.selectNode(copyDOM);
+            // 执行选中元素
+            window.getSelection().addRange(range);
+            // 执行 copy 操作
+            var successful = document.execCommand('copy');
+            try {
+                var msg = successful ? '成功' : '失败';
+                console.log(msg);
+            } catch(err) {
+                console.log(err);
+            }
+            // 移除选中的元素
+            window.getSelection().removeAllRanges();
+            // obj.innerHTML = '已复制';
+        }
+
+        // 安卓
+        if(u.indexOf('Android') > -1 ){
+            var $copyText = document.getElementById("copy-text"),
+                $copyPP = document.getElementById("copy-pp");
+            $copyText.innerHTML = $copyPP.innerHTML.replace(/<[^>]+>/g,"");
+            $copyText.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            // obj.innerHTML = '已复制';
+        }
+        // 安卓系统的UC浏览器
+        if(u.indexOf('Android') > -1 && u.indexOf('UCBrowser') > -1){
+            // obj.innerHTML = '点击复制分享链接';
+            alert('若点击复制分享链接无效，请长按内容手动复制！');
+        }
+    }
 </script>
