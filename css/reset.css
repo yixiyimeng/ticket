@@ -792,7 +792,9 @@ em {
 .page .view-cell:not(:last-child):after,
 .subpage .view-cell:not(:last-child):after,
 .subpage .pricelist .title:after,
-.mod-buyinfo .popup-hd:after{
+.mod-buyinfo .popup-hd:after,
+.popup.more-visitor .popup-hd:after,
+.popup.more-visitor .popup-bd .visitor-item:not(:last-child):after{
 	content: '';
 	display: block;
 	left: 0;
@@ -1277,4 +1279,28 @@ em {
 	width: 1.2rem;
 	margin-right: .4rem;
 	text-align: center;
+}
+
+.checkbox input[type=checkbox] {
+	-webkit-appearance: none;
+	height: .3rem;
+	width: .3rem;
+	background: no-repeat center center;
+	background-size: contain;
+}
+
+.checkbox.circular-checkbox input[type=checkbox] {
+	background-image: url(../img/weixuanzhong@3x.png)
+}
+
+.checkbox.circular-checkbox input[type=checkbox]:checked {
+	background-image: url(../img/xuanzehuang@3x.png);
+}
+
+.checkbox.square-checkbox input[type=checkbox] {
+	background-image: url(../img/xuanzefangkuang@3x.png);
+}
+
+.checkbox.square-checkbox input[type=checkbox]:checked {
+	background-image: url(../img/xuanzhong@3x.png);
 }

@@ -158,7 +158,7 @@
 		</div>
 		<!-- 编辑游客信息 -->
 		<div class="popup edit-visitor">
-			<div class="popup-hd">编辑游客 <a href="javascript:;" class="cancelbtn">取消</a><a href="javascript:;" class="okbtn">完成</a></div>
+			<div class="popup-hd"><span class="title">编辑游客</span> <a href="javascript:;" class="cancelbtn">取消</a><a href="javascript:;" class="okbtn">完成</a></div>
 			<div class="popup-bd">
 				<div class="input-group">
 					<div class="input-row flex input-row-clear">
@@ -244,7 +244,7 @@
 					<div class="tc"></div>
 					<div class="tc-innner">
 						<h2>
-						选择日期
+							选择日期
 						</h2>
 						<div class="current-time">
 							<i class="i-year">1900</i><i class="i-month">1</i><i class="i-date">1</i>
@@ -284,6 +284,40 @@
 
 			</div>
 		</div>
+		<!-- 更过游客 -->
+		<div class="popup more-visitor" >
+			<div class="popup-hd">
+				<div class="title">再选<em class="c-red">0</em>位</div>
+				<a href="javascript:;" class="close"></a>
+				<div class="addvisitorbtn"><i></i><em>新增常用用户</em></div>
+			</div>
+
+			<div class="popup-bd">
+				<div class="visitor-item flex flex-align-center">
+					<div class="checkbox circular-checkbox">
+						<input type="checkbox" name="check" id="check[1]"></div>
+					<label for="check[1]" class="flex-1 ml40">
+						<p>哈哈哈</p>
+						<p class="mt15">1344567781</p>
+					</label>
+					<a href="javascript:;" class="edit">编辑</a>
+
+				</div>
+				<div class="visitor-item flex flex-align-center">
+					<div class="checkbox circular-checkbox">
+						<input type="checkbox" name="check" id="check[2]"></div>
+					<label for="check[2]" class="flex-1 ml40">
+						<p>哈哈哈</p>
+						<p class="mt15">1344567781</p>
+					</label>
+					<a href="javascript:;" class="edit">编辑</a>
+
+				</div>
+			</div>
+			<div class="popup-ft">
+				<a href="javascript:;" class="del">完成</a>
+			</div>
+		</div>
 	</body>
 </html>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
@@ -320,16 +354,11 @@
 	$('.moreday').click(function() {
 		$('.mask').fadeIn();
 		$('.mod-rili').slideDown(300);
-		setrili(function(){
+		setrili(function() {
 			/* 回填价格 */
 			//$('#d3 tr td em')
-			 $(".swiper-slide-active tr td em").text('￥14');
+			$(".swiper-slide-active tr td em").text('￥14');
 		});
-	});
-	/* 编辑员工 */
-	$('.mod-visitor .edit').click(function() {
-		$('.mask').fadeIn();
-		$('.edit-visitor').slideDown(300);
 	});
 	/* 清除按钮 */
 	$('.edit-visitor').on('input', 'input', function() {
@@ -353,5 +382,30 @@
 		$('.popup').slideUp(300);
 		$('.shopbar .detailslist').slideUp(300);
 	});
-	
+	/*更多游客  */
+	$('.mod-visitor .checkname').click(function(){
+		$('.mask').fadeIn();
+		$('.more-visitor').slideDown(300);
+	})
+	/* 更多游客--新增游客 */
+	$('.more-visitor .addvisitorbtn').click(function(){
+		$('.popup').slideUp(300);
+		$('.edit-visitor .del').hide();
+		$('.edit-visitor .popup-hd .title').text('新增游客')
+		$('.edit-visitor').slideDown(300);
+	});
+	/* 更多游客--编辑游客 */
+	$('.more-visitor').on("click",".edit",function(){
+		$('.popup').slideUp(300);
+		$('.edit-visitor .del').show();
+		$('.edit-visitor .popup-hd .title').text('编辑游客')
+		$('.edit-visitor').slideDown(300);
+	});
+	/* 编辑员工 */
+	$('.mod-visitor .edit').click(function() {
+		$('.mask').fadeIn();
+		$('.edit-visitor .del').show();
+		$('.edit-visitor .popup-hd .title').text('编辑游客')
+		$('.edit-visitor').slideDown(300);
+	});
 </script>

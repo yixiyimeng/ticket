@@ -76,29 +76,7 @@
 	margin-top: .7rem;
 }
 
-.checkbox input[type=checkbox] {
-	-webkit-appearance: none;
-	height: .3rem;
-	width: .3rem;
-	background: no-repeat center center;
-	background-size: contain;
-}
 
-.checkbox.circular-checkbox input[type=checkbox] {
-	background-image: url(../img/weixuanzhong@3x.png)
-}
-
-.checkbox.circular-checkbox input[type=checkbox]:checked {
-	background-image: url(../img/xuanzehuang@3x.png);
-}
-
-.checkbox.square-checkbox input[type=checkbox] {
-	background-image: url(../img/xuanzefangkuang@3x.png);
-}
-
-.checkbox.square-checkbox input[type=checkbox]:checked {
-	background-image: url(../img/xuanzhong@3x.png);
-}
 
 /* 退款详情 */
 .subtip {

@@ -371,74 +371,64 @@ html {
 	transform: translateX(100%);
 	transition: all .3s;
 }
-.sildePage.active{
+
+.sildePage.active {
 	transform: translateX(0);
 }
-.sildePage .timeline{
+
+.sildePage .timeline {
 	color: #333;
 	font-size: .3rem;
+	padding-top: .75rem;
 }
-.sildePage .timeline .timeline-item{
-	margin-bottom: .4rem;
+
+.sildePage .timeline .timeline-item {
+	margin-bottom: .84rem;
+	position: relative;
 }
-.sildePage .timeline .time{
+
+.sildePage .timeline .timeline-item:before {
+	content: '';
+	display: block;
+	height: .36rem;
+	width: .36rem;
+	background: url(../img/weixuanzhong@3x.png) no-repeat center center;
+	background-size: contain;
+	position: absolute;
+	left: 50%;
+	margin-left: -.18rem;
+}
+
+.sildePage .timeline .timeline-item:first-child:before {
+	background-image: url(../img/xuanzehuang@3x.png)
+}
+
+.sildePage .timeline .timeline-item:not(:last-child):after {
+	width: 1px;
+	height: .5rem;
+	background: #ccc;
+	display: block;
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: .36rem;
+}
+
+.sildePage .timeline .timeline-item:first-child:after {
+	background: #ffab00;
+}
+
+.sildePage .timeline .time {
 	text-align: right;
 	width: 50%;
 	margin-right: .45rem;
+
 }
-.sildePage .timeline  .title{
+
+.sildePage .timeline .title {
 	text-align: left;
 	width: 50%;
 	margin-left: .45rem;
 }
-.use {
 
-	height: 18px;
-	width: 202px;
-	margin: 0 auto;
-
-
-
-}
-
-.date {
-	font-size: 15px;
-	color: #333333;
-	float: left;
-}
-
-.time {
-	font-size: 15px;
-	color: #666;
-	float: left;
-	margin-left: 4px;
-}
-
-.finish_pre {
-	height: 18px;
-	width: 18px;
-	float: left;
-	margin-left: 8px;
-	margin-right: 12px;
-}
-
-.finish_pre img {
-	width: 18px;
-}
-
-.line {
-	width: 1px;
-	height: 25px;
-	background-color: #ffab00;
-	margin: 0 auto;
-	margin-top: 8px;
-	margin-bottom: 10px;
-}
-
-.date2 {
-	color: #999999;
-}
-
-.line2 {
-	background-color: #CCCCCC;
-}
