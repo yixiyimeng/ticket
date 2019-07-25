@@ -418,7 +418,17 @@ body {
 	margin: .5rem auto 0;
 	font-size: .3rem;
 }
-
+.popup.more-visitor .popup-hd .addvisitorbtn i{
+	height: .3rem;
+	width: .3rem;
+	background: url(../img/add.png) no-repeat center center;
+	background-size: contain;
+	display: inline-block;
+	vertical-align: middle;
+}.popup.more-visitor .popup-hd .addvisitorbtn i+em{
+	vertical-align: middle;
+	margin-left: .1rem;
+}
 .popup.more-visitor .popup-bd {
 	height: 5rem;
 	overflow: auto;
@@ -427,7 +437,7 @@ body {
 }
 
 .popup.more-visitor .popup-bd .edit {
-	font-size: .26rem;
+	font-size: .24rem;
 	color: #ffab00;
 }
 
