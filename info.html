@@ -159,8 +159,9 @@
 </html>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+	var vtop=0;
 	$(function() {
-		var vtop = $('.tabpanel').eq(1).offset().top-$('.tablink').height()-$('.subheader').height();
+		 vtop = $('.tabpanel').eq(1).offset().top-$('.tablink').height()-$('.subheader').height();
 		$(window).scroll(function() {
 			//console.log(vtop)
 			if ($(window).scrollTop() >= vtop) {
@@ -192,7 +193,11 @@
 	/* tab 切换 */
 	$('.tablink a').click(function(){
 		$(this).addClass('active').siblings('a.active').removeClass('active');
-// 		var index=$(this).index('.tablink a');
+		var index=$(this).index('.tablink a');
+		$('html,body').animate({
+			scrollTop: index==0?'0px':vtop+'px'
+		}, 800);
+// 		
 // 		$('.tabpanel').eq(index).show().siblings('.tabpanel').hide();
 	})
 </script>
