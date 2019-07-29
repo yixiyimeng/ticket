@@ -10,7 +10,9 @@ var sFtv = new Array("0101*元旦", "0214 情人", "0308 妇女", "0312 植树",
 	"0910 教师", "1001*国庆",
 	"1225 圣诞", )
 var wFtv = new Array(
-	"1144 感恩节")
+	"0520 母亲",
+	"0630 父亲",
+	"1144 感恩")
 
 function setrili(callback) {
 	if (mySwiper) {
@@ -369,6 +371,7 @@ function click_sev() {
 			$(this).click();
 		}
 	});
+	
 }
 
 function get_first(a, b, c, d, e) {
@@ -450,13 +453,17 @@ function get_first(a, b, c, d, e) {
 		var bday = ldays - i + 1;
 		// var ly = LunarDate.GetLunarDayDetail(b, c, i);
 		var ly = '';
+		
 		var Fev = solarDate.GetSolarDayFev(b, c, i);
 		if (!Fev) {
 			Fev = LunarDate.GetLunarDayFev(b, c, i);
-
-		} else {
-			Fev = solarDate.getWeekFev(b, c, i)
-		}
+			if(!Fev){
+				if (c == 5 || c == 11 || c == 6) {
+					console.log(i);
+					Fev = solarDate.getWeekFev(b, c, i)
+				}
+			}
+		} 
 		//var ly = LunarDate.GetLunarDayFev(b, c, i);
 		//             var jq = getjq(b, c, i);
 		//             if (jq) {
@@ -498,7 +505,10 @@ function get_first(a, b, c, d, e) {
 			if (!Fev) {
 				Fev = LunarDate.GetLunarDayFev(xb, xm, i);
 			} else {
-				Fev = solarDate.getWeekFev(xb, xm, i)
+				if (xm == 11 && i == 24) {
+					Fev = solarDate.getWeekFev(xb, xm, i)
+				}
+
 			}
 			var day = Fev ? Fev : i;
 			var jd = "";
@@ -581,24 +591,32 @@ var solarDate = {
 	getWeekFev: function(solarYear, solarMonth, solarDay) {
 		//月周节日
 		var solarFestival = '';
-		var day = new Date(solarMonth == 1 ? solarYear - 1 : solarMonth, solarMonth == 1 ? 11 : solarMonth - 1, solarDay).getDay();
-		var firstWeek = new Date(solarMonth == 1 ? solarYear - 1 : solarMonth, solarMonth == 1 ? 11 : solarMonth - 1, 1).getDay();
+		var day = new Date(solarYear, solarMonth - 1, solarDay).getDay();
+		var firstWeek = new Date(solarYear, solarMonth - 1, 1).getDay();
 		var num = 0;
-		if (day < firstWeek) {
-			num = 1
-		} else {
-			num = solarDay % 7
-		}
-		//console.log(num)
+		//alert(solarMonth);
 		for (i in wFtv) {
 			if (wFtv[i].match(/^(\d{2})(\d)(\d)([\s\*])(.+)$/)) {
 				if (Number(RegExp.$1) == solarMonth) {
+
 					tmp1 = Number(RegExp.$2);
 					tmp2 = Number(RegExp.$3);
-					if (tmp1 == num && tmp2 == day) solarFestival = RegExp.$5
+					if (tmp2 > firstWeek) {
+						num = (tmp1 - 2) * 7 + (7 - firstWeek) + tmp2 + 1;
+						//console.log((tmp1-2)*7+(7-firstWeek)+tmp2+1)
+					} else {
+						num = (tmp1 - 1) * 7 + (7 - firstWeek) + tmp2 + 1;
+						//console.log((tmp1-1)*7+(7-firstWeek)+tmp2+1)
+					}
+					//alert(solarDay);
+					if (solarDay == num) {
+						//alert(RegExp.$3);
+						solarFestival = RegExp.$5
+					}
 				}
 			}
 		}
+		//alert(solarFestival)
 		return solarFestival
 	}
 }
@@ -767,15 +785,24 @@ $(function() {
 
 });
 
-// $('.date').on('click', function() {
+$('.date').on('click',"i.left", function() {
+	 mySwiper.slidePrev();
+	// $('.date').click(function(){
+	// 		
+	// })
+	// $('#ymym:after').click(function(){
+	//   mySwiper.slideNext();
+	// })
 // 
 // 	$('.tc').show();
 // 	$('.tc-innner').show();
 // 	tc();
 // 
 // 
-// });
-
+ });
+$('.date').on('click',"i.right", function() {
+	mySwiper.slideNext();
+})
 var e = 1;
 
 function tc() {

@@ -62,7 +62,7 @@
 				<div class="mod-visitor-hd"><span class="title">游客信息</span><span class="ml40">需填<em class="c-red">1</em>位，用于入园身份验证</span></div>
 				<div class="mod-visitor-bd">
 					<div class="namelist clearfix">
-						<div class="arrow-check active">梅玉函</div>
+						<div class="arrow-check active ellipsis">梅玉函函函</div>
 						<div class="checkname"><span>更换/新增</span></div>
 					</div>
 					<div class="bdline mt40"></div>
@@ -164,21 +164,21 @@
 				<div class="input-group">
 					<div class="input-row flex input-row-clear">
 						<label>姓名</label>
-						<input type="text" class="flex-1" placeholder="必填 请输入证件上的姓名">
+						<input type="text" name="name" class="flex-1" placeholder="必填 请输入证件上的姓名">
 						<i></i>
 					</div>
 				</div>
 				<div class="input-group">
 					<div class="input-row flex input-row-clear phonenum">
 						<label>手机号</label>
-						<input type="text" class="flex-1" placeholder="必填 请输入联系人手机号">
+						<input type="text" name="phone" class="flex-1" placeholder="必填 请输入联系人手机号">
 						<i></i>
 					</div>
 				</div>
 				<div class="input-group">
 					<div class="input-row flex input-row-clear">
 						<label>身份证号</label>
-						<input type="text" class="flex-1" placeholder="选填 请输入游客身份证号">
+						<input type="text" name="cardId" class="flex-1" placeholder="选填 请输入游客身份证号">
 						<i></i>
 					</div>
 				</div>
@@ -207,8 +207,9 @@
 							<div class="bdline"></div>
 						</section>
 						<div class="child date">
+							<i class="left"></i>
 							<em class="f34" id="ymym">2016年06月</em>
-							<i></i>
+							<i class="right"></i>
 						</div>
 						<section class="calenda">
 							<div class="swiper-container">
@@ -324,26 +325,10 @@
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/rili.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/toast.js"></script>
 <script type="text/javascript">
 	/* 日历数据 */
-// 	function fillrili() {
-// 		var yearstr = "";
-// 		for (var i = 0; i < 150; i++) {
-// 			yearstr += '<div class="swiper-slide">' + (1900 + i) + '年</div>';
-// 		}
-// 		$('.swiper-container2 .swiper-wrapper').html(yearstr)
-// 		var monthstr = "";
-// 		for (var i = 1; i <= 12; i++) {
-// 			monthstr += '<div class="swiper-slide">' + i + '月</div>';
-// 		}
-// 		$('.swiper-container3 .swiper-wrapper').html(monthstr)
-// 		var daystr = "";
-// 		for (var i = 1; i <= 31; i++) {
-// 			daystr += '<div class="swiper-slide">' + i + '日</div>';
-// 		}
-// 		$('.swiper-container4 .swiper-wrapper').html(daystr)
-// 
-// 	}
+
 	/* 日历数据 筛选回填 */
 	// fillrili();
 	/* 购票须知 */
@@ -369,6 +354,30 @@
 			$(this).next('i').hide();
 		}
 	});
+	/* 校验 */
+	$('.edit-visitor').on('blur', 'input', function(){
+		var reglist={
+			name:/^[0-9]+$/,
+			phone:/^1[3-9]\d{9}$/,
+			cardId: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
+		}
+		
+		reg=reglist[$(this).attr('name')];
+		if($(this).attr('name')=='name'){
+			if(!$(this).val()){
+				showMessage('请输入正确的姓名！');
+
+			}
+			if(reg.test($(this).val())){
+				showMessage('姓名不能为纯数字');
+			}
+		}else{
+			if(!reg.test($(this).val())){
+				showMessage('请输入正确的身份证和手机号码');
+			}
+			}
+		
+	})
 	/* 点击清除 */
 	$('.edit-visitor').on('click', '.input-row-clear i', function() {
 		$(this).prev('input').val('').focus();

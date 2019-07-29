@@ -1304,3 +1304,58 @@ em {
 .checkbox.square-checkbox input[type=checkbox]:checked {
 	background-image: url(../img/xuanzhong@3x.png);
 }
+.cpt-toast {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    animation-duration: .3s;
+    max-width: 300px;
+    line-height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom:1;*display: inline;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    transform: translate(-50%,-50%);
+    transform: translate3d(-50%,-50%,0);
+    font-family: 微软雅黑,microsoft yahei;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    word-wrap: break-word
+}
+.animated {
+    animation-duration: .5s;
+    animation-fill-mode: both
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+.fadeOut {
+    animation-name: fadeOut
+}

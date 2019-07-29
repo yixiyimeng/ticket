@@ -13,29 +13,28 @@
 	line-height: .7rem;
 	font-size: .26rem;
 	color: #999;
-}
-.date.child  em{
 	position: relative;
 }
-.date.child  em:before,.date.child  em:after{
+
+.date.child  i.left,.date.child i.right{
 	position: absolute;
 	content: '';
 	height: 10px;
 	width: 10px;
 	border: 2px solid transparent;
 	display: block;
-	top: 5px;
+	top: 12px;
 	
-}.date.child  em:before{
+}.date.child  i.left{
 	border-top-color: #ddd;
 	border-left-color: #ddd;
-	left: -10px;
-	transform: rotate(-45deg);
+	left: 50%;
+	transform:translate(-50px) rotate(-45deg);
 }
-.date.child  em:after{
+.date.child  i.right{
 	border-top-color: #ddd;
 	border-right-color: #ddd;
-	right: -10px;transform: rotate(45deg);
+	left: 50%;transform:translate(37px) rotate(45deg);
 }
 .day {
 	height: .77rem;
