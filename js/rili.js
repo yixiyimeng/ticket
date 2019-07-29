@@ -1,12 +1,21 @@
 //全局的年月日，适用于任何时候获取今天的年月日。（很重要）
 var sev_m, sev_y, sev_d, active = 3;
 var mySwiper = null;
-var fillPrice=null;
+var fillPrice = null;
 var yl = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+var lFtv = new Array("0101*春节", "0115 元宵节", "0505 端午节", "0707 七夕情人节", "0715 中元节", "0815 中秋节", "0909 重阳节", "1208 腊八节",
+	"1224 小年", "0100*除夕");
+var sFtv = new Array("0101*元旦", "0214 情人节", "0308 妇女节", "0309 偶今天又长一岁拉", "0312 植树节", "0315 消费者权益日", "0401 愚人节",
+	"0418 MM的生日", "0501 劳动节", "0504 青年节", "0512 护士节", "0601 儿童节", "0701 建党节 香港回归纪念", "0801 建军节", "0808 父亲节",
+	"0909 毛席逝世纪念", "0910 教师节", "0928 孔子诞辰", "1001*国庆节",
+	"1006 老人节", "1024 联合国日", "1112 孙中山诞辰", "1220 澳门回归纪念", "1225 圣诞节", "1226 毛席诞辰")
 
 function setrili(callback) {
-	if(callback){
-		fillPrice=callback;
+	if (mySwiper) {
+		return false
+	}
+	if (callback) {
+		fillPrice = callback;
 	}
 	mySwiper = new Swiper('.swiper-container', {
 		initialSlide: 1,
@@ -227,7 +236,7 @@ function setrili(callback) {
 				}
 				//swiper.unlockSwipes();
 				/* 回填价格 */
-				if(fillPrice){
+				if (fillPrice) {
 					fillPrice();
 				}
 			},
@@ -303,7 +312,7 @@ function setrili(callback) {
 	});
 	//mySwiper.unlockSwipes();
 	/* 回填价格 */
-	if(fillPrice){
+	if (fillPrice) {
 		fillPrice();
 	}
 };
@@ -408,16 +417,26 @@ function get_first(a, b, c, d, e) {
 
 	for (var i = a; i > 0; i--) {
 		var bday = ldays - i + 1;
-		// 		var ly = LunarDate.GetLunarDayDetail(lb, lm, bday);
-		// 		var jq = getjq(lb, lm, bday);
-		// 		if (jq) {
-		// 			ly = '<font color="#00b7ec">' + jq;
-		// 		}
-		// var ly = '￥12';
+		//var ly = LunarDate.GetLunarDayDetail(lb, lm, bday);
+		var ly = LunarDate.GetLunarDayFev(lb, lm, bday);
+		//             var jq = getjq(lb, lm, bday);
+		//             if (jq) {
+		//                 ly = '<font color="#00b7ec">' + jq;
+		//             }
 		var jd = "";
 		var hb = lb + "-" + lm + "-" + bday;
+
+		// if (fj.indexOf(hb) >= 0) {
+		//     jd = "<span class='fangjia'></span>";
+		// }
+		// if (sb.indexOf(hb) >= 0) {
+		//     jd = "<span class='shangban'></span>";
+		// }
+		// if (gj.indexOf(hb) >= 0) {
+		//     ly = '<font color="#00b7ec">' + gjs[gj.indexOf(hb)];
+		// }
 		str += ' <td data_y="' + lb + '" data_m="' + lm + '" data_d="' + bday + '" class="list not_this js_up"><i>' + bday +
-			'</i>' + jd + '</td>';
+			'</i><em>' + ly + '</em>' + jd + '</td>';
 		if (num % 7 == 0) {
 			str += '</tr><tr>';
 		}
@@ -426,12 +445,17 @@ function get_first(a, b, c, d, e) {
 
 	for (var i = 1; i <= dd; i++) {
 		var bday = ldays - i + 1;
-		var ly = '';
+		// var ly = LunarDate.GetLunarDayDetail(b, c, i);
+		var ly = LunarDate.GetLunarDayFev(b, c, i);
+		//             var jq = getjq(b, c, i);
+		//             if (jq) {
+		//                 ly = '<font color="#00b7ec">' + jq;
+		//             }
 		var jd = "";
 		var hb = b + "-" + c + "-" + i;
 		if (new Date().getDate() == i && b == new Date().getFullYear() && c == (new Date().getMonth() + 1)) {
-			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i + '" class="list today"><i>' + i + '</i><em>' +
-				ly + '</em>' + jd + '</td>';
+			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i + '" class="list today"><i>' + i + '</i><em>' + ly +
+				'</em>' + jd + '</td>';
 		} else {
 			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i + '" class="list"><i>' + i + '</i><em>' + ly +
 				'</em>' + jd + '</td>';
@@ -447,12 +471,13 @@ function get_first(a, b, c, d, e) {
 	if (last <= 6) {
 
 		for (var i = 1; i <= last; i++) {
-			// 			var ly = LunarDate.GetLunarDayDetail(xb, xm, i);
-			// 			var jq = getjq(xb, xm, i);
-			// 			if (jq) {
-			// 				ly = '<font color="#00b7ec">' + jq;
-			// 			}
-			var ly = '';
+			// var ly = LunarDate.GetLunarDayDetail(xb, xm, i);
+			var ly = LunarDate.GetLunarDayFev(xb, xm, i);
+			//                 var jq = getjq(xb, xm, i);
+			//                 if (jq) {
+			//                     ly = '<font color="#00b7ec">' + jq;
+			//                 }
+
 			var jd = "";
 			var hb = xb + "-" + xm + "-" + i;
 			str += ' <td data_y="' + xb + '" data_m="' + xm + '" data_d="' + i + '" class="list not_this js_down"><i>' + i +
@@ -468,8 +493,8 @@ function get_first(a, b, c, d, e) {
 	}
 	document.getElementById(e).innerHTML = str;
 	bind_click(e);
-	
 }
+
 
 function bind_click(a) {
 	$("#" + a).find("td").unbind("click");
@@ -613,6 +638,26 @@ var LunarDate = {
 			this.e2c(solarYear, solarMonth, solarDay);
 			return this.GetcDateString(1);
 		}
+	},
+	GetLunarDayFev: function(solarYear, solarMonth, solarDay) {
+		if (solarYear < 1921 || solarYear > 2020) {
+			return "";
+		} else {
+			solarMonth = (parseInt(solarMonth) > 0) ? (solarMonth - 1) : 11;
+			this.e2c(solarYear, solarMonth, solarDay);
+			var lunarFestival = '';
+			for (i in lFtv) {
+				if (lFtv[i].match(/^(\d{2})(.{2})([\s\*])(.+)$/)) {
+
+					tmp1 = Number(RegExp.$1) - this.Month;
+					tmp2 = Number(RegExp.$2) - this.Day;
+					//console.log(this.Month);
+					if (tmp1 == 0 && tmp2 == 0) lunarFestival = RegExp.$4
+				}
+			}
+			return lunarFestival;
+		}
+
 	}
 };
 
@@ -659,14 +704,14 @@ $(function() {
 
 });
 
-$('.date').on('click', function() {
-
-	$('.tc').show();
-	$('.tc-innner').show();
-	tc();
-
-
-});
+// $('.date').on('click', function() {
+// 
+// 	$('.tc').show();
+// 	$('.tc-innner').show();
+// 	tc();
+// 
+// 
+// });
 
 var e = 1;
 

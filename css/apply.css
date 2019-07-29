@@ -115,8 +115,7 @@
 }
 
 .mod-refunddetails .mod-card-bd .info {
-	padding-bottom: .4rem;
-	border-bottom: 1px dashed #e6e6e6;
+	padding-bottom: .3rem;
 }
 
 .mod-refunddetails .mod-card-bd .info .handle {
@@ -137,7 +136,10 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
-
+.mod-refunddetails .mod-card-bd .moreinfo{
+	padding-bottom: .4rem;
+	border-bottom: 1px dashed #e6e6e6;
+}
 .mod-refunddetails .timeaxis {
 	padding: .38rem 0 .64rem;
 	font-size: .24rem;

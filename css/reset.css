@@ -1194,7 +1194,7 @@ em {
 	color: #ffab00;
 }
 .tabpanel{
-	display: none;
+	/* display: none; */
 }
 .scroll_top {
 	height: .7rem;
@@ -1286,7 +1286,7 @@ em {
 	height: .3rem;
 	width: .3rem;
 	background: no-repeat center center;
-	background-size: contain;
+	background-size: cover;
 }
 
 .checkbox.circular-checkbox input[type=checkbox] {

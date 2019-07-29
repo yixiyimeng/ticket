@@ -29,7 +29,9 @@
 					<div class="info">
 						<div class="flex"><span class="subtitle">退款金额</span><span class="flex-1"><em class="c-red">￥100</em> (1张)</span>
 							<a href="javascript:;" class="handle">收起</a></div>
-						<div class="mt30 flex"><span class="subtitle">退回账户</span>
+					</div>
+					<div class="moreinfo">
+						<div class=" flex"><span class="subtitle">退回账户</span>
 							<span class="flex-1">微信支付账户</span></div>
 						<div class="mt30 flex"><span class="subtitle">退款流水号</span>
 							<span class="flex-1">123456789123456789</span></div>
@@ -37,20 +39,20 @@
 					<div class="timeaxis">
 						<div class="timeaxis-item">
 							<div class="title">提交退款申请</div>
-							<p>2019-07-01  16:20:25</p>
+							<p>2019-07-01 16:20:25</p>
 						</div>
 						<div class="timeaxis-item">
 							<div class="title">商家同意退款</div>
-							<p>2019-07-01  16:20:25</p>
+							<p>2019-07-01 16:20:25</p>
 						</div>
 						<div class="timeaxis-item">
 							<div class="title">审核通过</div>
-							<p>2019-07-01  16:20:25</p>
+							<p>2019-07-01 16:20:25</p>
 							<p>24.9元的退款申请已提交至微信</p>
 						</div>
 						<div class="timeaxis-item active">
 							<div class="title">微信正在处理您的退款</div>
-							<p>2019-07-01  16:20:25</p>
+							<p>2019-07-01 16:20:25</p>
 							<p>预计微信会在1天内处理完成。</p>
 							<p>交易号 <em class="c-blue">420000231255411455</em></p>
 							<p>拨打微信客服 <a href="tel:95017" class="c-blue">95017</a> 查询</p>
@@ -63,3 +65,14 @@
 	</body>
 </html>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	$('.handle').click(function(){
+		if($(this).hasClass('active')){
+			$(this).removeClass('active').text('收起');
+			$('.timeaxis,.moreinfo').show();
+		}else{
+			$('.timeaxis,.moreinfo').hide();
+			$(this).addClass('active').text('展开');
+		}
+	})
+</script>

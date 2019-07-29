@@ -204,7 +204,11 @@ body {
 .mod-visitor .mod-visitor-bd .visitorinfo p+p {
 	margin-top: .26rem;
 }
-
+.mod-visitor .mod-visitor-bd .visitorinfo .add{
+	color: #3a8dff;
+	font-size: .26rem;
+	display:none;
+}
 .mod-visitor .mod-visitor-bd .visitorinfo .edit {
 	position: absolute;
 	right: 0;
@@ -222,7 +226,21 @@ body {
 .mod-discount .mod-discount-hd {
 	font-size: .36rem;
 }
-
+.mod-discount .mod-discount-bd .mod-discount-item{
+	position: relative;
+}
+.mod-discount .mod-discount-bd .mod-discount-item:after{
+	display:block;
+	content:'';
+	height:.16rem;
+	width:.16rem;
+	background: url(../img/xq-jiantouhui@3x.png) no-repeat right center;
+	background-size: contain;
+	position: absolute;
+	right: -.2rem;
+	top:50%;
+	transform: translateY(-50%);
+}
 .mod-discount .mod-discount-bd .mod-discount-item i {
 	display: inline-block;
 	height: .4rem;
@@ -238,7 +256,6 @@ body {
 }
 
 .shopbar {
-
 	background: #fff;
 	position: fixed;
 	bottom: 0;

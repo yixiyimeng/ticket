@@ -94,3 +94,25 @@
 	</body>
 </html>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	/* 购物车 */
+	$('.shophandle .add').click(function(){
+		var num=parseInt($('.shophandle input').val());
+		num++
+		$('.shophandle input').val(num);
+	});
+	$('.shophandle .minus').click(function(){
+		var num=parseInt($('.shophandle input').val());
+		if(num>1){
+				num--
+		}
+		$('.shophandle input').val(num);
+	});
+	$('.shophandle input').change(function(){
+		var num=parseInt($('.shophandle input').val());
+		if(num<1||!num){
+			num=1
+		}
+		$('.shophandle input').val(num);
+	})
+</script>

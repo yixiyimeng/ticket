@@ -71,11 +71,12 @@
 							<div>游客</div>
 							<a href="javascript:;" class="close"></a>
 						</div>
-						<div>
+						<div class="visitorinfo-txt">
 							<p class="ellipsis">梅玉函</p>
 							<p class="ellipsis">手机号 15838022930</p>
 							<p class="ellipsis">身份证号 411322199206271029</p>
 						</div>
+						<a href="javascript:;" class="add">点击补全游客信息</a>
 						<a href="javascript:;" class="edit">编辑</a>
 					</div>
 				</div>
@@ -325,28 +326,28 @@
 <script src="js/rili.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	/* 日历数据 */
-	function fillrili() {
-		var yearstr = "";
-		for (var i = 0; i < 150; i++) {
-			yearstr += '<div class="swiper-slide">' + (1900 + i) + '年</div>';
-		}
-		$('.swiper-container2 .swiper-wrapper').html(yearstr)
-		var monthstr = "";
-		for (var i = 1; i <= 12; i++) {
-			monthstr += '<div class="swiper-slide">' + i + '月</div>';
-		}
-		$('.swiper-container3 .swiper-wrapper').html(monthstr)
-		var daystr = "";
-		for (var i = 1; i <= 31; i++) {
-			daystr += '<div class="swiper-slide">' + i + '日</div>';
-		}
-		$('.swiper-container4 .swiper-wrapper').html(daystr)
-
-	}
+// 	function fillrili() {
+// 		var yearstr = "";
+// 		for (var i = 0; i < 150; i++) {
+// 			yearstr += '<div class="swiper-slide">' + (1900 + i) + '年</div>';
+// 		}
+// 		$('.swiper-container2 .swiper-wrapper').html(yearstr)
+// 		var monthstr = "";
+// 		for (var i = 1; i <= 12; i++) {
+// 			monthstr += '<div class="swiper-slide">' + i + '月</div>';
+// 		}
+// 		$('.swiper-container3 .swiper-wrapper').html(monthstr)
+// 		var daystr = "";
+// 		for (var i = 1; i <= 31; i++) {
+// 			daystr += '<div class="swiper-slide">' + i + '日</div>';
+// 		}
+// 		$('.swiper-container4 .swiper-wrapper').html(daystr)
+// 
+// 	}
 	/* 日历数据 筛选回填 */
-	fillrili();
+	// fillrili();
 	/* 购票须知 */
-	$('.ticketinfo .know').click(function() {
+	$('.ticketinfo .know,.ticketinfo .tip').click(function() {
 		$('.mask').fadeIn();
 		$('.mod-buyinfo').slideDown(300);
 	});
@@ -357,7 +358,7 @@
 		setrili(function() {
 			/* 回填价格 */
 			//$('#d3 tr td em')
-			$(".swiper-slide-active tr td em").text('￥14');
+			//$(".swiper-slide-active tr td em").text('￥14');
 		});
 	});
 	/* 清除按钮 */
@@ -388,11 +389,17 @@
 		$('.more-visitor').slideDown(300);
 	})
 	/* 更多游客--新增游客 */
-	$('.more-visitor .addvisitorbtn').click(function(){
+	$('.more-visitor .addvisitorbtn,.visitorinfo .add').click(function(){
+		$('.mask').fadeIn();
 		$('.popup').slideUp(300);
 		$('.edit-visitor .del').hide();
 		$('.edit-visitor .popup-hd .title').text('新增游客')
 		$('.edit-visitor').slideDown(300);
+	});
+	$('.more-visitor .del').click(function(){
+		$('.mask').fadeOut();
+		$('.popup').slideUp(300);
+		
 	});
 	/* 更多游客--编辑游客 */
 	$('.more-visitor').on("click",".edit",function(){
@@ -408,4 +415,45 @@
 		$('.edit-visitor .popup-hd .title').text('编辑游客')
 		$('.edit-visitor').slideDown(300);
 	});
+	/* 删除*/
+	$('.visitorinfo .close').click(function(){
+		$('.visitorinfo .add').show();
+		$(this).hide();
+		$('.visitorinfo .visitorinfo-txt').hide();
+	});
+	/* 使用日期 */
+	$('.daylist .arrow-check').click(function(){
+		$('.daylist .arrow-check.active').removeClass('active')
+		$(this).addClass('active')
+	});
+	/* 更多游客 */
+	$('.more-visitor').on('change','.visitor-item input',function(){
+		var num=0;
+		$('.more-visitor .visitor-item input').each(function(item){
+			if($(this).is(':checked')){
+				num++
+			}
+		});
+		$('.more-visitor .popup-hd .title em').text(num)
+	});
+	/* 购物车 */
+	$('.shophandle .add').click(function(){
+		var num=parseInt($('.shophandle input').val());
+		num++
+		$('.shophandle input').val(num);
+	});
+	$('.shophandle .minus').click(function(){
+		var num=parseInt($('.shophandle input').val());
+		if(num>1){
+				num--
+		}
+		$('.shophandle input').val(num);
+	});
+	$('.shophandle input').change(function(){
+		var num=parseInt($('.shophandle input').val());
+		if(num<1||!num){
+			num=1
+		}
+		$('.shophandle input').val(num);
+	})
 </script>

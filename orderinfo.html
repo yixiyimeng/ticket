@@ -25,7 +25,7 @@
 			<div class="mod-card bgfff ticketinfo mt10">
 				<div class="flex">
 					<div class="flex-1 title mr80">郑州温泉门票郑州温泉门票郑州温泉门票</div>
-					<a href="" class="know">购买须知</a>
+					<a href="javascript:;" class="know">购买须知</a>
 				</div>
 				<div class="bdline mt50"></div>
 				<div class="flex txt mt36">
@@ -207,6 +207,47 @@
 				<div class="close"></div>
 			</div>
 		</div>
+		<div class="mask"></div>
+		<!-- 购买须知 -->
+		<div class="popup mod-buyinfo">
+			<div class="popup-hd">购买须知</div>
+			<div class="popup-bd">
+				<div class="mod-buyinfo-item">
+					<div class="title">购买须知</div>
+					<div class="flex  flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">18:00之前可定今日，预定后立即可用</p>
+					</div>
+					<div class="flex mt30  flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">18:00之前可定今日，预定后立即可用</p>
+					</div>
+					<div class="flex mt30 flex-align-top">
+						<div class="subtitle">随买随用</div>
+						<p class="flex-1">游玩日截止后6天 23:59 前未消费可申请
+							退款，退款不收手续费。过期未消费系统
+							自动发起退款申请。
+							一笔订单多张票不支持部分退款。下单后
+							不支持改期。</p>
+					</div>
+				</div>
+				<div class="mod-buyinfo-item mt40">
+					<div class="title">使用说明</div>
+					<div class="flex  flex-align-top">
+						<div>入院时间 </div>
+						<p class="flex-1 ml40">08:00-18:00</p>
+					</div>
+					<div class="flex  flex-align-top mt20">
+						<div>入院地址 </div>
+						<p class="flex-1 ml40">郑州市金水区动物园</p>
+					</div>
+		
+				</div>
+			</div>
+			<div class="popup-ft">
+				<a href="javascript:;" class="close">关闭</a>
+			</div>
+		</div>
 	</body>
 </html>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
@@ -221,7 +262,16 @@
 	});
 	$('.sildePage .close, .sildePage .reback').click(function() {
 		$('.sildePage').removeClass('active')
-	})
+	});
+	/* 购票须知 */
+	$('.ticketinfo .know').click(function() {
+		$('.mask').fadeIn();
+		$('.mod-buyinfo').slideDown(300);
+	});
+	$('.popup .close,.mask').click(function() {
+		$('.mask').fadeOut();
+		$('.popup').slideUp(300);
+			});
 	/* 复制 */
 	function jsCopy() {
 		var u = navigator.userAgent;
