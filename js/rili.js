@@ -3,12 +3,14 @@ var sev_m, sev_y, sev_d, active = 3;
 var mySwiper = null;
 var fillPrice = null;
 var yl = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var lFtv = new Array("0101*春节", "0115 元宵节", "0505 端午节", "0707 七夕情人节", "0715 中元节", "0815 中秋节", "0909 重阳节", "1208 腊八节",
+var lFtv = new Array("0101*春节", "0115 元宵", "0505 端午", "0707 七夕", "0715 中元", "0815 中秋", "0909 重阳", "1208 腊八",
 	"1224 小年", "0100*除夕");
-var sFtv = new Array("0101*元旦", "0214 情人节", "0308 妇女节", "0309 偶今天又长一岁拉", "0312 植树节", "0315 消费者权益日", "0401 愚人节",
-	"0418 MM的生日", "0501 劳动节", "0504 青年节", "0512 护士节", "0601 儿童节", "0701 建党节 香港回归纪念", "0801 建军节", "0808 父亲节",
-	"0909 毛席逝世纪念", "0910 教师节", "0928 孔子诞辰", "1001*国庆节",
-	"1006 老人节", "1024 联合国日", "1112 孙中山诞辰", "1220 澳门回归纪念", "1225 圣诞节", "1226 毛席诞辰")
+var sFtv = new Array("0101*元旦", "0214 情人", "0308 妇女", "0312 植树", "0401 愚人",
+	"0501 劳动", "0504 青年", "0601 儿童", "0701 建党", "0801 建军",
+	"0910 教师", "1001*国庆",
+	"1225 圣诞", )
+var wFtv = new Array(
+	"1144 感恩节")
 
 function setrili(callback) {
 	if (mySwiper) {
@@ -418,11 +420,12 @@ function get_first(a, b, c, d, e) {
 	for (var i = a; i > 0; i--) {
 		var bday = ldays - i + 1;
 		//var ly = LunarDate.GetLunarDayDetail(lb, lm, bday);
-		var ly = LunarDate.GetLunarDayFev(lb, lm, bday);
+		//var ly = LunarDate.GetLunarDayFev(lb, lm, bday);
 		//             var jq = getjq(lb, lm, bday);
 		//             if (jq) {
 		//                 ly = '<font color="#00b7ec">' + jq;
 		//             }
+		var ly = "";
 		var jd = "";
 		var hb = lb + "-" + lm + "-" + bday;
 
@@ -446,18 +449,36 @@ function get_first(a, b, c, d, e) {
 	for (var i = 1; i <= dd; i++) {
 		var bday = ldays - i + 1;
 		// var ly = LunarDate.GetLunarDayDetail(b, c, i);
-		var ly = LunarDate.GetLunarDayFev(b, c, i);
+		var ly = '';
+		var Fev = solarDate.GetSolarDayFev(b, c, i);
+		if (!Fev) {
+			Fev = LunarDate.GetLunarDayFev(b, c, i);
+
+		} else {
+			Fev = solarDate.getWeekFev(b, c, i)
+		}
+		//var ly = LunarDate.GetLunarDayFev(b, c, i);
 		//             var jq = getjq(b, c, i);
 		//             if (jq) {
 		//                 ly = '<font color="#00b7ec">' + jq;
 		//             }
+		var day = Fev ? ('<i style="font-size:16px;">' + Fev + '</i>') : ('<i>' + i + '</i>');
 		var jd = "";
 		var hb = b + "-" + c + "-" + i;
 		if (new Date().getDate() == i && b == new Date().getFullYear() && c == (new Date().getMonth() + 1)) {
-			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i + '" class="list today"><i>' + i + '</i><em>' + ly +
+			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i +
+				'" class="list xuanzhong"><i style="font-size:16px;">今天</i><em>' + ly +
+				'</em>' + jd + '</td>';
+		} else if (new Date().getDate() == (i - 1) && b == new Date().getFullYear() && c == (new Date().getMonth() + 1)) {
+			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i +
+				'" class="list"><i style="font-size:16px;">明天</i><em>' + ly +
+				'</em>' + jd + '</td>';
+		} else if (new Date().getDate() == (i - 2) && b == new Date().getFullYear() && c == (new Date().getMonth() + 1)) {
+			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i +
+				'" class="list"><i style="font-size:16px;">后天</i><em>' + ly +
 				'</em>' + jd + '</td>';
 		} else {
-			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i + '" class="list"><i>' + i + '</i><em>' + ly +
+			str += ' <td data_y="' + b + '" data_m="' + c + '" data_d="' + i + '" class="list">' + day + '<em>' + ly +
 				'</em>' + jd + '</td>';
 		}
 
@@ -473,14 +494,16 @@ function get_first(a, b, c, d, e) {
 		for (var i = 1; i <= last; i++) {
 			// var ly = LunarDate.GetLunarDayDetail(xb, xm, i);
 			var ly = LunarDate.GetLunarDayFev(xb, xm, i);
-			//                 var jq = getjq(xb, xm, i);
-			//                 if (jq) {
-			//                     ly = '<font color="#00b7ec">' + jq;
-			//                 }
-
+			var Fev = solarDate.GetSolarDayFev(xb, xm, i);
+			if (!Fev) {
+				Fev = LunarDate.GetLunarDayFev(xb, xm, i);
+			} else {
+				Fev = solarDate.getWeekFev(xb, xm, i)
+			}
+			var day = Fev ? Fev : i;
 			var jd = "";
 			var hb = xb + "-" + xm + "-" + i;
-			str += ' <td data_y="' + xb + '" data_m="' + xm + '" data_d="' + i + '" class="list not_this js_down"><i>' + i +
+			str += ' <td data_y="' + xb + '" data_m="' + xm + '" data_d="' + day + '" class="list not_this js_down"><i>' + i +
 				'</i><em>' + ly + '</em>' + jd + '</td>';
 			if (num % 7 == 0) {
 				str += '</tr><tr>';
@@ -540,6 +563,46 @@ function set_top(a) {
 		a.addClass("xuanzhong");
 	}
 }
+var solarDate = {
+	GetSolarDayFev: function(solarYear, solarMonth, solarDay) {
+		//console.log(arguments[0], arguments[1], arguments[2]);
+		var solarFestival = '';
+		for (i in sFtv) {
+			if (sFtv[i].match(/^(\d{2})(.{2})([\s\*])(.+)$/)) {
+				tmp1 = Number(RegExp.$1) - solarMonth;
+				tmp2 = Number(RegExp.$2) - solarDay;
+
+				if (tmp1 == 0 && tmp2 == 0) solarFestival = RegExp.$4
+			}
+		}
+		//console.log(solarFestival);
+		return solarFestival;
+	},
+	getWeekFev: function(solarYear, solarMonth, solarDay) {
+		//月周节日
+		var solarFestival = '';
+		var day = new Date(solarMonth == 1 ? solarYear - 1 : solarMonth, solarMonth == 1 ? 11 : solarMonth - 1, solarDay).getDay();
+		var firstWeek = new Date(solarMonth == 1 ? solarYear - 1 : solarMonth, solarMonth == 1 ? 11 : solarMonth - 1, 1).getDay();
+		var num = 0;
+		if (day < firstWeek) {
+			num = 1
+		} else {
+			num = solarDay % 7
+		}
+		//console.log(num)
+		for (i in wFtv) {
+			if (wFtv[i].match(/^(\d{2})(\d)(\d)([\s\*])(.+)$/)) {
+				if (Number(RegExp.$1) == solarMonth) {
+					tmp1 = Number(RegExp.$2);
+					tmp2 = Number(RegExp.$3);
+					if (tmp1 == num && tmp2 == day) solarFestival = RegExp.$5
+				}
+			}
+		}
+		return solarFestival
+	}
+}
+
 
 var LunarDate = {
 	madd: new Array(0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334),
