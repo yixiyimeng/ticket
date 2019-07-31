@@ -289,7 +289,9 @@
 .tables .list i {
 	font-size: .36rem;
 	display: block;
-
+font-weight: bold;
+line-height: .4rem;
+margin-top: .04rem;
 }
 
 .tables .list em {

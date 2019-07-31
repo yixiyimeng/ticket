@@ -443,7 +443,9 @@ em {
 .c333 {
 	color: #333;
 }
-
+.fbold{
+	font-weight: bold;
+	}
 .ft20 {
 	font-size: .2rem;
 }
@@ -479,6 +481,7 @@ em {
 .modbox .modbox-hd .title {
 	font-size: .36rem;
 	color: #333;
+	font-weight: bold;
 }
 
 .modbox .modbox-hd .thumb {
@@ -920,6 +923,7 @@ em {
 .spotslist .spots-item .name {
 	color: #333;
 	font-size: .3rem;
+	font-weight: bold;
 }
 
 .spotslist .spots-item .flex+p {
@@ -1227,6 +1231,7 @@ em {
 	font-size: .3rem;
 	background: #fff;
 	padding: .5rem 0;
+	font-weight: bold;
 }
 
 .mod-buyinfo .popup-bd {
@@ -1268,6 +1273,7 @@ em {
 	font-size: .36rem;
 	color: #333;
 	padding-bottom: .4rem;
+	font-weight: bold;
 }
 
 .mod-buyinfo .mod-buyinfo-item .subtitle {

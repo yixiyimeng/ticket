@@ -37,6 +37,7 @@ html,body{
 .details-info .base-info .name {
 	color: #333;
 	font-size: .34rem;
+	font-weight: bold;
 }
 
 .details-info .base-info .tag a,

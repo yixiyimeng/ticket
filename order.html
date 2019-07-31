@@ -159,7 +159,8 @@
 		</div>
 		<!-- 编辑游客信息 -->
 		<div class="popup edit-visitor">
-			<div class="popup-hd"><span class="title">编辑游客</span> <a href="javascript:;" class="cancelbtn">取消</a><a href="javascript:;" class="okbtn">完成</a></div>
+			<div class="popup-hd"><span class="title">编辑游客</span> <a href="javascript:;" class="cancelbtn">取消</a><a href="javascript:;"
+				 class="okbtn">完成</a></div>
 			<div class="popup-bd">
 				<div class="input-group">
 					<div class="input-row flex input-row-clear">
@@ -287,7 +288,7 @@
 			</div>
 		</div>
 		<!-- 更过游客 -->
-		<div class="popup more-visitor" >
+		<div class="popup more-visitor">
 			<div class="popup-hd">
 				<div class="title">再选<em class="c-red ml10 mr10">0</em>位</div>
 				<a href="javascript:;" class="close"></a>
@@ -343,7 +344,7 @@
 		setrili(function() {
 			/* 回填价格 */
 			//$('#d3 tr td em')
-			$(".swiper-slide-active tr td em").text('￥14');
+			$(".swiper-slide-active tr:not(.not_this js_up) td em").text('￥14');
 		});
 	});
 	/* 清除按钮 */
@@ -355,28 +356,28 @@
 		}
 	});
 	/* 校验 */
-	$('.edit-visitor').on('blur', 'input', function(){
-		var reglist={
-			name:/^[0-9]+$/,
-			phone:/^1[3-9]\d{9}$/,
+	$('.edit-visitor').on('blur', 'input', function() {
+		var reglist = {
+			name: /^[0-9]+$/,
+			phone: /^1[3-9]\d{9}$/,
 			cardId: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
 		}
-		
-		reg=reglist[$(this).attr('name')];
-		if($(this).attr('name')=='name'){
-			if(!$(this).val()){
+
+		reg = reglist[$(this).attr('name')];
+		if ($(this).attr('name') == 'name') {
+			if (!$(this).val()) {
 				showMessage('请输入正确的姓名！');
 
 			}
-			if(reg.test($(this).val())){
+			if (reg.test($(this).val())) {
 				showMessage('姓名不能为纯数字');
 			}
-		}else{
-			if(!reg.test($(this).val())){
+		} else {
+			if (!reg.test($(this).val())) {
 				showMessage('请输入正确的身份证和手机号码');
 			}
-			}
-		
+		}
+
 	})
 	/* 点击清除 */
 	$('.edit-visitor').on('click', '.input-row-clear i', function() {
@@ -393,25 +394,25 @@
 		$('.shopbar .detailslist').slideUp(300);
 	});
 	/*更多游客  */
-	$('.mod-visitor .checkname').click(function(){
+	$('.mod-visitor .checkname').click(function() {
 		$('.mask').fadeIn();
 		$('.more-visitor').slideDown(300);
 	})
 	/* 更多游客--新增游客 */
-	$('.more-visitor .addvisitorbtn,.visitorinfo .add').click(function(){
+	$('.more-visitor .addvisitorbtn,.visitorinfo .add').click(function() {
 		$('.mask').fadeIn();
 		$('.popup').slideUp(300);
 		$('.edit-visitor .del').hide();
 		$('.edit-visitor .popup-hd .title').text('新增游客')
 		$('.edit-visitor').slideDown(300);
 	});
-	$('.more-visitor .del').click(function(){
+	$('.more-visitor .del').click(function() {
 		$('.mask').fadeOut();
 		$('.popup').slideUp(300);
-		
+
 	});
 	/* 更多游客--编辑游客 */
-	$('.more-visitor').on("click",".edit",function(){
+	$('.more-visitor').on("click", ".edit", function() {
 		$('.popup').slideUp(300);
 		$('.edit-visitor .del').show();
 		$('.edit-visitor .popup-hd .title').text('编辑游客')
@@ -425,43 +426,43 @@
 		$('.edit-visitor').slideDown(300);
 	});
 	/* 删除*/
-	$('.visitorinfo .close').click(function(){
+	$('.visitorinfo .close').click(function() {
 		$('.visitorinfo .add').show();
 		$(this).hide();
 		$('.visitorinfo .visitorinfo-txt').hide();
 	});
 	/* 使用日期 */
-	$('.daylist .arrow-check').click(function(){
+	$('.daylist .arrow-check').click(function() {
 		$('.daylist .arrow-check.active').removeClass('active')
 		$(this).addClass('active')
 	});
 	/* 更多游客 */
-	$('.more-visitor').on('change','.visitor-item input',function(){
-		var num=0;
-		$('.more-visitor .visitor-item input').each(function(item){
-			if($(this).is(':checked')){
+	$('.more-visitor').on('change', '.visitor-item input', function() {
+		var num = 0;
+		$('.more-visitor .visitor-item input').each(function(item) {
+			if ($(this).is(':checked')) {
 				num++
 			}
 		});
 		$('.more-visitor .popup-hd .title em').text(num)
 	});
 	/* 购物车 */
-	$('.shophandle .add').click(function(){
-		var num=parseInt($('.shophandle input').val());
+	$('.shophandle .add').click(function() {
+		var num = parseInt($('.shophandle input').val());
 		num++
 		$('.shophandle input').val(num);
 	});
-	$('.shophandle .minus').click(function(){
-		var num=parseInt($('.shophandle input').val());
-		if(num>1){
-				num--
+	$('.shophandle .minus').click(function() {
+		var num = parseInt($('.shophandle input').val());
+		if (num > 1) {
+			num--
 		}
 		$('.shophandle input').val(num);
 	});
-	$('.shophandle input').change(function(){
-		var num=parseInt($('.shophandle input').val());
-		if(num<1||!num){
-			num=1
+	$('.shophandle input').change(function() {
+		var num = parseInt($('.shophandle input').val());
+		if (num < 1 || !num) {
+			num = 1
 		}
 		$('.shophandle input').val(num);
 	})

@@ -360,7 +360,10 @@ function jump(yyyy, mm, dd) {
 
 	$("#ymym").html(sev_y + "年" + sev_m + "月");
 	$(".covers").hide();
-	mySwiper.slideTo(2, 500, false);
+	var activeIndex=mySwiper.activeIndex;
+	var slideTocallback=(activeIndex==2&&fillPrice)?fillPrice():false;
+	mySwiper.slideTo(2, 500, slideTocallback);
+	//mySwiper.slideTo(2, 500, false);
 	click_sev();
 
 }

@@ -153,6 +153,7 @@
 .mod-refunddetails .timeaxis .timeaxis-item.active .title{
 	font-size: .3rem;
 	color: #2a99f1;
+	font-weight: bold;
 }
 .mod-refunddetails .timeaxis p {
 	margin-top: .2rem;
@@ -161,7 +162,7 @@
 .mod-refunddetails .timeaxis .timeaxis-item {
 	position: relative;
 	padding-bottom: .54rem;
-	font-weight: bold;
+	
 }
 .mod-refunddetails .timeaxis .timeaxis-item.active{
 	font-size: .26rem;

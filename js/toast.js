@@ -17,7 +17,7 @@
 			document.getElementsByTagName("head")[0].appendChild(link);
 		}
 	}
-	loadStyles('css/animate.css');
+	//loadStyles('css/animate.css');
 	$.fn.toast = function(options) {
 		var $this = $(this);
 		var _this = this;
