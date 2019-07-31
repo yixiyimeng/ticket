@@ -128,9 +128,11 @@ body {
 	background: #e7edf7;
 }
 
-.mod-visitor .mod-visitor-hd .title {
+.mod-visitor .mod-visitor-hd .title ,
+.mod-discount .mod-discount-hd {
 	font-size: .36rem;
 	color: #333;
+	font-weight: bold;
 }
 
 .mod-visitor .mod-visitor-bd {
@@ -222,10 +224,10 @@ body {
 	line-height: 1.2rem;
 	color: #333;
 }
-
+/* 
 .mod-discount .mod-discount-hd {
 	font-size: .36rem;
-}
+} */
 .mod-discount .mod-discount-bd .mod-discount-item{
 	position: relative;
 }
