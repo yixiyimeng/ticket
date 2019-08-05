@@ -46,7 +46,16 @@
 					<span>可退金额<em class="c-red ml70">￥24.60</em></span>
 					<div class="showdetails"><em>查看明细</em><i></i></div>
 				</div>
-
+				
+			</div>
+			<div class="pricelist modbox bgfff pd24">
+				<div class="bdline"></div>
+				<div class="view-cell ">
+					<span>门票价格<em class="ml70">￥55*1</em></span>
+				</div>
+				<div class="view-cell ">
+					<span>门票价格<em class="ml70">￥55*1</em></span>
+				</div>
 			</div>
 			<div class="modbox mt10 bgfff pd24">
 				<div class="view-cell ">
@@ -54,7 +63,7 @@
 				</div>
 				<div class="view-cell flex flex-pack-justify">
 					<span>原路返回<em class="c-red ml15 ft20">（1-7个工作日内退款到原支付方式）</em></span>
-					<div class="circular-checkbox checkbox"><input type="checkbox"></div>
+					<div class="circular-checkbox checkbox"><input type="checkbox" checked="checked"></div>
 				</div>
 
 			</div>
@@ -78,9 +87,9 @@
 						<span class="c333">天气原因不方便出行</span>
 						<div class="square-checkbox checkbox"><input type="checkbox"></div>
 					</label>
-			
+
 				</div>
-			
+
 			</div>
 			<div class="modbox mt10 bgfff pd24">
 				<div class="view-cell ">更多不爽？必须吐槽</div>
@@ -96,23 +105,28 @@
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 	/* 购物车 */
-	$('.shophandle .add').click(function(){
-		var num=parseInt($('.shophandle input').val());
+	$('.shophandle .add').click(function() {
+		var num = parseInt($('.shophandle input').val());
 		num++
 		$('.shophandle input').val(num);
 	});
-	$('.shophandle .minus').click(function(){
-		var num=parseInt($('.shophandle input').val());
-		if(num>1){
-				num--
+	$('.shophandle .minus').click(function() {
+		var num = parseInt($('.shophandle input').val());
+		if (num > 1) {
+			num--
 		}
 		$('.shophandle input').val(num);
 	});
-	$('.shophandle input').change(function(){
-		var num=parseInt($('.shophandle input').val());
-		if(num<1||!num){
-			num=1
+	$('.shophandle input').change(function() {
+		var num = parseInt($('.shophandle input').val());
+		if (num < 1 || !num) {
+			num = 1
 		}
 		$('.shophandle input').val(num);
+	});
+	/* 查看明细 */
+	$('.showdetails').click(function(){
+		$(this).toggleClass('active');
+		$('.pricelist').slideToggle()
 	})
 </script>

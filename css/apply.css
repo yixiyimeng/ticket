@@ -62,6 +62,14 @@
 	margin-left: .1rem;
 }
 
+.page .pricelist {
+	display: none;
+}
+
+.page .showdetails.active i {
+	transform: rotate(180deg);
+}
+
 .applyBtn {
 	color: #ff5b5b;
 	font-size: .3rem;
@@ -136,10 +144,12 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
-.mod-refunddetails .mod-card-bd .moreinfo{
+
+.mod-refunddetails .mod-card-bd .moreinfo {
 	padding-bottom: .4rem;
 	border-bottom: 1px dashed #e6e6e6;
 }
+
 .mod-refunddetails .timeaxis {
 	padding: .38rem 0 .64rem;
 	font-size: .24rem;
@@ -150,11 +160,13 @@
 .mod-refunddetails .timeaxis .title {
 	color: #333;
 }
-.mod-refunddetails .timeaxis .timeaxis-item.active .title{
+
+.mod-refunddetails .timeaxis .timeaxis-item.active .title {
 	font-size: .3rem;
 	color: #2a99f1;
 	font-weight: bold;
 }
+
 .mod-refunddetails .timeaxis p {
 	margin-top: .2rem;
 }
@@ -162,18 +174,23 @@
 .mod-refunddetails .timeaxis .timeaxis-item {
 	position: relative;
 	padding-bottom: .54rem;
-	
+
 }
-.mod-refunddetails .timeaxis .timeaxis-item.active{
+
+.mod-refunddetails .timeaxis .timeaxis-item.active {
 	font-size: .26rem;
 	color: #333;
 }
-.mod-refunddetails .timeaxis .timeaxis-item p{
+
+.mod-refunddetails .timeaxis .timeaxis-item p {
 	margin-top: .12rem;
-}.mod-refunddetails .timeaxis .timeaxis-item p:first-child{
+}
+
+.mod-refunddetails .timeaxis .timeaxis-item p:first-child {
 	margin-top: .18rem;
 	margin-bottom: .12rem;
 }
+
 .mod-refunddetails .timeaxis .timeaxis-item:before {
 	content: '';
 	height: .14rem;
@@ -184,11 +201,13 @@
 	position: absolute;
 	left: -.4rem;
 	top: .1rem;
-}.mod-refunddetails .timeaxis .timeaxis-item.active:before{
+}
+
+.mod-refunddetails .timeaxis .timeaxis-item.active:before {
 	height: .3rem;
 	width: .3rem;
 	background: url(../img/landangqian@3x.png) no-repeat center center;
-	 background-size: contain;
+	background-size: contain;
 	left: -.48rem;
 }
 

@@ -26,14 +26,17 @@
 	top: 12px;
 	
 }.date.child  i.left{
-	border-top-color: #ddd;
-	border-left-color: #ddd;
+	border-top-color: #aaa;
+	border-left-color: #aaa;
 	left: 50%;
 	transform:translate(-50px) rotate(-45deg);
+}.date.child  i.left.disable{
+	border-top-color: #ddd;
+	border-left-color: #ddd;
 }
 .date.child  i.right{
-	border-top-color: #ddd;
-	border-right-color: #ddd;
+	border-top-color: #aaa;
+	border-right-color: #aaa;
 	left: 50%;transform:translate(37px) rotate(45deg);
 }
 .day {
@@ -298,7 +301,12 @@ margin-top: .04rem;
 	font-size: .20rem;
 	display: block;
 }
-
+.tables .list:not(.not_this) em{
+	color: #ff5b5b;
+}
+.tables .list.xuanzhong em{
+	color: #fff;
+}
 .swiper-slide table tr {
 	text-align: center;
 	margin-bottom: .08rem;

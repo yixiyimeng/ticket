@@ -601,9 +601,9 @@ em {
 
 
 .filterbar .filter-item.active .list .area>ul.arealist {
-	width: 3.18rem;
+	width: 100%;
 
-}
+} 
 
 .filterbar .filter-item.active .list .area>ul li {
 	line-height: .8rem;
@@ -614,12 +614,17 @@ em {
 
 .filterbar .filter-item.active .list .area>ul.arealist li {
 	padding: 0 .24rem;
-	background: #f5f5f5;
+	/* background: #f5f5f5; */
 
 }
-
+.filterbar .filter-item.active .list .area>ul.arealist li span+span{
+	margin-left: .4rem;
+	font-size:.2rem ;
+	
+}
 .filterbar .filter-item.active .list .area>ul.arealist li.active {
 	background: #fff;
+	color: #ffab00;
 }
 
 .filterbar .filter-item.active .list .area>ul.arealist li.right-arrow {

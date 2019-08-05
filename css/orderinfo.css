@@ -348,7 +348,11 @@ html {
 	padding-top: .45rem;
 	padding-bottom: .2rem;
 }
-
+.subpage .pricelist .price{
+	color: #ff0000;
+}.subpage .pricelist .price em{
+	font-size: .36rem;
+}
 .subpage .close {
 	height: .48rem;
 	width: .48rem;

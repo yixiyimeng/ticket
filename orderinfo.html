@@ -70,12 +70,12 @@
 						<p class="c-yellow">凭以下券码先换票，再入园</p>
 						<div class="qrbox mt40">
 							<img src="img/demo/qr.png">
-							<p class="mt25">入园凭证：1234 5678</p>
-							<a href="" class="download"><i></i><em>保存凭证到手机</em></a>
+							<p class="mt25 ">入园凭证：1234 5678</p>
+							<!-- <a href="" class="download"><i></i><em>保存凭证到手机</em></a> -->
 						</div>
 					</div>
 				</div>
-				<div class="bdline"></div>
+				<div class="bdline mt40"></div>
 				<div class="flex txt mt36">
 					<label class="subtitle">单价包含</label>
 					<div class="flex-1">
@@ -179,8 +179,8 @@
 							<span class="c-grey ml30">15:30</span>
 						</div>
 						<div class="title">入园使用</div>
- 					</div>
-						<div class="timeline-item flex">
+					</div>
+					<div class="timeline-item flex">
 						<div class="time">
 							<span>06-29</span>
 							<span class="c-grey ml30">15:30</span>
@@ -188,7 +188,7 @@
 						<div class="title">入园使用</div>
 					</div>
 				</div>
-				
+
 				<div class="close"></div>
 			</div>
 		</div>
@@ -203,6 +203,10 @@
 						<span><em>￥30 </em><em class="ml30">×1张</em></span></div>
 					<div class="view-cell flex flex-pack-justify"><span>￥30</span>
 						<span><em>￥30 </em><em class="ml30">×1张</em></span></div>
+					<div class="view-cell flex flex-pack-justify">
+						<span></span>
+						<div class="price">总价￥<em>188</em></div>
+					</div>
 				</div>
 				<div class="close"></div>
 			</div>
@@ -241,7 +245,7 @@
 						<div>入院地址 </div>
 						<p class="flex-1 ml40">郑州市金水区动物园</p>
 					</div>
-		
+
 				</div>
 			</div>
 			<div class="popup-ft">
@@ -271,7 +275,7 @@
 	$('.popup .close,.mask').click(function() {
 		$('.mask').fadeOut();
 		$('.popup').slideUp(300);
-			});
+	});
 	/* 复制 */
 	function jsCopy() {
 		var u = navigator.userAgent;

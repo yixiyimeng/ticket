@@ -184,14 +184,14 @@
 							<i></i></div>
 						<div class="list">
 							<div class="area flex">
-								<ul class="arealist">
+								<!-- <ul class="arealist">
 									<li class=" ">综合排序</li>
 									<li class=" active flex flex-pack-justify right-arrow"><span>离我最近</span><span class="c-grey">30</span></li>
 									<li class="flex flex-pack-justify right-arrow"><span>离我最近</span><span class="c-grey">30</span></li>
-								</ul>
-								<ul class="arealist-item flex-1">
-									<li>全部</li>
-									<li class="flex flex-pack-justify"><span>离我最近</span><span class="c-grey">30</span></li>
+								</ul> -->
+								<ul class="arealist">
+									<li >全部</li>
+									<li class="active"><span>中原区</span><span class="c-grey">30个景点</span></li>
 								</ul>
 							</div>
 						</div>
@@ -341,4 +341,7 @@
 			}
 		}
 	});
+	$('.filter-item').on('click','ul li',function(){
+		$(this).addClass('active').siblings('.active').removeClass('active')
+	})
 </script>

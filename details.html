@@ -346,6 +346,10 @@
 		$('.mask').fadeIn();
 		$('.mod-buyinfo').slideDown(300);
 	});
+	/* 立即订购 */
+	$('.ticketlist').on('click','.ticket-item .flex-1+div',function(){
+		window.location.href='order.html'
+	});
 	$('.mask,.popup .close').on('click',function(){
 		$('.mask').fadeOut();
 		$(this).closest('.popup').slideUp(300);

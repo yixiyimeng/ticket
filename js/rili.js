@@ -30,6 +30,7 @@ function setrili(callback) {
 			slideChangeTransitionStart: function() {
 				// alert(this.activeIndex);
 				//swiper.lockSwipes();
+
 			},
 			slideChangeTransitionEnd: function() {
 				var nows = $(".swiper-slide-active").find("table").attr("id");
@@ -243,6 +244,13 @@ function setrili(callback) {
 				if (fillPrice) {
 					fillPrice();
 				}
+				if (new Date().getFullYear() == sev_y && (new Date().getMonth() + 1 == sev_m)) {
+					$('.date .left').addClass('disable');
+					mySwiper.allowSlidePrev = false;
+				} else {
+					$('.date .left.disable').removeClass('disable')
+					mySwiper.allowSlidePrev = true;
+				}
 			},
 		},
 	});
@@ -319,6 +327,8 @@ function setrili(callback) {
 	if (fillPrice) {
 		fillPrice();
 	}
+	$('.date .left').addClass('disable');
+	mySwiper.allowSlidePrev = false;
 };
 
 function jump(yyyy, mm, dd) {
@@ -360,8 +370,8 @@ function jump(yyyy, mm, dd) {
 
 	$("#ymym").html(sev_y + "年" + sev_m + "月");
 	$(".covers").hide();
-	var activeIndex=mySwiper.activeIndex;
-	var slideTocallback=(activeIndex==2&&fillPrice)?fillPrice():false;
+	var activeIndex = mySwiper.activeIndex;
+	var slideTocallback = (activeIndex == 2 && fillPrice) ? fillPrice() : false;
 	mySwiper.slideTo(2, 500, slideTocallback);
 	//mySwiper.slideTo(2, 500, false);
 	click_sev();
@@ -374,7 +384,7 @@ function click_sev() {
 			$(this).click();
 		}
 	});
-	
+
 }
 
 function get_first(a, b, c, d, e) {
@@ -456,17 +466,17 @@ function get_first(a, b, c, d, e) {
 		var bday = ldays - i + 1;
 		// var ly = LunarDate.GetLunarDayDetail(b, c, i);
 		var ly = '';
-		
+
 		var Fev = solarDate.GetSolarDayFev(b, c, i);
 		if (!Fev) {
 			Fev = LunarDate.GetLunarDayFev(b, c, i);
-			if(!Fev){
+			if (!Fev) {
 				if (c == 5 || c == 11 || c == 6) {
 					console.log(i);
 					Fev = solarDate.getWeekFev(b, c, i)
 				}
 			}
-		} 
+		}
 		//var ly = LunarDate.GetLunarDayFev(b, c, i);
 		//             var jq = getjq(b, c, i);
 		//             if (jq) {
@@ -536,9 +546,9 @@ function bind_click(a) {
 	$("#" + a).find("td").unbind("click");
 	$("#" + a).find("td").each(function() {
 		if ($(this).hasClass('not_this')) {
-			$(this).click(function() {
-				jump($(this).attr('data_y'), $(this).attr('data_m'), $(this).attr('data_d'));
-			});
+			// $(this).click(function() {
+			// 	jump($(this).attr('data_y'), $(this).attr('data_m'), $(this).attr('data_d'));
+			// });
 		} else {
 			$(this).click(function() {
 				set_top($(this));
@@ -788,22 +798,26 @@ $(function() {
 
 });
 
-$('.date').on('click',"i.left", function() {
-	 mySwiper.slidePrev();
+$('.date').on('click', "i.left", function() {
+	// if (new Date().getFullYear() == sev_y && (new Date().getMonth() + 1 == sev_m)) {
+	// 	return false;
+	// }
+
+	mySwiper.slidePrev();
 	// $('.date').click(function(){
 	// 		
 	// })
 	// $('#ymym:after').click(function(){
 	//   mySwiper.slideNext();
 	// })
-// 
-// 	$('.tc').show();
-// 	$('.tc-innner').show();
-// 	tc();
-// 
-// 
- });
-$('.date').on('click',"i.right", function() {
+	// 
+	// 	$('.tc').show();
+	// 	$('.tc-innner').show();
+	// 	tc();
+	// 
+	// 
+});
+$('.date').on('click', "i.right", function() {
 	mySwiper.slideNext();
 })
 var e = 1;
