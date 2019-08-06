@@ -703,8 +703,10 @@ em {
 
 .ticketlist .ticket-item {
 	font-size: .26rem;
-	padding: .3rem 0 .28rem;
+	padding: .3rem .24rem .28rem;
 	position: relative;
+	background: #F5F5F5;
+	/* margin: 0 -.24rem; */
 }
 
 .ticketlist .ticket-item .name {
@@ -756,6 +758,8 @@ em {
 
 .ticketlist .ticket-item .flex-1+div {
 	text-align: right;
+	padding-left: .3rem;
+	margin-left: .3rem;
 }
 
 .ticketlist .ticket-item .m-price {
