@@ -796,7 +796,7 @@ em {
 .ticketlist .ticket-item .orderBtn {
 	width: 1.7rem;
 	position: absolute;
-	right: 0;
+	right: .24rem;
 	bottom: .28rem;
 }
 
