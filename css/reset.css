@@ -951,7 +951,7 @@ em {
 }
 
 .spotslist .spots-item .tags {
-	margin-top: .22rem;
+	margin-top: .1rem;
 }
 
 .spotslist .spots-item .tags .tag {
@@ -980,13 +980,13 @@ em {
 .spotslist .spots-item .tags+p {
 
 	color: #666;
-	margin-top: .34rem;
+	margin-top: .1rem;
 }
 
 .spotslist .spots-item .score {
 	color: #ffab00;
 	font-size: .22rem;
-	margin-top: .1rem;
+	/* margin-top: .1rem; */
 }
 
 .spotslist .spots-item .score span {
