@@ -482,3 +482,13 @@ body {
 	background: #ffab00;
 	border-radius: .5rem;
 }
+.expirydate{
+	font-size: .2rem;
+	color: #333;
+	padding-bottom: .45rem;
+	margin-top: .15rem;
+}.expirydate .price{
+	color: #ff3030;
+} .expirydate .price em{
+	font-size: .3rem;
+}

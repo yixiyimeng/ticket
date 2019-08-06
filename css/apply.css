@@ -221,3 +221,16 @@
 	top: .32rem;
 	left: -.34rem;
 }
+.subtitle{
+	line-height: .8rem;
+    color: #999;
+    font-size: .24rem;
+    position: relative;
+}
+.text{
+	width: 100%;
+	background: #f5f5f5;
+	border-radius: .1rem;
+	border: none;
+	padding: 10px;
+}

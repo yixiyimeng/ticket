@@ -43,6 +43,12 @@
 					<div class="moreday ml20">更多<br>日期</div>
 				</div>
 				<div class="bdline"></div>
+				<div class="title mt36">使用有效期</div>
+				<div class="flex flex-align-center flex-pack-justify expirydate">
+					<span>2019-07-20 前可使用</span>
+					<span class="price">￥<em>188</em></span>
+				</div>
+				<div class="bdline"></div>
 				<div class="flex flex-pack-justify flex-align-center">
 					<div class="title">购买数量</div>
 					<div class="shophandle">
@@ -344,7 +350,7 @@
 		setrili(function() {
 			/* 回填价格 */
 			//$('#d3 tr td em')
-			$(".swiper-slide-active tr:not(.not_this js_up) td em").text('￥14');
+			$(".swiper-slide-active tr:not(.not_this) td em").text('￥14');
 		});
 	});
 	/* 清除按钮 */
@@ -451,6 +457,9 @@
 		var num = parseInt($('.shophandle input').val());
 		num++
 		$('.shophandle input').val(num);
+		if(num>1){
+			$('.shophandle .minus').addClass('active');
+		}
 	});
 	$('.shophandle .minus').click(function() {
 		var num = parseInt($('.shophandle input').val());
@@ -458,6 +467,9 @@
 			num--
 		}
 		$('.shophandle input').val(num);
+		if(num==1){
+			$('.shophandle .minus').removeClass('active');
+		}
 	});
 	$('.shophandle input').change(function() {
 		var num = parseInt($('.shophandle input').val());
@@ -465,5 +477,8 @@
 			num = 1
 		}
 		$('.shophandle input').val(num);
+		if(num>1){
+			$('.shophandle .minus').addClass('active');
+		}
 	})
 </script>
